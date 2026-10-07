@@ -11,12 +11,30 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/styles.css">
+<script>
+  (function (d) {
+    d.classList.add('js');
+    try {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduce && !sessionStorage.getItem('ngc-intro')) {
+        d.classList.add('has-intro');
+        sessionStorage.setItem('ngc-intro', '1');
+      }
+    } catch (e) {}
+  })(document.documentElement);
+</script>
 </head>
 <body>
+
+<div class="intro" aria-hidden="true">
+  <img class="intro-mark" src="assets/img/ng-mark-light.png" alt="" width="240" height="162">
+  <span class="intro-rule"></span>
+</div>
 
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="site-header" id="top">
+  <span class="scroll-progress" aria-hidden="true"></span>
   <div class="wrap header-inner">
     <a class="brand" href="#top" aria-label="New Generation Capital — home">
       <img class="brand-mark brand-mark--light" src="assets/img/ng-mark-light.png" alt="" width="240" height="162">
@@ -43,24 +61,24 @@
 <main id="main">
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="hero">
     <div class="hero-media" aria-hidden="true">
       <img src="assets/img/hero-path.jpg" alt="" width="1672" height="941" fetchpriority="high">
     </div>
     <div class="wrap hero-inner">
       <p class="label label--light reveal">Project finance &amp; advisory &nbsp;·&nbsp; Digital infrastructure</p>
-      <h1 class="hero-title reveal">We turn infrastructure ideas into <em>investable</em> projects.</h1>
+      <h1 class="hero-title reveal" data-split>We turn infrastructure ideas into <em class="hero-em">investable</em> projects.</h1>
       <p class="hero-lede reveal">New Generation Capital originates, structures and de-risks bankable infrastructure for South Africa’s digital economy — with technical and operational insight built into the financial structuring, not added after the fact.</p>
       <div class="hero-actions reveal">
-        <a class="btn" href="#contact">Discuss a project</a>
-        <a class="btn btn--ghost" href="#process">See how we work</a>
+        <a class="btn" href="#contact" data-magnetic><span>Discuss a project</span><svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a>
+        <a class="btn btn--ghost" href="#process" data-magnetic><span>See how we work</span><svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a>
       </div>
     </div>
     <div class="wrap hero-credentials reveal">
       <dl>
-        <div><dt>30+ years</dt><dd>Hands-on experience across telecoms, finance and infrastructure</dd></div>
-        <div><dt>USD 380M+</dt><dd>Raised by our leadership in debt, equity and project finance</dd></div>
-        <div><dt>R1.2bn</dt><dd>City of Johannesburg broadband project led by our directors</dd></div>
+        <div><dt><span data-count="30">30</span>+ years</dt><dd>Hands-on experience across telecoms, finance and infrastructure</dd></div>
+        <div><dt>USD <span data-count="380">380</span>M+</dt><dd>Raised by our leadership in debt, equity and project finance</dd></div>
+        <div><dt>R<span data-count="1.2" data-decimals="1">1.2</span>bn</dt><dd>City of Johannesburg broadband project led by our directors</dd></div>
       </dl>
       <p class="group-note">Part of the <strong>New Generation Group</strong></p>
     </div>
@@ -71,11 +89,11 @@
     <div class="wrap approach-grid">
       <div class="approach-statement reveal">
         <p class="label">Who we are</p>
-        <h2 class="display">Many advisors can model cash flows. <span>We know what it takes to deploy and operate infrastructure in South Africa.</span></h2>
+        <h2 class="display">Many advisors can model cash flows. <span class="ink-fill" data-ink>We know what it takes to deploy and operate infrastructure in South Africa.</span></h2>
       </div>
       <div class="approach-body reveal">
         <p>We are a specialist project finance advisory firm. We source opportunities, test feasibility, package projects and structure financing across energy, edge data centres, security, connectivity, public infrastructure and the value chains behind them.</p>
-        <ul class="pillars">
+        <ul class="pillars stagger">
           <li>
             <h3>Operational lens</h3>
             <p>Deployment experience informs every diligence decision.</p>
@@ -91,7 +109,7 @@
         </ul>
       </div>
     </div>
-    <figure class="wrap approach-figure reveal">
+    <figure class="wrap approach-figure reveal wipe" data-parallax>
       <img src="assets/img/team-review.jpg" alt="The New Generation Capital team reviewing infrastructure plans and project dashboards" width="1400" height="788" loading="lazy">
     </figure>
   </section>
@@ -101,7 +119,7 @@
     <div class="wrap market-grid">
       <div class="market-figure reveal">
         <p class="label">The opportunity</p>
-        <p class="figure">R140–200<span>bn+</span></p>
+        <p class="figure">R<span data-count="140">140</span>–<span data-count="200">200</span><span class="figure-unit">bn+</span></p>
         <p class="figure-caption">Estimated investment required by 2035 for high-speed broadband and digital connectivity in South Africa.</p>
         <p class="source">Source: DBSA Digital Infrastructure Investment Study, 2025</p>
       </div>
@@ -120,24 +138,24 @@
         <h2 class="display">Four areas that make digital infrastructure resilient.</h2>
       </div>
       <div class="focus-grid">
-        <div class="focus-media reveal">
+        <div class="focus-media reveal wipe" data-view="a">
           <img class="focus-media__a" src="assets/img/edge-campus.jpg" alt="Aerial view of a data centre campus with substation and solar array" width="1400" height="788" loading="lazy">
           <img class="focus-media__b" src="assets/img/secured-site.jpg" alt="Secured infrastructure facility with telecoms mast and surveillance cameras at dusk" width="1400" height="788" loading="lazy">
         </div>
-        <ul class="focus-list">
-          <li class="reveal">
+        <ul class="focus-list stagger">
+          <li class="focus-item" data-view="a">
             <h3>Energy solutions</h3>
             <p>Renewable, hybrid and micro-grid power for data centres and edge sites — critical to operability, bankability and ESG performance.</p>
           </li>
-          <li class="reveal">
+          <li class="focus-item" data-view="a">
             <h3>Edge &amp; micro data centres</h3>
             <p>Feasibility, site selection, power integration and financing for low-latency infrastructure supporting 5G, AI, IoT and enterprise.</p>
           </li>
-          <li class="reveal">
+          <li class="focus-item" data-view="b">
             <h3>Security &amp; surveillance</h3>
             <p>Physical security, smart surveillance and critical infrastructure protection, increasingly enhanced by digital and AI capabilities.</p>
           </li>
-          <li class="reveal">
+          <li class="focus-item" data-view="b">
             <h3>Supporting value chains</h3>
             <p>Logistics, civil works and ancillary assets required to deliver telecommunications and digital infrastructure projects.</p>
           </li>
@@ -171,7 +189,7 @@
         <div class="flow-gate"><span>Decision gate</span></div>
       </div>
 
-      <ol class="stages">
+      <ol class="stages stagger" id="stages">
         <li>
           <span class="stage-num">01</span>
           <h3>Find</h3>
@@ -216,6 +234,7 @@
       </div>
 
       <div class="model reveal">
+        <span class="model-pulse" aria-hidden="true"></span>
         <div class="model-col">
           <h3>Project sponsors &amp; clients</h3>
           <ul><li>Projects, sites and ambitions</li><li>Need funding to grow</li></ul>
@@ -233,7 +252,7 @@
       <div class="funder-grid">
         <div class="reveal">
           <p class="label label--light">What funders receive</p>
-          <dl class="benefits">
+          <dl class="benefits stagger">
             <div><dt>Pre-screened deal flow</dt><dd>Only commercially viable, deliverable projects reach you — de-risked before capital is committed.</dd></div>
             <div><dt>Lower post-funding risk</dt><dd>Active project management and milestone oversight reduce default and completion risk.</dd></div>
             <div><dt>Extended reach, no fixed cost</dt><dd>Added origination capacity and a managed pipeline without additional overhead.</dd></div>
@@ -242,7 +261,7 @@
         </div>
         <div class="reveal">
           <p class="label label--light">How capital is protected after funding</p>
-          <ul class="safeguards">
+          <ul class="safeguards stagger">
             <li><h3>Screening gate</h3><p>Standard credibility and viability criteria applied before any deal is presented.</p></li>
             <li><h3>Milestone drawdowns</h3><p>Funds released against verified project progress, not upfront.</p></li>
             <li><h3>Monthly reporting</h3><p>Progress, spend against plan, risks and early warnings.</p></li>
@@ -264,9 +283,9 @@
         </div>
         <p class="section-head__aside">Our board brings national-scale telecoms operation, ICT entrepreneurship and cross-border capital raising to every mandate.</p>
       </div>
-      <div class="people">
-        <article class="person reveal">
-          <img src="assets/img/melvin-watkins.jpg" alt="Portrait of Melvin Watkins" width="600" height="715" loading="lazy">
+      <div class="people stagger">
+        <article class="person">
+          <div class="person-photo wipe"><img src="assets/img/melvin-watkins.jpg" alt="Portrait of Melvin Watkins" width="600" height="715" loading="lazy"></div>
           <h3>Melvin Watkins</h3>
           <p class="role">Director · Founder &amp; Group CEO, New Generation Group</p>
           <ul>
@@ -276,8 +295,8 @@
             <li>B.Comm, University of the Western Cape</li>
           </ul>
         </article>
-        <article class="person reveal">
-          <img src="assets/img/jeffrey-de-wee.jpg" alt="Portrait of Jeffrey de Wee" width="600" height="715" loading="lazy">
+        <article class="person">
+          <div class="person-photo wipe"><img src="assets/img/jeffrey-de-wee.jpg" alt="Portrait of Jeffrey de Wee" width="600" height="715" loading="lazy"></div>
           <h3>Jeffrey de Wee</h3>
           <p class="role">Director · COO, New Generation Group</p>
           <ul>
@@ -287,8 +306,8 @@
             <li>B. Financial Management, UNISA · National Diploma, Electrical Engineering</li>
           </ul>
         </article>
-        <article class="person reveal">
-          <img src="assets/img/selwyn-watkins.jpg" alt="Portrait of Selwyn Watkins" width="600" height="715" loading="lazy">
+        <article class="person">
+          <div class="person-photo wipe"><img src="assets/img/selwyn-watkins.jpg" alt="Portrait of Selwyn Watkins" width="600" height="715" loading="lazy"></div>
           <h3>Selwyn Watkins</h3>
           <p class="role">Managing Director</p>
           <ul>
@@ -308,7 +327,7 @@
       <div class="reveal">
         <p class="label">Working together</p>
         <h2 class="display">Three steps to a repeatable, de&#8209;risked pipeline.</h2>
-        <ol class="steps">
+        <ol class="steps stagger">
           <li><h3>Align</h3><p>Confirm shared priorities and put an NDA and a simple MOU or fee agreement in place.</p></li>
           <li><h3>Pilot</h3><p>Select one or two near-term opportunities to run through the full process together.</p></li>
           <li><h3>Scale</h3><p>Agree a reporting cadence and grow the pipeline as delivery confidence builds.</p></li>
@@ -341,7 +360,7 @@
             <textarea id="f-msg" name="message" rows="4" required></textarea>
           </div>
           <p class="form-error" id="formError" role="alert" hidden></p>
-          <button class="btn btn--block" type="submit">Send enquiry</button>
+          <button class="btn btn--block" type="submit"><span>Send enquiry</span><svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></button>
         </form>
         <dl class="contact-details">
           <div><dt>Email</dt><dd><a href="mailto:selwynw@newgenerationcap.co.za">selwynw@newgenerationcap.co.za</a></dd></div>
@@ -376,6 +395,9 @@
   </div>
 </footer>
 
+<a class="to-top" href="#top" aria-label="Back to top"><svg viewBox="0 0 10 16" aria-hidden="true"><path d="M5 15V1M1 5l4-4 4 4"/></svg></a>
+
 <script src="assets/js/main.js" defer></script>
+<script src="assets/js/motion.js" defer></script>
 </body>
 </html>

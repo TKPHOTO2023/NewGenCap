@@ -32,7 +32,7 @@
   });
 
   /* ---------- reveal on scroll ---------- */
-  var reveals = document.querySelectorAll('.reveal');
+  var reveals = document.querySelectorAll('.reveal:not(.wipe)');
   if ('IntersectionObserver' in window && !reduceMotion) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -85,6 +85,7 @@
   var spawnClock = 0;
   var running = false;
   var last = 0;
+  var focusStage = -1;        // stage column highlighted while its card is hovered
 
   var INK = [5, 21, 42];
   var SLATE = [97, 112, 131];
@@ -152,6 +153,17 @@
     var mid = H * 0.56;
     var half = H * 0.4;
 
+    // highlighted stage column
+    if (focusStage >= 0) {
+      var fx = W * focusStage / 6;
+      var band = ctx.createLinearGradient(0, 24, 0, H);
+      var tint = focusStage >= 3 ? SIGNAL : INK;
+      band.addColorStop(0, rgba(tint, 0));
+      band.addColorStop(1, rgba(tint, focusStage >= 3 ? 0.09 : 0.05));
+      ctx.fillStyle = band;
+      ctx.fillRect(fx, 24, W / 6, H - 24);
+    }
+
     // stage dividers
     ctx.lineWidth = 1;
     for (var k = 1; k < 6; k++) {
@@ -189,9 +201,10 @@
         alpha = 1;
         color = mix(INK, SIGNAL, Math.min(1, (q.p - GATE) / 0.05));
       }
-      ctx.fillStyle = rgba(color, alpha);
+      var inFocus = focusStage >= 0 && Math.floor(q.p * 6) === focusStage && !q.fall;
+      ctx.fillStyle = rgba(inFocus && q.p < GATE ? INK : color, inFocus ? Math.min(1, alpha + 0.35) : alpha);
       ctx.beginPath();
-      ctx.arc(px, py, q.p >= GATE && !q.fall ? 3 : q.size, 0, Math.PI * 2);
+      ctx.arc(px, py, (q.p >= GATE && !q.fall ? 3 : q.size) * (inFocus ? 1.35 : 1), 0, Math.PI * 2);
       ctx.fill();
     }
 
@@ -229,6 +242,15 @@
   }
 
   init();
+
+  var stageList = document.getElementById('stages');
+  if (stageList) {
+    Array.prototype.forEach.call(stageList.children, function (li, i) {
+      li.addEventListener('mouseenter', function () { focusStage = i; if (!running) draw(); });
+      li.addEventListener('mouseleave', function () { focusStage = -1; if (!running) draw(); });
+    });
+  }
+
   window.addEventListener('resize', function () {
     if (!resize()) return;
     if (!particles.length) prewarm();
