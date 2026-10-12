@@ -303,8 +303,8 @@ ul, ol { padding: 0; list-style: none; }
 .leadership { background: var(--mist); }
 .people { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 3vw, 44px); }
 .person-photo { overflow: hidden; margin-bottom: 26px; }
-.person img { width: 100%; aspect-ratio: 5 / 6; object-fit: cover; object-position: center 20%; filter: saturate(.85); transition: transform 1.2s var(--ease), filter .6s var(--ease); }
-.person:hover img { transform: scale(1.04); filter: saturate(1); }
+.person img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: center top; transition: transform 1.2s var(--ease), filter .6s var(--ease); }
+.person:hover img { transform: scale(1.04); }
 .person h3 { font-family: var(--display); font-weight: 400; font-size: 1.45rem; letter-spacing: -.02em; line-height: 1.15; margin-bottom: 6px; }
 .person .role { font-size: .74rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--signal-deep); margin-bottom: 18px; line-height: 1.5; }
 .person li { font-size: .9rem; color: #3A4A5E; padding: 9px 0; border-top: 1px solid var(--rule); line-height: 1.55; }
@@ -413,7 +413,6 @@ ul, ol { padding: 0; list-style: none; }
   .approach-figure img { aspect-ratio: 4 / 3; }
   .stages { grid-template-columns: 1fr 1fr; }
   .people { grid-template-columns: 1fr; }
-  .person img { aspect-ratio: 4 / 4; }
   .footer-inner { grid-template-columns: 1fr; }
   .contact-details > div { grid-template-columns: 1fr; gap: 2px; }
 }
@@ -472,7 +471,7 @@ ul, ol { padding: 0; list-style: none; }
 .js .reveal.wipe { opacity: 1; transform: none; }
 .js .wipe--zoom img, .js .person-photo img { transform: scale(1.14); transition: transform 1.8s var(--ease), filter .6s var(--ease); }
 .js .person-photo.is-in img { transform: scale(1); }
-.person:hover .person-photo.is-in img { transform: scale(1.045); filter: saturate(1); }
+.person:hover .person-photo.is-in img { transform: scale(1.045); }
 
 /* parallax figure */
 .approach-figure { overflow: hidden; }
