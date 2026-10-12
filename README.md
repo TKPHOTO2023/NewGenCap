@@ -13,4 +13,4 @@ python3 -m http.server 8000
 - `assets/js/motion.js` — motion layer: opening curtain (first visit per session), hero word reveal and depth, count-ups, reading progress, active nav, ink-fill sentence, image wipes and parallax, focus-area photo swap, magnetic buttons, back-to-top. All of it respects `prefers-reduced-motion`.
 - `assets/img/` — imagery and the NG mark, taken from the July 2026 company profile
 
-Type: Newsreader (display) and Montserrat (brand text), loaded from Google Fonts.
+Type: Poppins (the New Generation Group typeface) throughout, loaded from Google Fonts.
