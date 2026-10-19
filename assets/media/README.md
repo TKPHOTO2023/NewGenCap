@@ -52,14 +52,14 @@ different pages, always in secondary positions (never a slider slide or a page h
 |---|---|---|
 | `hero-1` … `hero-4` | Home slider | `brand-path`, `solar-aerial`, `futuristic-office`, `sandton-dusk` |
 | `who-home`, `who-about` | "Who we are" photo on Home / About | `team-review`, `team-discussion` |
-| `heritage-home`, `heritage-about` | "Built on the New Generation Group" backdrop (video-ready) | `solar-wind`, `solar-site` |
+| `heritage-home`, `heritage-about` | "Built on the New Generation Group" backdrop (video-ready) | `sandton-day`, `solar-site` |
 | `cta-home`, `cta-about`, `cta-what-we-do`, `cta-services` | Sponsor / funder band (video-ready) | `tech-tunnel`, `liquid-metal`, `city-night`, `optical-fiber` |
-| `backdrop-about` | About header | `office-colleagues` |
+| `backdrop-about` | About header | `sponsor-model` |
 | `backdrop-what-we-do` | What we do header | `analytics-meeting` |
 | `backdrop-services` | Services header | `meeting-devices` |
 | `backdrop-funding-tools` | Funding tools header | `office-workers` |
-| `backdrop-partner` | Partner header | `sponsor-model` |
-| `break-home` / `-about` / `-what-we-do` / `-services` / `-partner` | Parallax breaks | `data-campus`, `sandton-day`, `growth-capital`, `sandton-dusk`, `solar-wind` |
+| `backdrop-partner` | Partner header | `office-colleagues` (shown mirrored so the couple sits right of the text) |
+| `break-home` / `-about` / `-what-we-do` / `-services` / `-partner` | Parallax breaks | `data-campus`, `solar-wind`, `growth-capital`, `sandton-dusk`, `solar-wind` |
 | `service-…` | Services: Project Fundraising, Bridging, M&A, Greenfield, Insurance | `team-meeting`, `growth-capital`, `office-analysis`, `solar-site`, `secured-site` |
 | `audience-sponsors`, `audience-funders` | Partner audience cards | `solar-aerial`, `analytics-meeting` |
 
