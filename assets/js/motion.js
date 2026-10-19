@@ -148,9 +148,9 @@
 
   /* ---------- scroll-driven effects ---------- */
   var header = $('.site-header');
-  var hero = $('#hero');
-  var heroMedia = $('.hero-media');
-  var heroInner = $('.hero-inner');
+  var hero = $('#hero') || $('.page-hero');
+  var heroMedia = hero && $('.hero-media, .page-hero__media', hero);
+  var heroInner = hero && $('.hero-inner, .page-hero__inner', hero);
   var toTop = $('.to-top');
   var parallaxEls = $$('[data-parallax]');
   var navLinks = $$('#nav a[href^="#"]:not(.btn)');
@@ -177,9 +177,9 @@
     if (reduceMotion) return;
 
     // hero depth
-    if (hero && y < hero.offsetHeight) {
+    if (hero && heroInner && y < hero.offsetHeight) {
       var p = y / hero.offsetHeight;
-      heroMedia.style.transform = 'translate3d(' + (pointerX * -14).toFixed(1) + 'px,' + (y * 0.28 + pointerY * -10).toFixed(1) + 'px,0)';
+      if (heroMedia) heroMedia.style.transform = 'translate3d(' + (pointerX * -14).toFixed(1) + 'px,' + (y * 0.28 + pointerY * -10).toFixed(1) + 'px,0)';
       heroInner.style.transform = 'translate3d(0,' + (y * 0.14).toFixed(1) + 'px,0)';
       heroInner.style.opacity = clamp(1 - p * 1.4, 0, 1).toFixed(3);
     }
@@ -216,16 +216,4 @@
     });
   }
 
-  /* ---------- form: confirm the hand-off to the mail app ---------- */
-  var form = $('#enquiry');
-  if (form) {
-    form.addEventListener('submit', function () {
-      var err = $('#formError');
-      if (err && !err.hidden) return;
-      var label = $('button[type="submit"] span', form);
-      if (!label) return;
-      label.textContent = 'Opening your email app…';
-      setTimeout(function () { label.textContent = 'Send enquiry'; }, 4000);
-    });
-  }
 })();

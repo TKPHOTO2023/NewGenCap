@@ -47,31 +47,8 @@
     reveals.forEach(function (el) { el.classList.add('is-in'); });
   }
 
-  /* ---------- enquiry form → opens the visitor's mail app ---------- */
-  var form = document.getElementById('enquiry');
-  var formError = document.getElementById('formError');
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var name = form.name.value.trim();
-    var email = form.email.value.trim();
-    var message = form.message.value.trim();
-    var missing = [];
-    if (!name) missing.push('your name');
-    if (!/^\S+@\S+\.\S+$/.test(email)) missing.push('a valid email address');
-    if (!message) missing.push('a short message');
-    if (missing.length) {
-      formError.textContent = 'Please add ' + missing.join(', ') + ' so we can respond.';
-      formError.hidden = false;
-      return;
-    }
-    formError.hidden = true;
-    var subject = 'Enquiry — ' + form.role.value;
-    var body = message + '\n\n' + name + '\n' + email;
-    window.location.href = 'mailto:selwynw@newgenerationcap.co.za?subject=' +
-      encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  });
-
-  document.getElementById('year').textContent = new Date().getFullYear();
+  var year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
 
   /* ---------- deal-flow visual ----------
      Opportunities enter at Find and thin out through Screen and Validate.

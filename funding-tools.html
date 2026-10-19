@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Funding tools — New Generation Capital</title>
+<meta name="description" content="Free project finance tools: a Funding Readiness Assessment and a Project Finance Repayment and DSCR Calculator, each with an instant result and a PDF report.">
+<meta name="theme-color" content="#05152A">
+<link rel="icon" type="image/png" href="assets/img/ng-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>
+  document.documentElement.classList.add('js');
+  try { sessionStorage.setItem('ngc-intro', '1'); } catch (e) {}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <span class="scroll-progress" aria-hidden="true"></span>
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="New Generation Capital — home">
+      <img class="brand-mark brand-mark--light" src="assets/img/ng-mark-light.png" alt="" width="240" height="162">
+      <img class="brand-mark brand-mark--dark" src="assets/img/ng-mark.png" alt="" width="240" height="162">
+      <span class="brand-word">
+        <span class="brand-word__top">New Generation</span>
+        <span class="brand-word__bottom">Capital</span>
+      </span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About us</a>
+      <a href="what-we-do.html">What we do</a>
+      <a href="funding-tools.html" aria-current="page">Funding tools</a>
+      <a href="partner.html">Partner with us</a>
+      <a class="btn btn--small" href="partner.html#submit">Submit a project</a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="wrap page-hero__inner">
+      <p class="label label--light reveal">Funding tools</p>
+      <h1 class="page-hero__title reveal">Know where your project stands before you pitch it.</h1>
+      <p class="page-hero__lede reveal">Two free tools with instant results. Download a detailed PDF report to share with your team, or send your project to us for review.</p>
+    </div>
+  </section>
+
+  <nav class="tool-switch wrap" aria-label="Funding tools">
+    <a href="#readiness" class="tool-switch__link"><span>01</span> Funding Readiness Assessment</a>
+    <a href="#dscr" class="tool-switch__link"><span>02</span> Repayment &amp; DSCR Calculator</a>
+  </nav>
+
+  <section class="section tool" id="readiness">
+    <div class="wrap tool-grid">
+      <div class="tool-intro reveal">
+        <p class="label">Tool 01</p>
+        <h2 class="display">Funding Readiness Assessment</h2>
+        <p>Answer ten short questions about your project. You will get a readiness score, a breakdown by area and a list of what to prepare before funders will engage.</p>
+        <ul class="tool-points">
+          <li>About 3 minutes</li>
+          <li>No sign-up needed to see your score</li>
+          <li>Optional PDF report to share</li>
+        </ul>
+      </div>
+
+      <div class="tool-panel reveal">
+        <form class="readiness" id="readinessForm" novalidate>
+          <div class="readiness-progress" aria-hidden="true"><span id="readinessBar"></span></div>
+          <p class="readiness-count" id="readinessCount" aria-live="polite">Question 1 of 10</p>
+          <fieldset class="q" data-q="stage">
+            <legend>What stage is your project at?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="stage" value="0"><span>Idea or concept</span></label>
+              <label class="choice"><input type="radio" name="stage" value="1"><span>Feasibility under way</span></label>
+              <label class="choice"><input type="radio" name="stage" value="2"><span>Feasibility complete</span></label>
+              <label class="choice"><input type="radio" name="stage" value="3"><span>Ready to build, or operating and expanding</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="q" data-q="plan">
+            <legend>Do you have a business plan and financial model?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="plan" value="0"><span>Not yet</span></label>
+              <label class="choice"><input type="radio" name="plan" value="1"><span>A draft plan, no model</span></label>
+              <label class="choice"><input type="radio" name="plan" value="2"><span>A plan and a basic model</span></label>
+              <label class="choice"><input type="radio" name="plan" value="3"><span>A full plan and a detailed financial model</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="q" data-q="revenue">
+            <legend>How certain is the project’s income?</legend>
+            <p class="q-hint">For example offtake agreements, leases or customer contracts.</p>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="revenue" value="0"><span>No customers yet</span></label>
+              <label class="choice"><input type="radio" name="revenue" value="1"><span>Letters of intent or early customers</span></label>
+              <label class="choice"><input type="radio" name="revenue" value="2"><span>Signed contracts for part of the income</span></label>
+              <label class="choice"><input type="radio" name="revenue" value="3"><span>Long-term contracts for most of the income</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="q" data-q="equity">
+            <legend>How much of the project cost will you contribute?</legend>
+            <p class="q-hint">Your own equity, in cash or assets.</p>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="equity" value="0"><span>None</span></label>
+              <label class="choice"><input type="radio" name="equity" value="1"><span>Less than 10%</span></label>
+              <label class="choice"><input type="radio" name="equity" value="2"><span>10% to 25%</span></label>
+              <label class="choice"><input type="radio" name="equity" value="3"><span>More than 25%</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="q" data-q="team">
+            <legend>What is your team’s track record?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="team" value="0"><span>This is our first project</span></label>
+              <label class="choice"><input type="radio" name="team" value="1"><span>Some related experience</span></label>
+              <label class="choice"><input type="radio" name="team" value="2"><span>We have delivered a similar project</span></label>
+              <label class="choice"><input type="radio" name="team" value="3"><span>We have delivered several similar projects</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="q" data-q="technical">
+            <legend>How far is the technical work?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="technical" value="0"><span>Not started</span></label>
+              <label class="choice"><input type="radio" name="technical" value="1"><span>Desktop study only</span></label>
+              <label class="choice"><input type="radio" name="technical" value="2"><span>Independent feasibility or engineering study</span></label>
+              <label class="choice"><input type="radio" name="technical" value="3"><span>Final design with supplier or contractor quotes</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="q" data-q="permits">
+            <legend>Are land, permits and licences in place?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="permits" value="0"><span>Not started</span></label>
+              <label class="choice"><input type="radio" name="permits" value="1"><span>Applications in progress</span></label>
+              <label class="choice"><input type="radio" name="permits" value="2"><span>Mostly secured</span></label>
+              <label class="choice"><input type="radio" name="permits" value="3"><span>All secured, or none required</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="q" data-q="financials">
+            <legend>What financial records does the company have?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="financials" value="0"><span>New company, no statements yet</span></label>
+              <label class="choice"><input type="radio" name="financials" value="1"><span>Management accounts</span></label>
+              <label class="choice"><input type="radio" name="financials" value="2"><span>1 to 2 years of audited statements</span></label>
+              <label class="choice"><input type="radio" name="financials" value="3"><span>3 or more years of audited statements</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="q" data-q="risk">
+            <legend>Have you assessed the project’s risks?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="risk" value="0"><span>Not yet</span></label>
+              <label class="choice"><input type="radio" name="risk" value="1"><span>Informally</span></label>
+              <label class="choice"><input type="radio" name="risk" value="2"><span>A written risk register</span></label>
+              <label class="choice"><input type="radio" name="risk" value="3"><span>A risk register and an environmental and social assessment</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="q" data-q="ask">
+            <legend>How clear is your funding requirement?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="ask" value="0"><span>Not sure yet</span></label>
+              <label class="choice"><input type="radio" name="ask" value="1"><span>A rough estimate</span></label>
+              <label class="choice"><input type="radio" name="ask" value="2"><span>A detailed budget</span></label>
+              <label class="choice"><input type="radio" name="ask" value="3"><span>A detailed budget and a preferred debt and equity mix</span></label>
+            </div>
+          </fieldset>
+          <div class="readiness-nav">
+            <button class="btn btn--quiet" type="button" id="readinessBack">Back</button>
+            <button class="btn" type="button" id="readinessNext" disabled><span>Next</span><svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></button>
+          </div>
+        </form>
+
+        <div class="result" id="readinessResult" hidden tabindex="-1">
+          <div class="result-head">
+            <div class="score-ring" aria-hidden="true">
+              <svg viewBox="0 0 120 120"><circle class="score-ring__track" cx="60" cy="60" r="52"/><circle class="score-ring__value" id="scoreArc" cx="60" cy="60" r="52"/></svg>
+              <span class="score-ring__num" id="scoreNum">0</span>
+            </div>
+            <div>
+              <p class="result-band" id="scoreBand">—</p>
+              <p class="result-summary" id="scoreSummary"></p>
+            </div>
+          </div>
+          <div class="result-areas" id="scoreAreas"></div>
+          <div class="result-gaps">
+            <h3>What to work on</h3>
+            <ul id="scoreGaps"></ul>
+          </div>
+          <div class="result-actions">
+            <button class="btn" type="button" data-report="readiness"><span>Get the PDF report</span><svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></button>
+            <a class="btn btn--outline" href="partner.html#submit"><span>Submit your project</span><svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a>
+            <button class="btn btn--quiet" type="button" id="readinessRestart">Start again</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tool tool--alt" id="dscr">
+    <div class="wrap tool-grid">
+      <div class="tool-intro reveal">
+        <p class="label">Tool 02</p>
+        <h2 class="display">Repayment &amp; DSCR Calculator</h2>
+        <p>Estimate loan repayments and your debt service coverage ratio (DSCR): how many times the project’s income covers its loan repayments. Lenders use it to size the debt they will offer.</p>
+        <ul class="tool-points">
+          <li>Results update as you type</li>
+          <li>Year-by-year repayment schedule</li>
+          <li>Optional PDF report to share</li>
+        </ul>
+      </div>
+
+      <div class="tool-panel reveal">
+        <form class="calc" id="dscrForm" novalidate>
+          <div class="calc-grid">
+            <div class="calc-field">
+              <label for="c-cost">Total project cost</label>
+              <div class="calc-input calc-input--prefix"><span>R</span><input id="c-cost" name="cost" inputmode="decimal" data-money value="50 000 000"></div>
+            </div>
+            <div class="calc-field">
+              <label for="c-debt">Portion funded by debt</label>
+              <div class="calc-input calc-input--suffix"><input id="c-debt" name="debt" inputmode="decimal" value="70"><span>%</span></div>
+            </div>
+            <div class="calc-field">
+              <label for="c-rate">Interest rate</label>
+              <div class="calc-input calc-input--suffix"><input id="c-rate" name="rate" inputmode="decimal" value="12.5"><span>% a year</span></div>
+            </div>
+            <div class="calc-field">
+              <label for="c-term">Loan term</label>
+              <div class="calc-input calc-input--suffix"><input id="c-term" name="term" inputmode="numeric" value="10"><span>years</span></div>
+            </div>
+            <div class="calc-field">
+              <label for="c-rev">Expected annual income</label>
+              <div class="calc-input calc-input--prefix"><span>R</span><input id="c-rev" name="revenue" inputmode="decimal" data-money value="18 000 000"></div>
+            </div>
+            <div class="calc-field">
+              <label for="c-opex">Annual operating costs</label>
+              <div class="calc-input calc-input--prefix"><span>R</span><input id="c-opex" name="opex" inputmode="decimal" data-money value="8 500 000"></div>
+            </div>
+            <div class="calc-field">
+              <label for="c-growth">Income growth</label>
+              <div class="calc-input calc-input--suffix"><input id="c-growth" name="growth" inputmode="decimal" value="5"><span>% a year</span></div>
+            </div>
+          </div>
+          <p class="form-error" id="dscrError" role="alert" hidden></p>
+        </form>
+
+        <div class="calc-results" id="dscrResults" aria-live="polite">
+          <div class="dscr-gauge">
+            <div class="dscr-gauge__head">
+              <span>Year 1 DSCR</span>
+              <strong id="r-dscr">—</strong>
+            </div>
+            <div class="dscr-gauge__track" aria-hidden="true">
+              <span class="dscr-gauge__zone dscr-gauge__zone--low"></span>
+              <span class="dscr-gauge__zone dscr-gauge__zone--tight"></span>
+              <span class="dscr-gauge__zone dscr-gauge__zone--ok"></span>
+              <span class="dscr-gauge__zone dscr-gauge__zone--good"></span>
+              <span class="dscr-gauge__marker" id="r-marker"></span>
+            </div>
+            <div class="dscr-gauge__scale" aria-hidden="true"><span>0.5×</span><span>1.0×</span><span>1.2×</span><span>1.35×</span><span>2.0×+</span></div>
+            <p class="dscr-verdict" id="r-verdict"></p>
+          </div>
+          <dl class="calc-kpis">
+            <div><dt>Monthly repayment</dt><dd id="r-monthly">—</dd></div>
+            <div><dt>Loan amount</dt><dd id="r-loan">—</dd></div>
+            <div><dt>Your equity</dt><dd id="r-equity">—</dd></div>
+            <div><dt>Total interest</dt><dd id="r-interest">—</dd></div>
+            <div><dt>Lowest DSCR over the term</dt><dd id="r-min">—</dd></div>
+            <div><dt>Debt supportable at 1.30×</dt><dd id="r-max">—</dd></div>
+          </dl>
+          <details class="schedule">
+            <summary>Show the year-by-year schedule</summary>
+            <div class="schedule-scroll">
+              <table>
+                <thead><tr><th scope="col">Year</th><th scope="col">Opening balance</th><th scope="col">Interest</th><th scope="col">Capital repaid</th><th scope="col">Closing balance</th><th scope="col">DSCR</th></tr></thead>
+                <tbody id="r-schedule"></tbody>
+              </table>
+            </div>
+          </details>
+          <div class="result-actions">
+            <button class="btn" type="button" data-report="dscr"><span>Get the PDF report</span><svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></button>
+            <a class="btn btn--outline" href="partner.html#submit"><span>Submit your project</span><svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="disclaimer">
+    <div class="wrap">
+      <p><strong>Indicative only.</strong> These tools give general estimates based on the information you enter. They do not constitute financial advice or an offer of finance. Lenders apply their own criteria, rates and terms.</p>
+    </div>
+  </section>
+
+  <dialog class="report-dialog" id="reportDialog" aria-labelledby="reportTitle">
+    <form class="form form--light" id="reportForm" method="dialog" novalidate>
+      <button class="dialog-close" type="button" id="reportClose" aria-label="Close">×</button>
+      <p class="label">Your PDF report</p>
+      <h2 id="reportTitle">Where should we send your report?</h2>
+      <p class="dialog-lede">Your report downloads straight away. Our team may follow up to see whether you would like help with your project.</p>
+      <div class="field">
+        <label for="rp-name">Full name</label>
+        <input id="rp-name" name="name" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="rp-email">Email</label>
+        <input id="rp-email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="rp-company">Company</label>
+        <input id="rp-company" name="company" autocomplete="organization">
+      </div>
+      <label class="check">
+        <input type="checkbox" name="consent" required>
+        <span>I agree that New Generation Capital may contact me about my project. My details are handled in line with POPIA.</span>
+      </label>
+      <p class="form-error" id="reportError" role="alert" hidden></p>
+      <button class="btn btn--block" type="submit"><span>Download my report</span><svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></button>
+    </form>
+  </dialog>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <img src="assets/img/ng-mark-light.png" alt="" width="240" height="162">
+      <p>New Generation Capital (Pty) Ltd<br>Project finance &amp; advisory across industries.<br>A member of the New Generation Group.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="about.html">About us</a>
+      <a href="what-we-do.html">What we do</a>
+      <a href="funding-tools.html">Funding tools</a>
+      <a href="partner.html">Partner with us</a>
+      <a href="partner.html#submit">Submit a project</a>
+    </nav>
+    <div class="footer-meta">
+      <p><a href="mailto:selwynw@newgenerationcap.co.za">selwynw@newgenerationcap.co.za</a></p>
+      <p><a href="tel:+27877420831">+27 87 742 0831</a></p>
+      <p>West House, Devcon Park, 7 Autumn Road, Rivonia, 2128</p>
+      <p>Registration No. 2015/421630/07</p>
+      <p>© <span id="year">2026</span> New Generation Capital (Pty) Ltd</p>
+    </div>
+  </div>
+</footer>
+
+<a class="to-top" href="#top" aria-label="Back to top"><svg viewBox="0 0 10 16" aria-hidden="true"><path d="M5 15V1M1 5l4-4 4 4"/></svg></a>
+
+<script src="assets/js/config.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/motion.js" defer></script>
+<script src="assets/vendor/jspdf.umd.min.js" defer></script>
+<script src="assets/js/leads.js" defer></script>
+<script src="assets/js/tools.js" defer></script>
+</body>
+</html>

@@ -1,16 +1,44 @@
-# New Generation Capital — landing page
+# New Generation Capital — website
 
-Static, single-page site for New Generation Capital (part of the New Generation Group).
-No build step: open `index.html` directly, or serve the folder:
+Static five-page site for New Generation Capital (part of the New Generation Group), following the
+CircleDesign scope of work. No build step: open `index.html` directly, or serve the folder:
 
 ```
 python3 -m http.server 8000
 ```
 
-- `index.html` — page content
-- `assets/css/styles.css` — design tokens (brand navy `#05152A`, signal orange `#F5831F`) and layout
-- `assets/js/main.js` — header state, mobile menu, scroll reveals, enquiry form (opens the visitor's email app) and the deal-flow visual in the Process section
-- `assets/js/motion.js` — motion layer: opening curtain (first visit per session), hero word reveal and depth, count-ups, reading progress, active nav, ink-fill sentence, image wipes and parallax, focus-area photo swap, magnetic buttons, back-to-top. All of it respects `prefers-reduced-motion`.
-- `assets/img/` — imagery and the NG mark, taken from the July 2026 company profile
+## Pages
+
+| File | Page | Content |
+|---|---|---|
+| `index.html` | Home | Positioning, key figures, Group heritage, industries, process, funding tools, board, calls to action |
+| `about.html` | About us | Who we are, our edge, the model, Board of Directors |
+| `what-we-do.html` | What we do | Industries, how we structure capital, the seven-step process (with the deal-flow visual), governance |
+| `funding-tools.html` | Funding tools | Funding Readiness Assessment and Repayment & DSCR Calculator, each with a PDF report |
+| `partner.html` | Partner with us | Sponsors and capital providers, engagement steps, project submission form with document upload |
+
+The header and footer are repeated in each page; change them in all five files.
+
+## Scripts
+
+- `assets/js/config.js` — site settings. **Set `leadEndpoint`** to the form handler (ZOHO CRM webform
+  handler or a CircleTel-hosted endpoint) to receive submissions and calculator leads as
+  `multipart/form-data`. Each request carries `lead_type` (`project-submission` or `tool-report`),
+  the form fields and, for submissions, the uploaded `documents`. While it is empty, the submission
+  form opens the visitor's email app instead, and calculator reports still download.
+- `assets/js/leads.js` — sends leads to the endpoint.
+- `assets/js/partner.js` — submission form: sponsor/funder switch, file checks (PDF, Word, Excel,
+  PowerPoint, CSV; up to 5 files of 10 MB), validation and POPIA consent.
+- `assets/js/tools.js` — the two calculators and the branded PDF reports (built in the browser with
+  jsPDF). Results are indicative only.
+- `assets/js/main.js` — header, mobile menu, scroll reveals and the deal-flow canvas.
+- `assets/js/motion.js` — motion layer (respects `prefers-reduced-motion`).
+- `assets/vendor/jspdf.umd.min.js` — jsPDF 2.5.1 (MIT, see `jspdf.LICENSE`).
+
+## Still to connect for go-live
+
+- Lead endpoint (ZOHO CRM or email delivery), including emailing the PDF report to the visitor.
+- Google Analytics 4 and Search Console.
+- Final imagery for page headers and sections.
 
 Type: Poppins (the New Generation Group typeface) throughout, loaded from Google Fonts.
