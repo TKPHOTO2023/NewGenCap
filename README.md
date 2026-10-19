@@ -29,9 +29,18 @@ The header and footer are repeated in each page; change them in all six files.
   PowerPoint, CSV; up to 5 files of 10 MB), validation (phone required) and POPIA consent.
 - `assets/js/tools.js` — the two calculators and the branded PDF reports (built in the browser with
   jsPDF). Name, email, phone and company are required before a report downloads. Results are indicative only.
+- `assets/js/slider.js` — home header slider (home page only): 7-second autoplay with progress bars, pause button,
+  hold on hover or focus, arrows, swipe and keyboard. No autoplay with `prefers-reduced-motion`.
 - `assets/js/main.js` — header, mobile menu, scroll reveals and the deal-flow canvas.
-- `assets/js/motion.js` — motion layer (respects `prefers-reduced-motion`).
+- `assets/js/motion.js` — motion layer (respects `prefers-reduced-motion`), parallax image breaks, and backdrop
+  videos that load only when scrolled near, play only while visible, and are skipped for reduced-motion or
+  data-saver visitors (the still image shows instead).
 - `assets/vendor/jspdf.umd.min.js` — jsPDF 2.5.1 (MIT, see `jspdf.LICENSE`).
+
+## Media
+
+Every image and video slot (home slider, video backdrops, parallax breaks, service and audience images) is listed
+in `assets/media/README.md` with the stand-in used now and the recommended format. Upload files to `assets/media/`.
 
 ## Lead emails (`api/`)
 
@@ -62,6 +71,6 @@ funding@newgenerationcap.co.za through that mailbox's SMTP login:
 
 - `api/config.php` with the funding@ mailbox password on the server (see above).
 - Google Analytics 4 and Search Console.
-- Final imagery for page headers and sections.
+- Final images and videos for the media slots (see `assets/media/README.md`).
 
 Type: Poppins (the New Generation Group typeface) throughout, loaded from Google Fonts.

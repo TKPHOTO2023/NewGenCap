@@ -61,17 +61,53 @@
 
 <main id="main">
 
-  <section class="hero" id="hero">
+  <section class="hero hero--slider" id="hero" aria-roledescription="carousel" aria-label="New Generation Capital highlights">
     <div class="hero-media" aria-hidden="true">
-      <img src="assets/img/hero-path.jpg" alt="" width="1672" height="941" fetchpriority="high">
+      <div class="hero-media__slide is-active"><img src="assets/img/hero-path.jpg" alt="" fetchpriority="high"></div>
+      <div class="hero-media__slide"><img src="assets/img/edge-campus.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="hero-media__slide"><img src="assets/img/team-review.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="hero-media__slide"><img src="assets/img/secured-site.jpg" alt="" loading="lazy" decoding="async"></div>
     </div>
     <div class="wrap hero-inner">
-      <p class="label label--light reveal">Project finance &amp; advisory &nbsp;·&nbsp; South Africa</p>
-      <h1 class="hero-title reveal" data-split>We turn ideas into <em class="hero-em">investable</em> projects.</h1>
-      <p class="hero-lede reveal">New Generation Capital originates, structures and funds viable projects across every industry — from energy and construction to fintech. We bring the operating insight of the New Generation Group to every deal.</p>
-      <div class="hero-actions reveal">
-        <a class="btn" href="partner.html#submit" data-magnetic><span>Submit a project</span><svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a>
-        <a class="btn btn--ghost" href="funding-tools.html" data-magnetic><span>Try our funding tools</span><svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a>
+      <div class="hero-slides reveal">
+        <div class="hero-slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 4">
+          <p class="label label--light">Project finance &amp; advisory &nbsp;·&nbsp; South Africa</p>
+          <h1 class="hero-title" data-split>We turn ideas into <em class="hero-em">investable</em> projects.</h1>
+          <p class="hero-lede">New Generation Capital originates, structures and funds viable projects across every industry — from energy and construction to fintech. We bring the operating insight of the New Generation Group to every deal.</p>
+        </div>
+        <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="2 of 4" aria-hidden="true">
+          <p class="label label--light">Energy &amp; infrastructure</p>
+          <h2 class="hero-title" data-split>Power and infrastructure, <em class="hero-em">structured</em> to be funded.</h2>
+          <p class="hero-lede">Our roots are in the New Generation Group’s construction, energy and infrastructure companies — so we know what it takes to build what we finance.</p>
+        </div>
+        <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="3 of 4" aria-hidden="true">
+          <p class="label label--light">Capital solutions</p>
+          <h2 class="hero-title" data-split>From bridging finance to <em class="hero-em">financial close</em>.</h2>
+          <p class="hero-lede">Project and greenfield fundraising, bridging finance, acquisitions and short-term insurance — the right capital for the stage you are at.</p>
+        </div>
+        <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="4 of 4" aria-hidden="true">
+          <p class="label label--light">Every industry</p>
+          <h2 class="hero-title" data-split>Any industry. One <em class="hero-em">disciplined</em> process.</h2>
+          <p class="hero-lede">From fintech platforms to factories and farms: if a project is viable, our seven-step process gets it ready for funders.</p>
+        </div>
+      </div>
+      <div class="hero-bar reveal">
+        <div class="hero-actions">
+          <a class="btn" href="partner.html#submit" data-magnetic><span>Submit a project</span><svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a>
+          <a class="btn btn--ghost" href="funding-tools.html" data-magnetic><span>Try our funding tools</span><svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a>
+        </div>
+        <div class="hero-nav" role="group" aria-label="Slideshow controls">
+          <p class="hero-nav__count" aria-hidden="true"><span id="heroCurrent">01</span> / 04</p>
+          <div class="hero-nav__dots">
+            <button class="hero-dot is-active" type="button" aria-label="Show slide 1: Project finance and advisory" aria-current="true"><span class="hero-dot__fill"></span></button>
+            <button class="hero-dot" type="button" aria-label="Show slide 2: Energy and infrastructure"><span class="hero-dot__fill"></span></button>
+            <button class="hero-dot" type="button" aria-label="Show slide 3: Capital solutions"><span class="hero-dot__fill"></span></button>
+            <button class="hero-dot" type="button" aria-label="Show slide 4: Every industry"><span class="hero-dot__fill"></span></button>
+          </div>
+          <button class="hero-nav__btn" type="button" data-hero="prev" aria-label="Previous slide"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg></button>
+          <button class="hero-nav__btn" type="button" data-hero="next" aria-label="Next slide"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg></button>
+          <button class="hero-nav__btn" type="button" data-hero="toggle" aria-label="Pause slideshow"><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 3v10M10.5 3v10"/></svg><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10l8-5z"/></svg></button>
+        </div>
       </div>
     </div>
     <div class="wrap hero-credentials reveal">
@@ -113,7 +149,10 @@
     </figure>
   </section>
 
-  <section class="section heritage">
+  <section class="section heritage has-backdrop">
+    <div class="backdrop" aria-hidden="true">
+      <img class="backdrop__poster" src="assets/img/edge-campus.jpg" alt="" loading="lazy" decoding="async">
+    </div>
     <div class="wrap heritage-grid">
       <div class="reveal">
         <p class="label label--light">Built on the New Generation Group</p>
@@ -170,6 +209,16 @@
       <p class="section-link reveal"><a class="text-link" href="what-we-do.html#industries">See what we do in each industry <svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a></p>
     </div>
   </section>
+
+
+  <div class="photo-break photo-break--text">
+    <div class="photo-break__media" data-parallax="110">
+      <img src="assets/img/secured-site.jpg" alt="" loading="lazy" decoding="async">
+    </div>
+    <div class="wrap photo-break__inner">
+      <p class="photo-break__text reveal">Technical and operational insight, built into every structure.</p>
+    </div>
+  </div>
 
   <section class="section process" id="process">
     <div class="wrap">
@@ -278,7 +327,10 @@
     </div>
   </section>
 
-  <section class="section cta-band">
+  <section class="section cta-band has-backdrop">
+    <div class="backdrop" aria-hidden="true">
+      <img class="backdrop__poster" src="assets/img/hero-path.jpg" alt="" loading="lazy" decoding="async">
+    </div>
     <div class="wrap cta-grid">
       <div class="cta-col reveal">
         <p class="label label--light">For project sponsors</p>
@@ -327,6 +379,6 @@
 <script src="assets/js/config.js" defer></script>
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/motion.js" defer></script>
-
+<script src="assets/js/slider.js" defer></script>
 </body>
 </html>

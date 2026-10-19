@@ -129,6 +129,28 @@
     });
   }
 
+  /* ---------- backdrop videos: load near view, play only while visible ---------- */
+  var videos = $$('video[data-src]');
+  var saveData = navigator.connection && navigator.connection.saveData;
+  if (videos.length && !reduceMotion && !saveData && 'IntersectionObserver' in window) {
+    var vio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var v = entry.target;
+        if (entry.isIntersecting) {
+          if (!v.getAttribute('src')) {
+            v.addEventListener('playing', function () { v.classList.add('is-playing'); }, { once: true });
+            v.src = v.getAttribute('data-src');
+          }
+          var playing = v.play();
+          if (playing && playing.catch) playing.catch(function () {});
+        } else if (v.getAttribute('src')) {
+          v.pause();
+        }
+      });
+    }, { rootMargin: '150px 0px' });
+    videos.forEach(function (v) { vio.observe(v); });
+  }
+
   /* ---------- magnetic buttons ---------- */
   if (finePointer && !reduceMotion) {
     $$('[data-magnetic]').forEach(function (btn) {
@@ -189,7 +211,8 @@
       var r = el.getBoundingClientRect();
       if (r.bottom < 0 || r.top > vh) return;
       var t = (r.top + r.height / 2 - vh / 2) / vh;
-      el.style.setProperty('--py', (t * -60).toFixed(1) + 'px');
+      var amp = parseFloat(el.getAttribute('data-parallax')) || 60;
+      el.style.setProperty('--py', (t * -amp).toFixed(1) + 'px');
     });
 
     // ink-fill sentence

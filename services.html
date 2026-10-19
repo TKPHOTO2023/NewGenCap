@@ -49,6 +49,9 @@
 <main id="main">
 
   <section class="page-hero">
+    <div class="page-hero__media backdrop" aria-hidden="true">
+      <img class="backdrop__poster" src="assets/img/hero-path.jpg" alt="" fetchpriority="high">
+    </div>
     <div class="wrap page-hero__inner">
       <p class="label label--light reveal">Services</p>
       <h1 class="page-hero__title reveal">Capital and cover for every stage of a project.</h1>
@@ -64,43 +67,48 @@
       <a href="#greenfield-fundraising">Greenfield Project Fundraising</a>
       <a href="#short-term-insurance">Short-Term Insurance</a>
     </nav>
-    <div class="wrap service-rows">
-      <article class="service-row reveal" id="project-fundraising">
-        <p class="service-row__tag">Capital raising</p>
-        <h2 class="service-row__title">Project Fundraising</h2>
-        <div class="service-row__body">
+    <div class="wrap service-blocks">
+      <article class="service-block" id="project-fundraising">
+        <div class="service-block__media wipe" data-parallax="40"><img src="assets/img/team-review.jpg" alt="" loading="lazy" decoding="async"></div>
+        <div class="service-block__text reveal">
+          <p class="service-block__tag">Capital raising</p>
+          <h2 class="service-block__title">Project Fundraising</h2>
           <p>Sourcing and structuring debt, equity and blended capital to fund infrastructure and enterprise projects through to financial close.</p>
           <a class="text-link" href="partner.html?service=project-fundraising#submit">Enquire about Project Fundraising <svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a>
         </div>
       </article>
-      <article class="service-row reveal" id="bridging-finance">
-        <p class="service-row__tag">Short-term capital</p>
-        <h2 class="service-row__title">Bridging Finance</h2>
-        <div class="service-row__body">
+      <article class="service-block service-block--flip" id="bridging-finance">
+        <div class="service-block__media wipe" data-parallax="40"><img src="assets/img/hero-path.jpg" alt="" loading="lazy" decoding="async"></div>
+        <div class="service-block__text reveal">
+          <p class="service-block__tag">Short-term capital</p>
+          <h2 class="service-block__title">Bridging Finance</h2>
           <p>Short-term funding that bridges timing gaps — between a commitment and drawdown, or transaction and settlement — to keep projects moving.</p>
           <a class="text-link" href="partner.html?service=bridging-finance#submit">Enquire about Bridging Finance <svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a>
         </div>
       </article>
-      <article class="service-row reveal" id="acquisitions-mergers">
-        <p class="service-row__tag">M&amp;A advisory</p>
-        <h2 class="service-row__title">Acquisitions &amp; Mergers</h2>
-        <div class="service-row__body">
+      <article class="service-block" id="acquisitions-mergers">
+        <div class="service-block__media wipe" data-parallax="40"><img src="assets/img/team-review.jpg" alt="" loading="lazy" decoding="async"></div>
+        <div class="service-block__text reveal">
+          <p class="service-block__tag">M&amp;A advisory</p>
+          <h2 class="service-block__title">Acquisitions &amp; Mergers</h2>
           <p>Advisory and funding for buy-side and sell-side transactions, from target identification and structuring to deal execution.</p>
           <a class="text-link" href="partner.html?service=acquisitions-mergers#submit">Enquire about Acquisitions &amp; Mergers <svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a>
         </div>
       </article>
-      <article class="service-row reveal" id="greenfield-fundraising">
-        <p class="service-row__tag">New development</p>
-        <h2 class="service-row__title">Greenfield Project Fundraising</h2>
-        <div class="service-row__body">
+      <article class="service-block service-block--flip" id="greenfield-fundraising">
+        <div class="service-block__media wipe" data-parallax="40"><img src="assets/img/edge-campus.jpg" alt="" loading="lazy" decoding="async"></div>
+        <div class="service-block__text reveal">
+          <p class="service-block__tag">New development</p>
+          <h2 class="service-block__title">Greenfield Project Fundraising</h2>
           <p>Capital structuring for new-build developments from the ground up — backing promoters of greenfield infrastructure and energy projects.</p>
           <a class="text-link" href="partner.html?service=greenfield-fundraising#submit">Enquire about Greenfield Project Fundraising <svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a>
         </div>
       </article>
-      <article class="service-row reveal" id="short-term-insurance">
-        <p class="service-row__tag">Risk &amp; cover</p>
-        <h2 class="service-row__title">Short-Term Insurance</h2>
-        <div class="service-row__body">
+      <article class="service-block" id="short-term-insurance">
+        <div class="service-block__media wipe" data-parallax="40"><img src="assets/img/secured-site.jpg" alt="" loading="lazy" decoding="async"></div>
+        <div class="service-block__text reveal">
+          <p class="service-block__tag">Risk &amp; cover</p>
+          <h2 class="service-block__title">Short-Term Insurance</h2>
           <p>Short-term insurance broking services, providing cover and risk solutions that complement our clients’ projects and operations.</p>
           <a class="text-link" href="partner.html?service=short-term-insurance#submit">Enquire about Short-Term Insurance <svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a>
         </div>
@@ -108,7 +116,19 @@
     </div>
   </section>
 
-  <section class="section cta-band">
+  <div class="photo-break photo-break--text">
+    <div class="photo-break__media" data-parallax="110">
+      <img src="assets/img/hero-path.jpg" alt="" loading="lazy" decoding="async">
+    </div>
+    <div class="wrap photo-break__inner">
+      <p class="photo-break__text reveal">One partner across the funding lifecycle.</p>
+    </div>
+  </div>
+
+  <section class="section cta-band has-backdrop">
+    <div class="backdrop" aria-hidden="true">
+      <img class="backdrop__poster" src="assets/img/hero-path.jpg" alt="" loading="lazy" decoding="async">
+    </div>
     <div class="wrap cta-grid">
       <div class="cta-col reveal">
         <p class="label label--light">For project sponsors</p>

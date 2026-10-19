@@ -49,8 +49,8 @@
 <main id="main">
 
   <section class="page-hero">
-    <div class="page-hero__media" aria-hidden="true">
-      <img src="assets/img/secured-site.jpg" alt="" width="1400" height="788">
+    <div class="page-hero__media backdrop" aria-hidden="true">
+      <img class="backdrop__poster" src="assets/img/secured-site.jpg" alt="" fetchpriority="high">
     </div>
     <div class="wrap page-hero__inner">
       <p class="label label--light reveal">Partner with us</p>
@@ -62,6 +62,7 @@
   <section class="section audiences">
     <div class="wrap audience-grid">
       <article class="audience reveal" id="sponsors">
+        <div class="audience__media wipe"><img src="assets/img/edge-campus.jpg" alt="" loading="lazy" decoding="async"></div>
         <p class="label">For project sponsors</p>
         <h2 class="display">Get your project funder-ready.</h2>
         <ul class="audience-list">
@@ -73,6 +74,7 @@
         <a class="btn" href="#submit"><span>Submit your project</span><svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a>
       </article>
       <article class="audience audience--dark reveal" id="funders">
+        <div class="audience__media wipe"><img src="assets/img/team-review.jpg" alt="" loading="lazy" decoding="async"></div>
         <p class="label label--light">For capital providers</p>
         <h2 class="display display--light">Grow your book without growing your risk.</h2>
         <ul class="audience-list">
@@ -99,6 +101,13 @@
       </ol>
     </div>
   </section>
+
+
+  <div class="photo-break" aria-hidden="true">
+    <div class="photo-break__media" data-parallax="110">
+      <img src="assets/img/edge-campus.jpg" alt="" loading="lazy" decoding="async">
+    </div>
+  </div>
 
   <section class="section contact" id="submit">
     <div class="wrap contact-grid">
