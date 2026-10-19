@@ -525,6 +525,9 @@ ul, ol { padding: 0; list-style: none; }
 .form-done p { color: rgba(255,255,255,.72); }
 .form-done:focus { outline: none; }
 
+/* spam trap: off-screen for people, still filled in by bots */
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
 /* light form variant (dialog) */
 .form--light .field label { color: var(--slate); }
 .form--light .field input, .form--light .field select, .form--light .field textarea { color: var(--ink); border-bottom-color: var(--rule); }

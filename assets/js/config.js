@@ -1,9 +1,9 @@
 /* Site settings.
-   leadEndpoint: URL that receives form submissions (a ZOHO CRM webform handler or a
-   CircleTel-hosted endpoint) as multipart/form-data. Leave empty to fall back to the
-   visitor's email app; calculator reports still download either way. */
+   leadEndpoint: the script that emails leads to the funding team (api/lead.php, configured in
+   api/config.php on the server). If it cannot be reached, the project form falls back to the
+   visitor's email app; calculator reports download either way. */
 window.NGC_CONFIG = {
-  leadEndpoint: '',
+  leadEndpoint: 'api/lead.php',
   enquiryEmail: 'funding@newgenerationcap.co.za',
   maxFiles: 5,
   maxFileMB: 10

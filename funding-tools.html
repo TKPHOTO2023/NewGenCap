@@ -302,7 +302,7 @@
       <button class="dialog-close" type="button" id="reportClose" aria-label="Close">×</button>
       <p class="label">Your PDF report</p>
       <h2 id="reportTitle">Where should we send your report?</h2>
-      <p class="dialog-lede">Your report downloads straight away. Our team may follow up to see whether you would like help with your project.</p>
+      <p class="dialog-lede">Your report downloads straight away, and we will email you a copy. We ask for a phone number in case the email does not reach you.</p>
       <div class="field">
         <label for="rp-name">Full name</label>
         <input id="rp-name" name="name" autocomplete="name" required>
@@ -312,8 +312,16 @@
         <input id="rp-email" name="email" type="email" autocomplete="email" required>
       </div>
       <div class="field">
+        <label for="rp-phone">Phone</label>
+        <input id="rp-phone" name="phone" type="tel" autocomplete="tel" required>
+      </div>
+      <div class="field">
         <label for="rp-company">Company</label>
         <input id="rp-company" name="company" autocomplete="organization">
+      </div>
+      <div class="hp" aria-hidden="true">
+        <label for="rp-website">Leave this field empty</label>
+        <input id="rp-website" name="website" tabindex="-1" autocomplete="off">
       </div>
       <label class="check">
         <input type="checkbox" name="consent" required>

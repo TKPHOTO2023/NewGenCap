@@ -22,23 +22,45 @@ The header and footer are repeated in each page; change them in all six files.
 
 ## Scripts
 
-- `assets/js/config.js` — site settings. **Set `leadEndpoint`** to the form handler (ZOHO CRM webform
-  handler or a CircleTel-hosted endpoint) to receive submissions and calculator leads as
-  `multipart/form-data`. Each request carries `lead_type` (`project-submission` or `tool-report`),
-  the form fields and, for submissions, the uploaded `documents`. While it is empty, the submission
-  form opens the visitor's email app instead, and calculator reports still download.
-- `assets/js/leads.js` — sends leads to the endpoint.
+- `assets/js/config.js` — site settings. `leadEndpoint` points at `api/lead.php`. If it cannot be
+  reached, the project form falls back to the visitor's email app; calculator reports download either way.
+- `assets/js/leads.js` — sends leads (fields, uploaded documents and the PDF report) to the endpoint.
 - `assets/js/partner.js` — submission form: sponsor/funder switch, file checks (PDF, Word, Excel,
-  PowerPoint, CSV; up to 5 files of 10 MB), validation and POPIA consent.
+  PowerPoint, CSV; up to 5 files of 10 MB), validation (phone required) and POPIA consent.
 - `assets/js/tools.js` — the two calculators and the branded PDF reports (built in the browser with
-  jsPDF). Results are indicative only.
+  jsPDF). Name, email, phone and company are required before a report downloads. Results are indicative only.
 - `assets/js/main.js` — header, mobile menu, scroll reveals and the deal-flow canvas.
 - `assets/js/motion.js` — motion layer (respects `prefers-reduced-motion`).
 - `assets/vendor/jspdf.umd.min.js` — jsPDF 2.5.1 (MIT, see `jspdf.LICENSE`).
 
+## Lead emails (`api/`)
+
+`api/lead.php` receives every calculator report and project submission and emails it to
+funding@newgenerationcap.co.za through that mailbox's SMTP login:
+
+- **Calculator leads:** name, company, email, phone, tool and result, with the visitor's PDF report attached.
+  The visitor also receives their report by email (`send_visitor_copy`).
+- **Project submissions:** every form field, with the uploaded documents attached.
+- Reply-To is the visitor, so replying in the mail client answers them directly.
+- Protection: hidden spam-trap field, per-visitor rate limit (8 per 10 minutes), server-side validation,
+  file type checks by content (not just extension), header-injection safe fields.
+- Mail is sent with PHPMailer 6.12.0 (LGPL 2.1, `api/lib/PHPMailer`). Needs PHP 7.4 or later.
+
+### Go-live on CircleTel Hosting
+
+1. Upload the whole folder, including `api/` and its `.htaccess` files.
+2. On the server, copy `api/config.sample.php` to `api/config.php` and enter the funding@ mailbox
+   password. Check the SMTP host and port against the mailbox's "Connect Devices" settings in cPanel
+   (usually `mail.newgenerationcap.co.za`, port 465 with `ssl`, or 587 with `tls`).
+3. Once the domain is live, add it to `allowed_origins` in `config.php`.
+4. Confirm `https://<domain>/api/config.php` returns 403 Forbidden.
+5. Submit one calculator report and one project to check both emails arrive.
+
+`api/config.php` is listed in `.gitignore` and must never be committed.
+
 ## Still to connect for go-live
 
-- Lead endpoint (ZOHO CRM or email delivery), including emailing the PDF report to the visitor.
+- `api/config.php` with the funding@ mailbox password on the server (see above).
 - Google Analytics 4 and Search Console.
 - Final imagery for page headers and sections.
 

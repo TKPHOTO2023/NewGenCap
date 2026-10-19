@@ -122,6 +122,7 @@
     if (!form.name.value.trim()) missing.push('your name');
     if (!form.company.value.trim()) missing.push('your company');
     if (!window.NGC.isEmail(form.email.value.trim())) missing.push('a valid email address');
+    if (!window.NGC.isPhone(form.phone.value)) missing.push('a phone number we can reach you on');
     if (!form.message.value.trim()) missing.push(sponsor ? 'a short description of the project' : 'a short description of your mandate');
     if (missing.length) { showError('Please add ' + missing.join(', ') + '.'); return; }
     if (!form.consent.checked) { showError('Please confirm that we may use your details to assess your enquiry.'); return; }
@@ -135,7 +136,8 @@
       phone: form.phone.value.trim(),
       service: serviceName(),
       message: form.message.value.trim(),
-      consent: 'yes'
+      consent: 'yes',
+      website: form.website ? form.website.value : ''
     };
     if (sponsor) {
       fields.industry = form.industry.value;
@@ -148,17 +150,13 @@
     button.disabled = true;
     label.textContent = 'Sending…';
 
-    window.NGC.submitLead('project-submission', fields, files).then(function (result) {
-      if (result.sent) {
-        finish('Our team will review your submission and come back to you with next steps.');
-        return;
-      }
+    function emailFallback() {
       var lines = [
         'I am a: ' + fields.role,
         'Name: ' + fields.name,
         'Company: ' + fields.company,
         'Email: ' + fields.email,
-        'Phone: ' + (fields.phone || '—'),
+        'Phone: ' + fields.phone,
         'Service of interest: ' + fields.service
       ];
       if (sponsor) {
@@ -172,8 +170,15 @@
       finish(files.length
         ? 'Your email app has opened with your details. Please attach your documents to that email before you send it.'
         : 'Your email app has opened with your details. Send the email and our team will come back to you with next steps.');
-    }).catch(function () {
-      showError('We could not send your submission. Please try again, or email us at ' + (config.enquiryEmail || '') + '.');
+    }
+
+    window.NGC.submitLead('project-submission', fields, files).then(function (result) {
+      if (result.sent) finish('Our team will review your submission and come back to you with next steps.');
+      else emailFallback();
+    }).catch(function (err) {
+      // problems the visitor can fix are shown; if the server is unreachable, email keeps the lead
+      if (err.userMessage) showError(err.userMessage);
+      else emailFallback();
     }).then(function () {
       button.disabled = false;
       label.textContent = 'Submit';

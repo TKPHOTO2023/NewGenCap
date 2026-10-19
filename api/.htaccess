@@ -1,0 +1,18 @@
+# Only lead.php is public. Settings (with the mailbox password) and the sample are never served.
+Options -Indexes
+<FilesMatch "^(config|config\.sample)\.php$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# Allow document uploads up to 5 files of 10 MB (where the host permits overrides).
+<IfModule mod_php.c>
+  php_value upload_max_filesize 12M
+  php_value post_max_size 60M
+  php_value max_file_uploads 10
+</IfModule>

@@ -362,10 +362,15 @@
       var name = reportForm.name.value.trim();
       var email = reportForm.email.value.trim();
       var company = reportForm.company.value.trim();
+      var phone = reportForm.phone.value.trim();
       var problems = [];
       if (!name) problems.push('your name');
       if (!window.NGC.isEmail(email)) problems.push('a valid email address');
-      if (problems.length) { reportError.textContent = 'Please add ' + problems.join(' and ') + '.'; reportError.hidden = false; return; }
+      if (!window.NGC.isPhone(phone)) problems.push('a phone number we can reach you on');
+      if (problems.length) {
+        var list = problems.length > 1 ? problems.slice(0, -1).join(', ') + ' and ' + problems[problems.length - 1] : problems[0];
+        reportError.textContent = 'Please add ' + list + '.'; reportError.hidden = false; return;
+      }
       if (!reportForm.consent.checked) { reportError.textContent = 'Please confirm that we may contact you about your project.'; reportError.hidden = false; return; }
       reportError.hidden = true;
 
@@ -374,20 +379,24 @@
         ? 'Readiness score ' + readinessResult.pct + '% (' + readinessResult.band.name + ')'
         : 'Year 1 DSCR ' + ratio(dscrResult.dscr1) + ', loan ' + money(dscrResult.loan);
 
-      // the download never waits on the lead being delivered
-      window.NGC.submitLead('tool-report', {
-        tool: reportType === 'readiness' ? 'Funding Readiness Assessment' : 'Repayment & DSCR Calculator',
-        name: name, email: email, company: company, summary: summary, consent: 'yes'
-      }).catch(function () {});
+      var tool = reportType === 'readiness' ? 'Funding Readiness Assessment' : 'Repayment & DSCR Calculator';
+      var honeypot = reportForm.website ? reportForm.website.value : '';
 
-      buildPdf(reportType, person).then(function () {
+      // the visitor gets the PDF straight away; the same PDF then goes to the team with the lead
+      buildPdf(reportType, person).then(function (pdf) {
         closeDialog();
-        if (opener) {
-          var label = opener.querySelector('span');
-          var original = label.textContent;
-          label.textContent = 'Report downloaded';
-          setTimeout(function () { label.textContent = original; }, 3500);
-        }
+        var label = opener ? opener.querySelector('span') : null;
+        var original = label ? label.textContent : '';
+        if (label) label.textContent = 'Report downloaded';
+        window.NGC.submitLead('tool-report', {
+          tool: tool, name: name, email: email, phone: phone, company: company,
+          summary: summary, consent: 'yes', website: honeypot
+        }, null, { blob: pdf.blob, name: pdf.name }).then(function (result) {
+          if (label && result.copied) label.textContent = 'Report downloaded and emailed';
+        }).catch(function (err) {
+          if (window.console) console.warn('Lead not delivered:', err.message);
+        });
+        if (label) setTimeout(function () { label.textContent = original; }, 6000);
       }).catch(function () {
         reportError.textContent = 'We could not create the PDF in this browser. Please try another browser, or contact us for a copy.';
         reportError.hidden = false;
@@ -564,6 +573,7 @@
       footer();
       var file = (type === 'readiness' ? 'NGC-Funding-Readiness-Report' : 'NGC-Repayment-DSCR-Report') + '.pdf';
       doc.save(file);
+      return { blob: doc.output('blob'), name: file };
     });
   }
 })();

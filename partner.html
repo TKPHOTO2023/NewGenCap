@@ -139,7 +139,7 @@
             </div>
             <div class="field">
               <label for="s-phone">Phone</label>
-              <input id="s-phone" name="phone" type="tel" autocomplete="tel">
+              <input id="s-phone" name="phone" type="tel" autocomplete="tel" required>
             </div>
           </div>
           <div class="form-row" data-sponsor-only>
@@ -194,6 +194,10 @@
               <span>Drag files here or browse. PDF, Word, Excel or PowerPoint, up to 10 MB each, 5 files.</span>
             </label>
             <ul class="upload-list" id="uploadList"></ul>
+          </div>
+          <div class="hp" aria-hidden="true">
+                <label for="s-website">Leave this field empty</label>
+                <input id="s-website" name="website" tabindex="-1" autocomplete="off">
           </div>
           <label class="check">
             <input type="checkbox" name="consent" required>
