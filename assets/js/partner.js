@@ -36,6 +36,18 @@
   });
   applyRole();
 
+  // a service chosen on the Services page arrives as ?service=<slug>
+  var serviceSelect = form.service;
+  var wanted = new URLSearchParams(window.location.search).get('service');
+  if (serviceSelect && wanted) {
+    Array.prototype.forEach.call(serviceSelect.options, function (opt) {
+      if (opt.value === wanted) serviceSelect.value = wanted;
+    });
+  }
+  function serviceName() {
+    return serviceSelect && serviceSelect.value ? serviceSelect.options[serviceSelect.selectedIndex].text : 'Not sure yet';
+  }
+
   /* ---------- documents ---------- */
   function sizeLabel(bytes) {
     return bytes > 1048576 ? (bytes / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(bytes / 1024)) + ' KB';
@@ -121,6 +133,7 @@
       company: form.company.value.trim(),
       email: form.email.value.trim(),
       phone: form.phone.value.trim(),
+      service: serviceName(),
       message: form.message.value.trim(),
       consent: 'yes'
     };
@@ -145,7 +158,8 @@
         'Name: ' + fields.name,
         'Company: ' + fields.company,
         'Email: ' + fields.email,
-        'Phone: ' + (fields.phone || '—')
+        'Phone: ' + (fields.phone || '—'),
+        'Service of interest: ' + fields.service
       ];
       if (sponsor) {
         lines.push('Industry: ' + fields.industry, 'Funding required: R ' + (fields.amount || '—'), 'Stage: ' + fields.stage);

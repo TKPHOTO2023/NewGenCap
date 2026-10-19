@@ -543,6 +543,38 @@ ul, ol { padding: 0; list-style: none; }
 .btn:disabled:not(.btn--quiet) { opacity: .45; }
 .btn:disabled::before { transform: scaleX(0); }
 
+/* ---------- services page ---------- */
+.service-index { padding-top: clamp(40px, 6vw, 72px); }
+.service-jump { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: clamp(40px, 6vw, 72px); }
+.service-jump a {
+  padding: 10px 16px; border: 1px solid var(--rule); text-decoration: none; color: var(--ink); font-size: .86rem;
+  transition: border-color .3s var(--ease), background .3s var(--ease);
+}
+.service-jump a:hover { border-color: var(--ink); }
+.service-row:first-child { border-top: 1px solid var(--ink); }
+.service-row {
+  position: relative; display: grid; grid-template-columns: 200px 1fr 1.1fr; gap: clamp(20px, 4vw, 56px); align-items: start;
+  padding: clamp(32px, 4.5vw, 52px) 0; border-bottom: 1px solid var(--rule); scroll-margin-top: 90px;
+}
+.service-row::before {
+  content: ""; position: absolute; left: 0; top: -1px; height: 2px; width: 100%; background: var(--signal);
+  transform: scaleX(0); transform-origin: left; transition: transform .7s var(--ease);
+}
+.service-row:hover::before, .service-row:target::before { transform: scaleX(1); }
+.service-row__tag { font-size: .7rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--signal-deep); padding-top: 12px; }
+.service-row__title { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 300; letter-spacing: -.035em; line-height: 1.12; }
+.service-row__body p { color: var(--slate); font-size: 1.02rem; margin-bottom: 22px; padding-top: 6px; }
+
+.services-list--links li { padding: 0; }
+.services-list--links li + li { padding-left: 0; }
+.services-list--links a {
+  display: block; height: 100%; padding: 26px 22px 30px 0; text-decoration: none; color: var(--ink);
+  transition: color .3s var(--ease);
+}
+.services-list--links li + li a { padding-left: 22px; }
+.services-list--links a:hover { color: var(--signal-deep); }
+.services-list__tag { display: block; font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--slate); margin-bottom: 10px; }
+
 /* =========================================================
    Funding tools
    ========================================================= */
@@ -686,12 +718,16 @@ ul, ol { padding: 0; list-style: none; }
   .industries { grid-template-columns: repeat(2, 1fr); }
   .services-list { grid-template-columns: repeat(2, 1fr); border-top: 0; }
   .services-list li, .services-list li + li { padding: 24px 24px 24px 0; border-left: 0; border-top: 1px solid var(--ink); }
+  .services-list--links li, .services-list--links li + li { padding: 0; }
+  .services-list--links a, .services-list--links li + li a { padding: 22px 22px 22px 0; }
   .safeguards--grid { grid-template-columns: repeat(2, 1fr); }
   .tool-grid { grid-template-columns: 1fr; }
   .tool-intro { position: static; }
 }
 @media (max-width: 900px) {
   .heritage-grid, .cta-grid, .audience-grid, .tool-cards { grid-template-columns: 1fr; }
+  .service-row { grid-template-columns: 1fr; gap: 14px; }
+  .service-row__tag { padding-top: 0; }
   .cta-col, .cta-col + .cta-col { padding: 0; border-left: 0; }
   .cta-col + .cta-col { margin-top: 48px; padding-top: 48px; border-top: 1px solid rgba(255,255,255,.14); }
   .edge-grid, .steps--row { grid-template-columns: 1fr; }
