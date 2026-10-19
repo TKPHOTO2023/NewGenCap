@@ -611,6 +611,9 @@ ul, ol { padding: 0; list-style: none; }
   transition: border-color .3s var(--ease), color .3s var(--ease), background .3s var(--ease);
 }
 .hero-nav__btn:hover { border-color: var(--signal); color: var(--signal); }
+/* keep the controls legible on bright photos */
+.hero-nav { padding: 6px 6px 6px 14px; background: rgba(5,21,42,.38); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.hero-nav__btn { background: rgba(5,21,42,.25); }
 .hero-nav__btn svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.6; }
 .hero-nav__btn .i-play { display: none; fill: currentColor; stroke: none; }
 .hero.is-paused .hero-nav__btn .i-pause { display: none; }
