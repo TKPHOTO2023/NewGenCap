@@ -1,6 +1,6 @@
 <?php
 /**
- * New Generation Capital — lead endpoint.
+ * New Generation Capital: lead endpoint.
  *
  * Receives calculator report leads and project submissions from the website
  * (multipart/form-data), emails them to the funding team through the funding@
@@ -123,7 +123,7 @@ if (field('consent', 10) !== 'yes') {
 
 $rows = [
     'Name' => $name,
-    'Company' => $company !== '' ? $company : '—',
+    'Company' => $company !== '' ? $company : 'Not provided',
     'Email' => $email,
     'Phone' => $phone,
 ];
@@ -289,7 +289,7 @@ function mailer(array $config)
 }
 
 $label = $types[$type];
-$who = $company !== '' ? $company . ' — ' . $name : $name;
+$who = $company !== '' ? $company . ', ' . $name : $name;
 $subject = $type === 'tool-report'
     ? 'Calculator lead: ' . $who . ' (' . $rows['Tool'] . ')'
     : 'Project submission: ' . $who;
@@ -326,7 +326,7 @@ if ($type === 'tool-report' && $report && !empty($config['send_visitor_copy'])) 
         $copy = mailer($config);
         $copy->addAddress($email, $name);
         $copy->addReplyTo($config['from_email'], $config['from_name'] ?? 'New Generation Capital');
-        $copy->Subject = 'Your ' . $rows['Tool'] . ' report — New Generation Capital';
+        $copy->Subject = 'Your ' . $rows['Tool'] . ' report from New Generation Capital';
         $copy->isHTML(true);
         $contact = $config['contact_line'] ?? 'funding@newgenerationcap.co.za  ·  +27 87 742 0831';
         $copy->Body = '<div style="font-family:Arial,sans-serif;color:#05152A;font-size:14px;line-height:1.6">'

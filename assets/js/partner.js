@@ -160,13 +160,13 @@
         'Service of interest: ' + fields.service
       ];
       if (sponsor) {
-        lines.push('Industry: ' + fields.industry, 'Funding required: R ' + (fields.amount || '—'), 'Stage: ' + fields.stage);
+        lines.push('Industry: ' + fields.industry, 'Funding required: R ' + (fields.amount || 'Not provided'), 'Stage: ' + fields.stage);
       }
       lines.push('', fields.message);
       if (files.length) {
         lines.push('', 'Documents to attach: ' + files.map(function (f) { return f.name; }).join(', '));
       }
-      window.NGC.openEmail('Project submission — ' + fields.company, lines.join('\n'));
+      window.NGC.openEmail('Project submission: ' + fields.company, lines.join('\n'));
       finish(files.length
         ? 'Your email app has opened with your details. Please attach your documents to that email before you send it.'
         : 'Your email app has opened with your details. Send the email and our team will come back to you with next steps.');

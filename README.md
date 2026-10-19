@@ -1,4 +1,4 @@
-# New Generation Capital — website
+# New Generation Capital website
 
 Static six-page site for New Generation Capital (part of the New Generation Group), following the
 CircleDesign scope of work. No build step: open `index.html` directly, or serve the folder:
@@ -22,20 +22,20 @@ The header and footer are repeated in each page; change them in all six files.
 
 ## Scripts
 
-- `assets/js/config.js` — site settings. `leadEndpoint` points at `api/lead.php`. If it cannot be
+- `assets/js/config.js`: site settings. `leadEndpoint` points at `api/lead.php`. If it cannot be
   reached, the project form falls back to the visitor's email app; calculator reports download either way.
-- `assets/js/leads.js` — sends leads (fields, uploaded documents and the PDF report) to the endpoint.
-- `assets/js/partner.js` — submission form: sponsor/funder switch, file checks (PDF, Word, Excel,
+- `assets/js/leads.js`: sends leads (fields, uploaded documents and the PDF report) to the endpoint.
+- `assets/js/partner.js`: submission form: sponsor/funder switch, file checks (PDF, Word, Excel,
   PowerPoint, CSV; up to 5 files of 10 MB), validation (phone required) and POPIA consent.
-- `assets/js/tools.js` — the two calculators and the branded PDF reports (built in the browser with
+- `assets/js/tools.js`: the two calculators and the branded PDF reports (built in the browser with
   jsPDF). Name, email, phone and company are required before a report downloads. Results are indicative only.
-- `assets/js/slider.js` — home header slider (home page only): 7-second autoplay with progress bars, pause button,
+- `assets/js/slider.js`: home header slider (home page only): 7-second autoplay with progress bars, pause button,
   hold on hover or focus, arrows, swipe and keyboard. No autoplay with `prefers-reduced-motion`.
-- `assets/js/main.js` — header, mobile menu, scroll reveals and the deal-flow canvas.
-- `assets/js/motion.js` — motion layer (respects `prefers-reduced-motion`), parallax image breaks, and backdrop
+- `assets/js/main.js`: header, mobile menu, scroll reveals and the deal-flow canvas.
+- `assets/js/motion.js`: motion layer (respects `prefers-reduced-motion`), parallax image breaks, and backdrop
   videos that load only when scrolled near, play only while visible, and are skipped for reduced-motion or
   data-saver visitors (the still image shows instead).
-- `assets/vendor/jspdf.umd.min.js` — jsPDF 2.5.1 (MIT, see `jspdf.LICENSE`).
+- `assets/vendor/jspdf.umd.min.js`: jsPDF 2.5.1 (MIT, see `jspdf.LICENSE`).
 
 ## Media
 

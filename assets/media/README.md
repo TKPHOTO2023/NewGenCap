@@ -9,7 +9,7 @@ image is turned into web copies in `assets/img/site/<name>-<width>.jpg` (800, 14
 | Type | Format | Size |
 |---|---|---|
 | Header slider and break images | JPG | at least 2400 px wide |
-| Video backdrops | MP4 (H.264), no sound, 10–20 s seamless loop | 1920 × 1080 (or 1280 × 720), under 8 MB each |
+| Video backdrops | MP4 (H.264), no sound, 10 to 20 s seamless loop | 1920 × 1080 (or 1280 × 720), under 8 MB each |
 | Service and audience images | JPG | at least 1600 px wide |
 
 Darker, uncluttered footage works best behind text; the site adds a navy overlay on top.

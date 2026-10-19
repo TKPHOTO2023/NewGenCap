@@ -12,7 +12,7 @@
     var sign = v < 0 ? '-' : '';
     return sign + 'R ' + groupDigits(Math.round(Math.abs(v)));
   }
-  function ratio(v) { return isFinite(v) ? v.toFixed(2) + '×' : '—'; }
+  function ratio(v) { return isFinite(v) ? v.toFixed(2) + '×' : 'n/a'; }
 
   /* =========================================================
      1. Funding Readiness Assessment
@@ -40,7 +40,7 @@
     { min: 85, name: 'Funding-ready', text: 'Your project looks ready to present to funders. Submit it and we will review it with you.' },
     { min: 65, name: 'Nearly ready', text: 'A few gaps to close before funders will engage. Most of them can be fixed in weeks, not months.' },
     { min: 40, name: 'Developing', text: 'The foundations are there. Closing the gaps below will materially improve your chances of funding.' },
-    { min: 0, name: 'Early stage', text: 'It is early days. Use the list below as your roadmap — we can help you build the case.' }
+    { min: 0, name: 'Early stage', text: 'It is early days. Use the list below as your roadmap. We can help you build the case.' }
   ];
 
   var rForm = $('readinessForm');

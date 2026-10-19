@@ -1,4 +1,4 @@
-/* New Generation Capital — landing page
+/* New Generation Capital: landing page
    Palette and type drawn from the company profile deck. */
 
 :root {
@@ -918,7 +918,7 @@ ul, ol { padding: 0; list-style: none; }
 :root { --intro-delay: .15s; }
 .has-intro { --intro-delay: 1.5s; }
 
-/* opening curtain — first visit per session only, CSS-timed so it can never get stuck */
+/* opening curtain: first visit per session only, CSS-timed so it can never get stuck */
 .intro { display: none; }
 .has-intro .intro {
   position: fixed; inset: 0; z-index: 200; background: var(--ink);

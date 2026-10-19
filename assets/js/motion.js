@@ -1,4 +1,4 @@
-/* New Generation Capital — motion layer.
+/* New Generation Capital: motion layer.
    Everything here is progressive: without it the page is complete and static. */
 (function () {
   'use strict';
