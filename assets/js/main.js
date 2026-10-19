@@ -90,7 +90,8 @@
   var INK = [5, 21, 42];
   var SLATE = [97, 112, 131];
   var SIGNAL = [245, 131, 31];
-  var GATE = 0.5;             // decision gate sits between Validate and Package
+  var STAGES = 7;             // Find, Screen, Validate, Package, Fund, Deliver, Monitor
+  var GATE = 3 / STAGES;      // decision gate sits between Validate and Package
   var CROSS_SECONDS = 9;      // time for a deal to travel the full band
   var SPAWN_EVERY = 0.075;
 
@@ -132,7 +133,7 @@
     var v = dt / CROSS_SECONDS;
     for (var i = particles.length - 1; i >= 0; i--) {
       var q = particles[i];
-      var stopAt = q.exit ? q.exit / 6 : 2;
+      var stopAt = q.exit ? q.exit / STAGES : 2;
       if (q.p >= stopAt) {
         q.fall += dt;
         q.p += v * 0.25;
@@ -155,20 +156,20 @@
 
     // highlighted stage column
     if (focusStage >= 0) {
-      var fx = W * focusStage / 6;
+      var fx = W * focusStage / STAGES;
       var band = ctx.createLinearGradient(0, 24, 0, H);
       var tint = focusStage >= 3 ? SIGNAL : INK;
       band.addColorStop(0, rgba(tint, 0));
       band.addColorStop(1, rgba(tint, focusStage >= 3 ? 0.09 : 0.05));
       ctx.fillStyle = band;
-      ctx.fillRect(fx, 24, W / 6, H - 24);
+      ctx.fillRect(fx, 24, W / STAGES, H - 24);
     }
 
     // stage dividers
     ctx.lineWidth = 1;
-    for (var k = 1; k < 6; k++) {
+    for (var k = 1; k < STAGES; k++) {
       if (k === 3) continue;
-      var x = Math.round(W * k / 6) + 0.5;
+      var x = Math.round(W * k / STAGES) + 0.5;
       ctx.strokeStyle = rgba(INK, 0.08);
       ctx.setLineDash([2, 5]);
       ctx.beginPath(); ctx.moveTo(x, 24); ctx.lineTo(x, H); ctx.stroke();
@@ -201,7 +202,7 @@
         alpha = 1;
         color = mix(INK, SIGNAL, Math.min(1, (q.p - GATE) / 0.05));
       }
-      var inFocus = focusStage >= 0 && Math.floor(q.p * 6) === focusStage && !q.fall;
+      var inFocus = focusStage >= 0 && Math.floor(q.p * STAGES) === focusStage && !q.fall;
       ctx.fillStyle = rgba(inFocus && q.p < GATE ? INK : color, inFocus ? Math.min(1, alpha + 0.35) : alpha);
       ctx.beginPath();
       ctx.arc(px, py, (q.p >= GATE && !q.fall ? 3 : q.size) * (inFocus ? 1.35 : 1), 0, Math.PI * 2);
@@ -211,6 +212,17 @@
     // end-point marker: delivered
     ctx.fillStyle = rgba(SIGNAL, 1);
     ctx.beginPath(); ctx.arc(W - 5, mid, 5, 0, Math.PI * 2); ctx.fill();
+
+    // monitoring: a slow pulse from the delivered project, repeating like a reporting cycle
+    if (running) {
+      var cycle = (performance.now() / 1000 % 2.6) / 2.6;
+      ctx.strokeStyle = rgba(SIGNAL, 0.55 * (1 - cycle));
+      ctx.lineWidth = 1.2;
+      var mx = W * (STAGES - 0.5) / STAGES;
+      ctx.beginPath(); ctx.arc(mx, mid, 4 + cycle * 28, 0, Math.PI * 2); ctx.stroke();
+      ctx.fillStyle = rgba(SIGNAL, 1);
+      ctx.beginPath(); ctx.arc(mx, mid, 3.5, 0, Math.PI * 2); ctx.fill();
+    }
   }
 
   function prewarm() {
