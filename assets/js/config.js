@@ -4,7 +4,7 @@
    visitor's email app; calculator reports still download either way. */
 window.NGC_CONFIG = {
   leadEndpoint: '',
-  enquiryEmail: 'selwynw@newgenerationcap.co.za',
+  enquiryEmail: 'funding@newgenerationcap.co.za',
   maxFiles: 5,
   maxFileMB: 10
 };

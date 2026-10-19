@@ -443,7 +443,7 @@
           doc.setDrawColor.apply(doc, RULE); doc.line(M, 280, W - M, 280);
           doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5); doc.setTextColor.apply(doc, SLATE);
           doc.text('Indicative only. This report does not constitute financial advice or an offer of finance.', M, 285);
-          doc.text('New Generation Capital  ·  selwynw@newgenerationcap.co.za  ·  +27 87 742 0831', M, 289);
+          doc.text('New Generation Capital  ·  funding@newgenerationcap.co.za  ·  +27 87 742 0831', M, 289);
           doc.text('Page ' + p + ' of ' + pages, W - M, 289, { align: 'right' });
         }
       }
@@ -559,7 +559,7 @@
 
       y += 6;
       heading('Next step');
-      para('Ready to take the project further? Submit it through the Partner with us page on our website, or email selwynw@newgenerationcap.co.za, and our team will review it with you.', 9.5);
+      para('Ready to take the project further? Submit it through the Partner with us page on our website, or email funding@newgenerationcap.co.za, and our team will review it with you.', 9.5);
 
       footer();
       var file = (type === 'readiness' ? 'NGC-Funding-Readiness-Report' : 'NGC-Repayment-DSCR-Report') + '.pdf';
