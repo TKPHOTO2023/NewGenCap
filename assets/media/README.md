@@ -31,37 +31,37 @@ GitHub's web upload refuses files over 25 MB.
 | `sponsor-model` | `smiley-man-working-project.jpg` |
 | `growth-capital` | `stacked-coins-with-dirt-plant.jpg` |
 | `city-night` | `building-area-east-river-travel-city-landscape.jpg` |
-| `data-campus`, `secured-site` | company profile images in `assets/img/` |
+| `liquid-metal` | `elegant-black-ferromagnetic-liquid-metal-with-copy-space.jpg` |
+| `tech-tunnel` | `futuristic-time-machine.jpg` |
+| `optical-fiber` | `optical-fiber-background.jpg` |
+| `meeting-devices` | `people-using-digital-device-while-meeting.jpg` |
+| `office-workers` | `people-working-their-office.jpg` |
+| `futuristic-office` | `person-working-futuristic-office.jpg` |
+| `analytics-meeting` | `tablet-shows-analytics-data-meeting.jpg` |
+| `team-discussion` | `team-diverse-coworkers-modern-office-discuss-their-project-together.jpg` |
+| `team-review`, `data-campus`, `secured-site` | company profile images in `assets/img/` |
 
 Not used: `unsuitable-furious-woman-gets-angry-after-getting-rejected-from-job-offer.jpg`.
 
-## Slots
+## Placement
 
-| Slot | Where it appears | Image | Video |
-|---|---|---|---|
-| `hero-1` | Home slider 1: "We turn ideas into investable projects." | `brand-path` | — |
-| `hero-2` | Home slider 2: Energy & infrastructure | `solar-aerial` | — |
-| `hero-3` | Home slider 3: Capital solutions | `team-meeting` | — |
-| `hero-4` | Home slider 4: Every industry | `sandton-dusk` | — |
-| `backdrop-heritage` | Home and About: "Built on the New Generation Group" | `solar-wind` | open — construction, energy, telecoms footage |
-| `backdrop-cta` | Sponsor / funder band near the foot of most pages | `city-night` | open — slow aerial of a city |
-| `backdrop-about` | About us header | `office-colleagues` | open — team at work |
-| `backdrop-what-we-do` | What we do header | `solar-site` | open — projects being built |
-| `backdrop-services` | Services header | `sandton-day` | — |
-| `backdrop-funding-tools` | Funding tools header | `office-analysis` | — |
-| `backdrop-partner` | Partner with us header | `sponsor-model` | — |
-| `break-home` | Home, between Industries and How we work | `data-campus` | — |
-| `break-about` | About, before the Board | `solar-site` | — |
-| `break-what-we-do` | What we do, before the process | `growth-capital` | — |
-| `break-services` | Services, after the services | `sandton-dusk` | — |
-| `break-partner` | Partner, before the submission form | `solar-wind` | — |
-| `service-project-fundraising` | Services: Project Fundraising | `team-meeting` | — |
-| `service-bridging-finance` | Services: Bridging Finance | `growth-capital` | — |
-| `service-acquisitions-mergers` | Services: Acquisitions & Mergers | `office-analysis` | — |
-| `service-greenfield-fundraising` | Services: Greenfield Project Fundraising | `solar-aerial` | — |
-| `service-short-term-insurance` | Services: Short-Term Insurance | `secured-site` | — |
-| `audience-sponsors` | Partner: "For project sponsors" card | `solar-site` | — |
-| `audience-funders` | Partner: "For capital providers" card | `team-meeting` | — |
+No image appears twice on the same page. With 23 images for 29 spots, six images appear on two
+different pages, always in secondary positions (never a slider slide or a page header).
 
-Still welcome: construction-site imagery (the Group's construction heritage is not yet pictured), a
-fintech image, and up to four backdrop videos for the slots marked "open".
+| Slot | Where it appears | Image |
+|---|---|---|
+| `hero-1` … `hero-4` | Home slider | `brand-path`, `solar-aerial`, `futuristic-office`, `sandton-dusk` |
+| `who-home`, `who-about` | "Who we are" photo on Home / About | `team-review`, `team-discussion` |
+| `heritage-home`, `heritage-about` | "Built on the New Generation Group" backdrop (video-ready) | `solar-wind`, `solar-site` |
+| `cta-home`, `cta-about`, `cta-what-we-do`, `cta-services` | Sponsor / funder band (video-ready) | `tech-tunnel`, `liquid-metal`, `city-night`, `optical-fiber` |
+| `backdrop-about` | About header | `office-colleagues` |
+| `backdrop-what-we-do` | What we do header | `analytics-meeting` |
+| `backdrop-services` | Services header | `meeting-devices` |
+| `backdrop-funding-tools` | Funding tools header | `office-workers` |
+| `backdrop-partner` | Partner header | `sponsor-model` |
+| `break-home` / `-about` / `-what-we-do` / `-services` / `-partner` | Parallax breaks | `data-campus`, `sandton-day`, `growth-capital`, `sandton-dusk`, `solar-wind` |
+| `service-…` | Services: Project Fundraising, Bridging, M&A, Greenfield, Insurance | `team-meeting`, `growth-capital`, `office-analysis`, `solar-site`, `secured-site` |
+| `audience-sponsors`, `audience-funders` | Partner audience cards | `solar-aerial`, `analytics-meeting` |
+
+Still welcome: construction-site imagery, a fintech image, and backdrop videos (MP4) for the heritage
+and sponsor / funder sections.
