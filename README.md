@@ -70,7 +70,7 @@ funding@newgenerationcap.co.za through that mailbox's SMTP login:
 ## Still to connect for go-live
 
 - `api/config.php` with the funding@ mailbox password on the server (see above).
-- Google Analytics 4 and Search Console.
+- Search Console (Google Analytics 4 is installed: tag `G-GHDWLZN32V` in the `<head>` of every page).
 - Final images and videos for the media slots (see `assets/media/README.md`).
 
 Type: Poppins (the New Generation Group typeface) throughout, loaded from Google Fonts.
