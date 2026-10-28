@@ -61,9 +61,15 @@ funding@newgenerationcap.co.za through that mailbox's SMTP login:
 2. On the server, copy `api/config.sample.php` to `api/config.php` and enter the funding@ mailbox
    password. Check the SMTP host and port against the mailbox's "Connect Devices" settings in cPanel
    (usually `mail.newgenerationcap.co.za`, port 465 with `ssl`, or 587 with `tls`).
-3. Once the domain is live, add it to `allowed_origins` in `config.php`.
-4. Confirm `https://<domain>/api/config.php` returns 403 Forbidden.
-5. Submit one calculator report and one project to check both emails arrive.
+3. Check the email set-up with `api/mail-check.php`. It sends one test email to funding@ and says
+   exactly what to fix if it fails:
+   - with SSH or the cPanel Terminal: `php api/mail-check.php`
+   - without: put a long random value in `check_key` in `config.php`, open
+     `https://<domain>/api/mail-check.php?key=<that value>`, then empty `check_key` again.
+     Without a matching key the page returns 404.
+4. Once the domain is live, add it to `allowed_origins` in `config.php`.
+5. Confirm `https://<domain>/api/config.php` returns 403 Forbidden.
+6. Submit one calculator report and one project to check both emails arrive.
 
 `api/config.php` is listed in `.gitignore` and must never be committed.
 

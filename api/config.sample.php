@@ -36,6 +36,10 @@ return [
     // At most 'max' submissions per visitor every 'window' seconds.
     'rate_limit' => ['max' => 8, 'window' => 600],
 
+    // Optional: a long random key that switches on api/mail-check.php in the browser
+    // (https://<domain>/api/mail-check.php?key=...). Leave empty when not in use.
+    'check_key' => '',
+
     'max_files' => 5,
     'max_file_mb' => 10,
     'timezone' => 'Africa/Johannesburg',

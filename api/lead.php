@@ -16,6 +16,7 @@ use PHPMailer\PHPMailer\Exception as MailerException;
 require __DIR__ . '/lib/PHPMailer/Exception.php';
 require __DIR__ . '/lib/PHPMailer/PHPMailer.php';
 require __DIR__ . '/lib/PHPMailer/SMTP.php';
+require __DIR__ . '/lib/mailer.php';
 
 header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
@@ -263,30 +264,6 @@ function renderText(array $rows)
     return $text;
 }
 
-function mailer(array $config)
-{
-    $smtp = $config['smtp'];
-    $mail = new PHPMailer(true);
-    $mail->isSMTP();
-    $mail->Host = $smtp['host'];
-    $mail->Port = (int) $smtp['port'];
-    $mail->SMTPAuth = ($smtp['username'] ?? '') !== '';
-    $mail->Username = $smtp['username'] ?? '';
-    $mail->Password = $smtp['password'] ?? '';
-    $secure = $smtp['secure'] ?? 'ssl';
-    if ($secure === 'ssl') {
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    } elseif ($secure === 'tls') {
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    } else {
-        $mail->SMTPSecure = '';
-        $mail->SMTPAutoTLS = false;
-    }
-    $mail->Timeout = 20;
-    $mail->CharSet = PHPMailer::CHARSET_UTF8;
-    $mail->setFrom($config['from_email'], $config['from_name'] ?? 'New Generation Capital');
-    return $mail;
-}
 
 $label = $types[$type];
 $who = $company !== '' ? $company . ', ' . $name : $name;
