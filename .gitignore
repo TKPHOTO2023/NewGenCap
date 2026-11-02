@@ -1,2 +1,3 @@
 # Server-only settings with the mailbox password
 api/config.php
+__pycache__/
