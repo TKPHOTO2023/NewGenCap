@@ -1,6 +1,6 @@
 # New Generation Capital website
 
-Static six-page site for New Generation Capital (part of the New Generation Group), following the
+Static seven-page site for New Generation Capital (part of the New Generation Group), following the
 CircleDesign scope of work. No build step: open `index.html` directly, or serve the folder:
 
 ```
@@ -15,10 +15,11 @@ python3 -m http.server 8000
 | `about.html` | About us | Who we are, our edge, the model, Board of Directors |
 | `what-we-do.html` | What we do | Industries, a preview of our services, the seven-step process (with the deal-flow visual), governance |
 | `services.html` | Services | Project Fundraising, Bridging Finance, Acquisitions & Mergers, Greenfield Project Fundraising, Short-Term Insurance; each links to the submission form with the service pre-selected (`partner.html?service=<slug>`) |
+| `digital-telecoms.html` | Digital & Telecoms | Sector page: the R140bn+ opportunity (DBSA 2025), five areas we finance, the board's telecoms track record, the seven-step process |
 | `funding-tools.html` | Funding tools | Funding Readiness Assessment and Repayment & DSCR Calculator, each with a PDF report |
 | `partner.html` | Partner with us | Sponsors and capital providers, engagement steps, project submission form with document upload |
 
-The header and footer are repeated in each page; change them in all six files.
+The header and footer are repeated in each page; change them in all seven files.
 
 ## Scripts
 
