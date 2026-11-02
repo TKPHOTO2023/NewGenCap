@@ -53,7 +53,7 @@
        "elType": "widget",
        "widgetType": "heading",
        "settings": {
-        "title": "NEW AT BABYVIBES",
+        "title": "HAPPY BABIES, HAPPY MOMS",
         "header_size": "p",
         "align": "left",
         "title_color": "#FF7F6E",
@@ -87,7 +87,7 @@
        "elType": "widget",
        "widgetType": "heading",
        "settings": {
-        "title": "Meet the Talking Cactus, the little friend who talks back",
+        "title": "Toys and goodies that bring the giggles",
         "header_size": "h1",
         "align": "left",
         "title_color": "#2E2A3B",
@@ -118,7 +118,7 @@
        "elType": "widget",
        "widgetType": "text-editor",
        "settings": {
-        "editor": "<p>Say something and the Talking Cactus says it right back in a giggly voice, then wiggles, dances and lights up. It's the toy that keeps the giggles going.</p>",
+        "editor": "<p>BabyVibes is a shop for moms, by moms. We pick fun, good-value toys and baby essentials, test them with our own little ones and deliver them across South Africa.</p>",
         "align": "left",
         "text_color": "#2E2A3B",
         "typography_typography": "custom",
@@ -155,9 +155,56 @@
       {
        "id": "3387fb8",
        "elType": "widget",
-       "widgetType": "shortcode",
+       "widgetType": "button",
        "settings": {
-        "shortcode": "[add_to_cart sku=\"BV-TC-001\" show_price=\"true\" style=\"\"]"
+        "text": "Shop now",
+        "link": {
+         "url": "/shop/",
+         "is_external": "",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "align": "left",
+        "align_mobile": "justify",
+        "size": "lg",
+        "background_color": "#2F7A4D",
+        "button_text_color": "#FFFFFF",
+        "button_background_hover_color": "#25613D",
+        "hover_color": "#FFFFFF",
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "2",
+         "right": "2",
+         "bottom": "2",
+         "left": "2",
+         "isLinked": true
+        },
+        "border_color": "#2F7A4D",
+        "border_radius": {
+         "unit": "px",
+         "top": "999",
+         "right": "999",
+         "bottom": "999",
+         "left": "999",
+         "isLinked": true
+        },
+        "text_padding": {
+         "unit": "px",
+         "top": "16",
+         "right": "34",
+         "bottom": "16",
+         "left": "34",
+         "isLinked": false
+        },
+        "typography_typography": "custom",
+        "typography_font_family": "Nunito",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 17,
+         "sizes": []
+        },
+        "typography_font_weight": "800"
        },
        "elements": [],
        "isInner": false
@@ -186,7 +233,7 @@
          },
          {
           "_id": "ec5824c",
-          "text": "USB rechargeable, so no batteries to buy",
+          "text": "Help on WhatsApp from real moms",
           "selected_icon": {
            "value": "fas fa-check-circle",
            "library": "fa-solid"
@@ -247,7 +294,326 @@
    "isInner": false
   },
   {
-   "id": "ce75ef3",
+   "id": "8bdb160",
+   "elType": "section",
+   "settings": {
+    "layout": "boxed",
+    "content_width": {
+     "unit": "px",
+     "size": 1140,
+     "sizes": []
+    },
+    "gap": "wider",
+    "structure": "40",
+    "background_background": "classic",
+    "background_color": "#FFFFFF",
+    "padding": {
+     "unit": "px",
+     "top": "56",
+     "right": "20",
+     "bottom": "56",
+     "left": "20",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "40",
+     "right": "16",
+     "bottom": "40",
+     "left": "16",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "34c55e2",
+     "elType": "column",
+     "settings": {
+      "_column_size": 25,
+      "_inline_size": null
+     },
+     "elements": [
+      {
+       "id": "7439c3b",
+       "elType": "widget",
+       "widgetType": "icon-box",
+       "settings": {
+        "selected_icon": {
+         "value": "fas fa-truck",
+         "library": "fa-solid"
+        },
+        "view": "stacked",
+        "shape": "circle",
+        "title_text": "Fast delivery",
+        "description_text": "Tracked delivery across South Africa.",
+        "position": "top",
+        "text_align": "center",
+        "title_size": "h3",
+        "primary_color": "#2F7A4D",
+        "secondary_color": "#FFFFFF",
+        "icon_size": {
+         "unit": "px",
+         "size": 26,
+         "sizes": []
+        },
+        "icon_padding": {
+         "unit": "em",
+         "size": 0.75,
+         "sizes": []
+        },
+        "icon_space": {
+         "unit": "px",
+         "size": 14,
+         "sizes": []
+        },
+        "title_color": "#2E2A3B",
+        "description_color": "#2E2A3B",
+        "title_typography_typography": "custom",
+        "title_typography_font_family": "Fredoka",
+        "title_typography_font_size": {
+         "unit": "px",
+         "size": 21,
+         "sizes": []
+        },
+        "title_typography_font_weight": "600",
+        "description_typography_typography": "custom",
+        "description_typography_font_family": "Nunito",
+        "description_typography_font_size": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "description_typography_font_weight": "400",
+        "description_typography_line_height": {
+         "unit": "em",
+         "size": 1.55,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      }
+     ],
+     "isInner": false
+    },
+    {
+     "id": "baee65a",
+     "elType": "column",
+     "settings": {
+      "_column_size": 25,
+      "_inline_size": null
+     },
+     "elements": [
+      {
+       "id": "9e5fbd4",
+       "elType": "widget",
+       "widgetType": "icon-box",
+       "settings": {
+        "selected_icon": {
+         "value": "fas fa-lock",
+         "library": "fa-solid"
+        },
+        "view": "stacked",
+        "shape": "circle",
+        "title_text": "Secure checkout",
+        "description_text": "Card, Instant EFT and more.",
+        "position": "top",
+        "text_align": "center",
+        "title_size": "h3",
+        "primary_color": "#FF7F6E",
+        "secondary_color": "#FFFFFF",
+        "icon_size": {
+         "unit": "px",
+         "size": 26,
+         "sizes": []
+        },
+        "icon_padding": {
+         "unit": "em",
+         "size": 0.75,
+         "sizes": []
+        },
+        "icon_space": {
+         "unit": "px",
+         "size": 14,
+         "sizes": []
+        },
+        "title_color": "#2E2A3B",
+        "description_color": "#2E2A3B",
+        "title_typography_typography": "custom",
+        "title_typography_font_family": "Fredoka",
+        "title_typography_font_size": {
+         "unit": "px",
+         "size": 21,
+         "sizes": []
+        },
+        "title_typography_font_weight": "600",
+        "description_typography_typography": "custom",
+        "description_typography_font_family": "Nunito",
+        "description_typography_font_size": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "description_typography_font_weight": "400",
+        "description_typography_line_height": {
+         "unit": "em",
+         "size": 1.55,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      }
+     ],
+     "isInner": false
+    },
+    {
+     "id": "ce75ef3",
+     "elType": "column",
+     "settings": {
+      "_column_size": 25,
+      "_inline_size": null
+     },
+     "elements": [
+      {
+       "id": "fdb4fd0",
+       "elType": "widget",
+       "widgetType": "icon-box",
+       "settings": {
+        "selected_icon": {
+         "value": "fas fa-heart",
+         "library": "fa-solid"
+        },
+        "view": "stacked",
+        "shape": "circle",
+        "title_text": "Mom-picked",
+        "description_text": "Every product tested by real moms.",
+        "position": "top",
+        "text_align": "center",
+        "title_size": "h3",
+        "primary_color": "#2F7A4D",
+        "secondary_color": "#FFFFFF",
+        "icon_size": {
+         "unit": "px",
+         "size": 26,
+         "sizes": []
+        },
+        "icon_padding": {
+         "unit": "em",
+         "size": 0.75,
+         "sizes": []
+        },
+        "icon_space": {
+         "unit": "px",
+         "size": 14,
+         "sizes": []
+        },
+        "title_color": "#2E2A3B",
+        "description_color": "#2E2A3B",
+        "title_typography_typography": "custom",
+        "title_typography_font_family": "Fredoka",
+        "title_typography_font_size": {
+         "unit": "px",
+         "size": 21,
+         "sizes": []
+        },
+        "title_typography_font_weight": "600",
+        "description_typography_typography": "custom",
+        "description_typography_font_family": "Nunito",
+        "description_typography_font_size": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "description_typography_font_weight": "400",
+        "description_typography_line_height": {
+         "unit": "em",
+         "size": 1.55,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      }
+     ],
+     "isInner": false
+    },
+    {
+     "id": "801022d",
+     "elType": "column",
+     "settings": {
+      "_column_size": 25,
+      "_inline_size": null
+     },
+     "elements": [
+      {
+       "id": "d79824a",
+       "elType": "widget",
+       "widgetType": "icon-box",
+       "settings": {
+        "selected_icon": {
+         "value": "fas fa-comment-dots",
+         "library": "fa-solid"
+        },
+        "view": "stacked",
+        "shape": "circle",
+        "title_text": "Friendly help",
+        "description_text": "Questions? We're a WhatsApp away.",
+        "position": "top",
+        "text_align": "center",
+        "title_size": "h3",
+        "primary_color": "#FF7F6E",
+        "secondary_color": "#FFFFFF",
+        "icon_size": {
+         "unit": "px",
+         "size": 26,
+         "sizes": []
+        },
+        "icon_padding": {
+         "unit": "em",
+         "size": 0.75,
+         "sizes": []
+        },
+        "icon_space": {
+         "unit": "px",
+         "size": 14,
+         "sizes": []
+        },
+        "title_color": "#2E2A3B",
+        "description_color": "#2E2A3B",
+        "title_typography_typography": "custom",
+        "title_typography_font_family": "Fredoka",
+        "title_typography_font_size": {
+         "unit": "px",
+         "size": 21,
+         "sizes": []
+        },
+        "title_typography_font_weight": "600",
+        "description_typography_typography": "custom",
+        "description_typography_font_family": "Nunito",
+        "description_typography_font_size": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "description_typography_font_weight": "400",
+        "description_typography_line_height": {
+         "unit": "em",
+         "size": 1.55,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      }
+     ],
+     "isInner": false
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "50416f7",
    "elType": "section",
    "settings": {
     "layout": "boxed",
@@ -279,7 +645,7 @@
    },
    "elements": [
     {
-     "id": "fdb4fd0",
+     "id": "f6116f8",
      "elType": "column",
      "settings": {
       "_column_size": 100,
@@ -287,11 +653,11 @@
      },
      "elements": [
       {
-       "id": "7439c3b",
+       "id": "70caec8",
        "elType": "widget",
        "widgetType": "heading",
        "settings": {
-        "title": "WHAT IT DOES",
+        "title": "SHOP",
         "header_size": "p",
         "align": "center",
         "title_color": "#FF7F6E",
@@ -321,11 +687,11 @@
        "isInner": false
       },
       {
-       "id": "34c55e2",
+       "id": "6513058",
        "elType": "widget",
        "widgetType": "heading",
        "settings": {
-        "title": "Talks, dances, sings and glows",
+        "title": "New arrivals",
         "header_size": "h2",
         "align": "center",
         "title_color": "#2E2A3B",
@@ -352,11 +718,11 @@
        "isInner": false
       },
       {
-       "id": "9e5fbd4",
+       "id": "97b46c1",
        "elType": "widget",
        "widgetType": "text-editor",
        "settings": {
-        "editor": "<p>Everything little ones love, in one cheeky cactus.</p>",
+        "editor": "<p>The latest finds for your little one.</p>",
         "align": "center",
         "text_color": "#2E2A3B",
         "typography_typography": "custom",
@@ -377,13 +743,13 @@
        "isInner": false
       },
       {
-       "id": "baee65a",
+       "id": "ef570a6",
        "elType": "widget",
        "widgetType": "spacer",
        "settings": {
         "space": {
          "unit": "px",
-         "size": 20,
+         "size": 10,
          "sizes": []
         }
        },
@@ -397,7 +763,7 @@
    "isInner": false
   },
   {
-   "id": "50416f7",
+   "id": "275aa7e",
    "elType": "section",
    "settings": {
     "layout": "boxed",
@@ -407,7 +773,7 @@
      "sizes": []
     },
     "gap": "wider",
-    "structure": "40",
+    "structure": "10",
     "background_background": "classic",
     "background_color": "#FFF8F0",
     "padding": {
@@ -429,282 +795,76 @@
    },
    "elements": [
     {
-     "id": "801022d",
+     "id": "5292c1d",
      "elType": "column",
      "settings": {
-      "_column_size": 25,
+      "_column_size": 100,
       "_inline_size": null
      },
      "elements": [
       {
-       "id": "d79824a",
+       "id": "192a47f",
        "elType": "widget",
-       "widgetType": "icon-box",
+       "widgetType": "shortcode",
        "settings": {
-        "selected_icon": {
-         "value": "fas fa-microphone",
-         "library": "fa-solid"
-        },
-        "view": "stacked",
-        "shape": "circle",
-        "title_text": "Repeats what you say",
-        "description_text": "Talk, sing or giggle and it copies you in a funny voice.",
-        "position": "top",
-        "text_align": "center",
-        "title_size": "h3",
-        "primary_color": "#2F7A4D",
-        "secondary_color": "#FFFFFF",
-        "icon_size": {
-         "unit": "px",
-         "size": 26,
-         "sizes": []
-        },
-        "icon_padding": {
-         "unit": "em",
-         "size": 0.75,
-         "sizes": []
-        },
-        "icon_space": {
-         "unit": "px",
-         "size": 14,
-         "sizes": []
-        },
-        "title_color": "#2E2A3B",
-        "description_color": "#2E2A3B",
-        "title_typography_typography": "custom",
-        "title_typography_font_family": "Fredoka",
-        "title_typography_font_size": {
-         "unit": "px",
-         "size": 21,
-         "sizes": []
-        },
-        "title_typography_font_weight": "600",
-        "description_typography_typography": "custom",
-        "description_typography_font_family": "Nunito",
-        "description_typography_font_size": {
-         "unit": "px",
-         "size": 16,
-         "sizes": []
-        },
-        "description_typography_font_weight": "400",
-        "description_typography_line_height": {
-         "unit": "em",
-         "size": 1.55,
-         "sizes": []
-        }
+        "shortcode": "[products limit=\"8\" columns=\"4\" orderby=\"date\" order=\"DESC\" paginate=\"false\"]"
        },
        "elements": [],
        "isInner": false
-      }
-     ],
-     "isInner": false
-    },
-    {
-     "id": "70caec8",
-     "elType": "column",
-     "settings": {
-      "_column_size": 25,
-      "_inline_size": null
-     },
-     "elements": [
+      },
       {
-       "id": "8bdb160",
+       "id": "38a999c",
        "elType": "widget",
-       "widgetType": "icon-box",
+       "widgetType": "button",
        "settings": {
-        "selected_icon": {
-         "value": "fas fa-music",
-         "library": "fa-solid"
+        "text": "See all products",
+        "link": {
+         "url": "/shop/",
+         "is_external": "",
+         "nofollow": "",
+         "custom_attributes": ""
         },
-        "view": "stacked",
-        "shape": "circle",
-        "title_text": "Sings and dances",
-        "description_text": "A playlist of catchy songs with a wiggle to match.",
-        "position": "top",
-        "text_align": "center",
-        "title_size": "h3",
-        "primary_color": "#FF7F6E",
-        "secondary_color": "#FFFFFF",
-        "icon_size": {
+        "align": "center",
+        "align_mobile": "justify",
+        "size": "lg",
+        "background_color": "#FFFFFF",
+        "button_text_color": "#2F7A4D",
+        "button_background_hover_color": "#E8F6EC",
+        "hover_color": "#2F7A4D",
+        "border_border": "solid",
+        "border_width": {
          "unit": "px",
-         "size": 26,
-         "sizes": []
+         "top": "2",
+         "right": "2",
+         "bottom": "2",
+         "left": "2",
+         "isLinked": true
         },
-        "icon_padding": {
-         "unit": "em",
-         "size": 0.75,
-         "sizes": []
-        },
-        "icon_space": {
+        "border_color": "#2F7A4D",
+        "border_radius": {
          "unit": "px",
-         "size": 14,
-         "sizes": []
+         "top": "999",
+         "right": "999",
+         "bottom": "999",
+         "left": "999",
+         "isLinked": true
         },
-        "title_color": "#2E2A3B",
-        "description_color": "#2E2A3B",
-        "title_typography_typography": "custom",
-        "title_typography_font_family": "Fredoka",
-        "title_typography_font_size": {
+        "text_padding": {
          "unit": "px",
-         "size": 21,
-         "sizes": []
+         "top": "16",
+         "right": "34",
+         "bottom": "16",
+         "left": "34",
+         "isLinked": false
         },
-        "title_typography_font_weight": "600",
-        "description_typography_typography": "custom",
-        "description_typography_font_family": "Nunito",
-        "description_typography_font_size": {
+        "typography_typography": "custom",
+        "typography_font_family": "Nunito",
+        "typography_font_size": {
          "unit": "px",
-         "size": 16,
+         "size": 17,
          "sizes": []
         },
-        "description_typography_font_weight": "400",
-        "description_typography_line_height": {
-         "unit": "em",
-         "size": 1.55,
-         "sizes": []
-        }
-       },
-       "elements": [],
-       "isInner": false
-      }
-     ],
-     "isInner": false
-    },
-    {
-     "id": "97b46c1",
-     "elType": "column",
-     "settings": {
-      "_column_size": 25,
-      "_inline_size": null
-     },
-     "elements": [
-      {
-       "id": "6513058",
-       "elType": "widget",
-       "widgetType": "icon-box",
-       "settings": {
-        "selected_icon": {
-         "value": "fas fa-lightbulb",
-         "library": "fa-solid"
-        },
-        "view": "stacked",
-        "shape": "circle",
-        "title_text": "Lights up",
-        "description_text": "Soft, colourful lights that catch little eyes.",
-        "position": "top",
-        "text_align": "center",
-        "title_size": "h3",
-        "primary_color": "#2F7A4D",
-        "secondary_color": "#FFFFFF",
-        "icon_size": {
-         "unit": "px",
-         "size": 26,
-         "sizes": []
-        },
-        "icon_padding": {
-         "unit": "em",
-         "size": 0.75,
-         "sizes": []
-        },
-        "icon_space": {
-         "unit": "px",
-         "size": 14,
-         "sizes": []
-        },
-        "title_color": "#2E2A3B",
-        "description_color": "#2E2A3B",
-        "title_typography_typography": "custom",
-        "title_typography_font_family": "Fredoka",
-        "title_typography_font_size": {
-         "unit": "px",
-         "size": 21,
-         "sizes": []
-        },
-        "title_typography_font_weight": "600",
-        "description_typography_typography": "custom",
-        "description_typography_font_family": "Nunito",
-        "description_typography_font_size": {
-         "unit": "px",
-         "size": 16,
-         "sizes": []
-        },
-        "description_typography_font_weight": "400",
-        "description_typography_line_height": {
-         "unit": "em",
-         "size": 1.55,
-         "sizes": []
-        }
-       },
-       "elements": [],
-       "isInner": false
-      }
-     ],
-     "isInner": false
-    },
-    {
-     "id": "f6116f8",
-     "elType": "column",
-     "settings": {
-      "_column_size": 25,
-      "_inline_size": null
-     },
-     "elements": [
-      {
-       "id": "ef570a6",
-       "elType": "widget",
-       "widgetType": "icon-box",
-       "settings": {
-        "selected_icon": {
-         "value": "fas fa-battery-full",
-         "library": "fa-solid"
-        },
-        "view": "stacked",
-        "shape": "circle",
-        "title_text": "USB rechargeable",
-        "description_text": "Charge it like your phone. No batteries to buy.",
-        "position": "top",
-        "text_align": "center",
-        "title_size": "h3",
-        "primary_color": "#FF7F6E",
-        "secondary_color": "#FFFFFF",
-        "icon_size": {
-         "unit": "px",
-         "size": 26,
-         "sizes": []
-        },
-        "icon_padding": {
-         "unit": "em",
-         "size": 0.75,
-         "sizes": []
-        },
-        "icon_space": {
-         "unit": "px",
-         "size": 14,
-         "sizes": []
-        },
-        "title_color": "#2E2A3B",
-        "description_color": "#2E2A3B",
-        "title_typography_typography": "custom",
-        "title_typography_font_family": "Fredoka",
-        "title_typography_font_size": {
-         "unit": "px",
-         "size": 21,
-         "sizes": []
-        },
-        "title_typography_font_weight": "600",
-        "description_typography_typography": "custom",
-        "description_typography_font_family": "Nunito",
-        "description_typography_font_size": {
-         "unit": "px",
-         "size": 16,
-         "sizes": []
-        },
-        "description_typography_font_weight": "400",
-        "description_typography_line_height": {
-         "unit": "em",
-         "size": 1.55,
-         "sizes": []
-        }
+        "typography_font_weight": "800"
        },
        "elements": [],
        "isInner": false
@@ -716,7 +876,7 @@
    "isInner": false
   },
   {
-   "id": "e28c3ac",
+   "id": "5ef60e7",
    "elType": "section",
    "settings": {
     "layout": "boxed",
@@ -749,7 +909,7 @@
    },
    "elements": [
     {
-     "id": "38a999c",
+     "id": "b88d73d",
      "elType": "column",
      "settings": {
       "_column_size": 50,
@@ -758,7 +918,7 @@
      },
      "elements": [
       {
-       "id": "192a47f",
+       "id": "852653b",
        "elType": "widget",
        "widgetType": "html",
        "settings": {
@@ -771,7 +931,7 @@
      "isInner": false
     },
     {
-     "id": "6fa123e",
+     "id": "6db2907",
      "elType": "column",
      "settings": {
       "_column_size": 50,
@@ -780,11 +940,11 @@
      },
      "elements": [
       {
-       "id": "5292c1d",
+       "id": "0537189",
        "elType": "widget",
        "widgetType": "heading",
        "settings": {
-        "title": "WHY MOMS LOVE IT",
+        "title": "SPOTLIGHT",
         "header_size": "p",
         "align": "left",
         "title_color": "#FF7F6E",
@@ -814,11 +974,11 @@
        "isInner": false
       },
       {
-       "id": "275aa7e",
+       "id": "ba56294",
        "elType": "widget",
        "widgetType": "heading",
        "settings": {
-        "title": "More giggles, more chatting, more play",
+        "title": "Meet the Talking Cactus",
         "header_size": "h2",
         "align": "left",
         "title_color": "#2E2A3B",
@@ -845,11 +1005,11 @@
        "isInner": false
       },
       {
-       "id": "852653b",
+       "id": "5b0213f",
        "elType": "widget",
        "widgetType": "text-editor",
        "settings": {
-        "editor": "<p>Little ones love hearing their own voice played back. The Talking Cactus turns babbling into a game and keeps them busy for longer than most toys.</p>",
+        "editor": "<p>Say something and it says it right back in a giggly voice, then wiggles, dances and lights up. Little ones love hearing their own voice played back.</p>",
         "align": "left",
         "text_color": "#2E2A3B",
         "typography_typography": "custom",
@@ -870,38 +1030,30 @@
        "isInner": false
       },
       {
-       "id": "77d56ae",
+       "id": "4fed8c3",
        "elType": "widget",
        "widgetType": "icon-list",
        "settings": {
         "icon_list": [
          {
-          "_id": "b88d73d",
-          "text": "Encourages babbling and first words",
+          "_id": "77d56ae",
+          "text": "Repeats what you say",
           "selected_icon": {
            "value": "fas fa-check-circle",
            "library": "fa-solid"
           }
          },
          {
-          "_id": "0537189",
-          "text": "Makes tummy time more fun",
+          "_id": "6fa123e",
+          "text": "Sings, dances and lights up",
           "selected_icon": {
            "value": "fas fa-check-circle",
            "library": "fa-solid"
           }
          },
          {
-          "_id": "ba56294",
-          "text": "A great distraction for car trips and nappy changes",
-          "selected_icon": {
-           "value": "fas fa-check-circle",
-           "library": "fa-solid"
-          }
-         },
-         {
-          "_id": "5b0213f",
-          "text": "A gift that gets a reaction at baby showers and birthdays",
+          "_id": "e28c3ac",
+          "text": "USB rechargeable, so no batteries to buy",
           "selected_icon": {
            "value": "fas fa-check-circle",
            "library": "fa-solid"
@@ -932,6 +1084,77 @@
        },
        "elements": [],
        "isInner": false
+      },
+      {
+       "id": "48f266e",
+       "elType": "widget",
+       "widgetType": "spacer",
+       "settings": {
+        "space": {
+         "unit": "px",
+         "size": 6,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      },
+      {
+       "id": "8073456",
+       "elType": "widget",
+       "widgetType": "button",
+       "settings": {
+        "text": "Shop the Talking Cactus",
+        "link": {
+         "url": "/product/talking-cactus/",
+         "is_external": "",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "align": "left",
+        "align_mobile": "justify",
+        "size": "lg",
+        "background_color": "#2F7A4D",
+        "button_text_color": "#FFFFFF",
+        "button_background_hover_color": "#25613D",
+        "hover_color": "#FFFFFF",
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "2",
+         "right": "2",
+         "bottom": "2",
+         "left": "2",
+         "isLinked": true
+        },
+        "border_color": "#2F7A4D",
+        "border_radius": {
+         "unit": "px",
+         "top": "999",
+         "right": "999",
+         "bottom": "999",
+         "left": "999",
+         "isLinked": true
+        },
+        "text_padding": {
+         "unit": "px",
+         "top": "16",
+         "right": "34",
+         "bottom": "16",
+         "left": "34",
+         "isLinked": false
+        },
+        "typography_typography": "custom",
+        "typography_font_family": "Nunito",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 17,
+         "sizes": []
+        },
+        "typography_font_weight": "800"
+       },
+       "elements": [],
+       "isInner": false
       }
      ],
      "isInner": false
@@ -940,7 +1163,7 @@
    "isInner": false
   },
   {
-   "id": "9aca521",
+   "id": "e801254",
    "elType": "section",
    "settings": {
     "layout": "boxed",
@@ -972,7 +1195,7 @@
    },
    "elements": [
     {
-     "id": "f70fa4a",
+     "id": "ab25f93",
      "elType": "column",
      "settings": {
       "_column_size": 100,
@@ -980,11 +1203,11 @@
      },
      "elements": [
       {
-       "id": "236cced",
+       "id": "a1776ed",
        "elType": "widget",
        "widgetType": "heading",
        "settings": {
-        "title": "HOW IT WORKS",
+        "title": "BROWSE",
         "header_size": "p",
         "align": "center",
         "title_color": "#FF7F6E",
@@ -1014,11 +1237,11 @@
        "isInner": false
       },
       {
-       "id": "ab25f93",
+       "id": "55342c1",
        "elType": "widget",
        "widgetType": "heading",
        "settings": {
-        "title": "Ready to play in three steps",
+        "title": "Shop by category",
         "header_size": "h2",
         "align": "center",
         "title_color": "#2E2A3B",
@@ -1045,7 +1268,7 @@
        "isInner": false
       },
       {
-       "id": "e801254",
+       "id": "236cced",
        "elType": "widget",
        "widgetType": "spacer",
        "settings": {
@@ -1065,7 +1288,7 @@
    "isInner": false
   },
   {
-   "id": "55342c1",
+   "id": "c1b61df",
    "elType": "section",
    "settings": {
     "layout": "boxed",
@@ -1075,7 +1298,7 @@
      "sizes": []
     },
     "gap": "wider",
-    "structure": "30",
+    "structure": "10",
     "background_background": "classic",
     "background_color": "#FFF8F0",
     "padding": {
@@ -1097,211 +1320,19 @@
    },
    "elements": [
     {
-     "id": "48f266e",
+     "id": "9aca521",
      "elType": "column",
      "settings": {
-      "_column_size": 33,
+      "_column_size": 100,
       "_inline_size": null
      },
      "elements": [
       {
-       "id": "4fed8c3",
+       "id": "f70fa4a",
        "elType": "widget",
-       "widgetType": "icon-box",
+       "widgetType": "shortcode",
        "settings": {
-        "selected_icon": {
-         "value": "fas fa-plug",
-         "library": "fa-solid"
-        },
-        "view": "stacked",
-        "shape": "circle",
-        "title_text": "1. Charge it",
-        "description_text": "Plug in the USB cable until the light shows it's full.",
-        "position": "top",
-        "text_align": "center",
-        "title_size": "h3",
-        "primary_color": "#2F7A4D",
-        "secondary_color": "#FFFFFF",
-        "icon_size": {
-         "unit": "px",
-         "size": 26,
-         "sizes": []
-        },
-        "icon_padding": {
-         "unit": "em",
-         "size": 0.75,
-         "sizes": []
-        },
-        "icon_space": {
-         "unit": "px",
-         "size": 14,
-         "sizes": []
-        },
-        "title_color": "#2E2A3B",
-        "description_color": "#2E2A3B",
-        "title_typography_typography": "custom",
-        "title_typography_font_family": "Fredoka",
-        "title_typography_font_size": {
-         "unit": "px",
-         "size": 21,
-         "sizes": []
-        },
-        "title_typography_font_weight": "600",
-        "description_typography_typography": "custom",
-        "description_typography_font_family": "Nunito",
-        "description_typography_font_size": {
-         "unit": "px",
-         "size": 16,
-         "sizes": []
-        },
-        "description_typography_font_weight": "400",
-        "description_typography_line_height": {
-         "unit": "em",
-         "size": 1.55,
-         "sizes": []
-        }
-       },
-       "elements": [],
-       "isInner": false
-      }
-     ],
-     "isInner": false
-    },
-    {
-     "id": "6db2907",
-     "elType": "column",
-     "settings": {
-      "_column_size": 33,
-      "_inline_size": null
-     },
-     "elements": [
-      {
-       "id": "8073456",
-       "elType": "widget",
-       "widgetType": "icon-box",
-       "settings": {
-        "selected_icon": {
-         "value": "fas fa-toggle-on",
-         "library": "fa-solid"
-        },
-        "view": "stacked",
-        "shape": "circle",
-        "title_text": "2. Switch it on",
-        "description_text": "Pick talk mode or music mode with the switch under the pot.",
-        "position": "top",
-        "text_align": "center",
-        "title_size": "h3",
-        "primary_color": "#FF7F6E",
-        "secondary_color": "#FFFFFF",
-        "icon_size": {
-         "unit": "px",
-         "size": 26,
-         "sizes": []
-        },
-        "icon_padding": {
-         "unit": "em",
-         "size": 0.75,
-         "sizes": []
-        },
-        "icon_space": {
-         "unit": "px",
-         "size": 14,
-         "sizes": []
-        },
-        "title_color": "#2E2A3B",
-        "description_color": "#2E2A3B",
-        "title_typography_typography": "custom",
-        "title_typography_font_family": "Fredoka",
-        "title_typography_font_size": {
-         "unit": "px",
-         "size": 21,
-         "sizes": []
-        },
-        "title_typography_font_weight": "600",
-        "description_typography_typography": "custom",
-        "description_typography_font_family": "Nunito",
-        "description_typography_font_size": {
-         "unit": "px",
-         "size": 16,
-         "sizes": []
-        },
-        "description_typography_font_weight": "400",
-        "description_typography_line_height": {
-         "unit": "em",
-         "size": 1.55,
-         "sizes": []
-        }
-       },
-       "elements": [],
-       "isInner": false
-      }
-     ],
-     "isInner": false
-    },
-    {
-     "id": "a1776ed",
-     "elType": "column",
-     "settings": {
-      "_column_size": 33,
-      "_inline_size": null
-     },
-     "elements": [
-      {
-       "id": "5ef60e7",
-       "elType": "widget",
-       "widgetType": "icon-box",
-       "settings": {
-        "selected_icon": {
-         "value": "fas fa-comments",
-         "library": "fa-solid"
-        },
-        "view": "stacked",
-        "shape": "circle",
-        "title_text": "3. Talk and play",
-        "description_text": "Say hello and watch it answer back with a dance.",
-        "position": "top",
-        "text_align": "center",
-        "title_size": "h3",
-        "primary_color": "#2F7A4D",
-        "secondary_color": "#FFFFFF",
-        "icon_size": {
-         "unit": "px",
-         "size": 26,
-         "sizes": []
-        },
-        "icon_padding": {
-         "unit": "em",
-         "size": 0.75,
-         "sizes": []
-        },
-        "icon_space": {
-         "unit": "px",
-         "size": 14,
-         "sizes": []
-        },
-        "title_color": "#2E2A3B",
-        "description_color": "#2E2A3B",
-        "title_typography_typography": "custom",
-        "title_typography_font_family": "Fredoka",
-        "title_typography_font_size": {
-         "unit": "px",
-         "size": 21,
-         "sizes": []
-        },
-        "title_typography_font_weight": "600",
-        "description_typography_typography": "custom",
-        "description_typography_font_family": "Nunito",
-        "description_typography_font_size": {
-         "unit": "px",
-         "size": 16,
-         "sizes": []
-        },
-        "description_typography_font_weight": "400",
-        "description_typography_line_height": {
-         "unit": "em",
-         "size": 1.55,
-         "sizes": []
-        }
+        "shortcode": "[product_categories columns=\"3\" hide_empty=\"1\" parent=\"0\"]"
        },
        "elements": [],
        "isInner": false
@@ -1313,7 +1344,7 @@
    "isInner": false
   },
   {
-   "id": "5179bfd",
+   "id": "8d87f3b",
    "elType": "section",
    "settings": {
     "layout": "boxed",
@@ -1330,7 +1361,7 @@
      "unit": "px",
      "top": "90",
      "right": "20",
-     "bottom": "90",
+     "bottom": "0",
      "left": "20",
      "isLinked": false
     },
@@ -1338,15 +1369,14 @@
      "unit": "px",
      "top": "56",
      "right": "16",
-     "bottom": "56",
+     "bottom": "0",
      "left": "16",
      "isLinked": false
-    },
-    "_element_id": "buy"
+    }
    },
    "elements": [
     {
-     "id": "8d87f3b",
+     "id": "77669ac",
      "elType": "column",
      "settings": {
       "_column_size": 100,
@@ -1354,11 +1384,11 @@
      },
      "elements": [
       {
-       "id": "c1b61df",
+       "id": "4977425",
        "elType": "widget",
        "widgetType": "heading",
        "settings": {
-        "title": "GET YOURS",
+        "title": "MOM FAVOURITES",
         "header_size": "p",
         "align": "center",
         "title_color": "#FF7F6E",
@@ -1388,11 +1418,11 @@
        "isInner": false
       },
       {
-       "id": "4977425",
+       "id": "b27b5cf",
        "elType": "widget",
        "widgetType": "heading",
        "settings": {
-        "title": "Bring home the Talking Cactus",
+        "title": "Our best sellers",
         "header_size": "h2",
         "align": "center",
         "title_color": "#2E2A3B",
@@ -1412,31 +1442,6 @@
         "typography_line_height": {
          "unit": "em",
          "size": 1.15,
-         "sizes": []
-        }
-       },
-       "elements": [],
-       "isInner": false
-      },
-      {
-       "id": "b27b5cf",
-       "elType": "widget",
-       "widgetType": "text-editor",
-       "settings": {
-        "editor": "<p>Add it to your cart and check out in under a minute.</p>",
-        "align": "center",
-        "text_color": "#2E2A3B",
-        "typography_typography": "custom",
-        "typography_font_family": "Nunito",
-        "typography_font_size": {
-         "unit": "px",
-         "size": 18,
-         "sizes": []
-        },
-        "typography_font_weight": "400",
-        "typography_line_height": {
-         "unit": "em",
-         "size": 1.6,
          "sizes": []
         }
        },
@@ -1456,13 +1461,59 @@
        },
        "elements": [],
        "isInner": false
-      },
+      }
+     ],
+     "isInner": false
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "cdac72a",
+   "elType": "section",
+   "settings": {
+    "layout": "boxed",
+    "content_width": {
+     "unit": "px",
+     "size": 1140,
+     "sizes": []
+    },
+    "gap": "wider",
+    "structure": "10",
+    "background_background": "classic",
+    "background_color": "#FFFFFF",
+    "padding": {
+     "unit": "px",
+     "top": "0",
+     "right": "20",
+     "bottom": "90",
+     "left": "20",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "0",
+     "right": "16",
+     "bottom": "56",
+     "left": "16",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "0939e1b",
+     "elType": "column",
+     "settings": {
+      "_column_size": 100,
+      "_inline_size": null
+     },
+     "elements": [
       {
-       "id": "77669ac",
+       "id": "5179bfd",
        "elType": "widget",
        "widgetType": "shortcode",
        "settings": {
-        "shortcode": "[product_page sku=\"BV-TC-001\"]"
+        "shortcode": "[products limit=\"4\" columns=\"4\" best_selling=\"true\"]"
        },
        "elements": [],
        "isInner": false
@@ -1474,7 +1525,7 @@
    "isInner": false
   },
   {
-   "id": "7675d6a",
+   "id": "e206abd",
    "elType": "section",
    "settings": {
     "layout": "boxed",
@@ -1506,7 +1557,7 @@
    },
    "elements": [
     {
-     "id": "0e22c6d",
+     "id": "7675d6a",
      "elType": "column",
      "settings": {
       "_column_size": 100,
@@ -1514,7 +1565,7 @@
      },
      "elements": [
       {
-       "id": "0939e1b",
+       "id": "e2bbb00",
        "elType": "widget",
        "widgetType": "heading",
        "settings": {
@@ -1548,7 +1599,7 @@
        "isInner": false
       },
       {
-       "id": "cdac72a",
+       "id": "193a6a8",
        "elType": "widget",
        "widgetType": "heading",
        "settings": {
@@ -1579,7 +1630,7 @@
        "isInner": false
       },
       {
-       "id": "e2bbb00",
+       "id": "900d93a",
        "elType": "widget",
        "widgetType": "spacer",
        "settings": {
@@ -1593,30 +1644,20 @@
        "isInner": false
       },
       {
-       "id": "72b99ec",
+       "id": "0e22c6d",
        "elType": "widget",
        "widgetType": "accordion",
        "settings": {
         "tabs": [
          {
-          "_id": "193a6a8",
-          "tab_title": "What age is the Talking Cactus for?",
-          "tab_content": "<p>Check the age rating on the box of your Talking Cactus before giving it to your little one. It is a soft toy with a battery inside, so play should always be supervised, and it is not a sleep toy to leave in a cot.</p>"
-         },
-         {
-          "_id": "900d93a",
-          "tab_title": "How does it charge?",
-          "tab_content": "<p>It charges with the USB cable in the box. Plug it into a phone charger or a laptop, and a full charge gives hours of play.</p>"
-         },
-         {
           "_id": "cc501c8",
-          "tab_title": "Can I turn the volume down?",
-          "tab_content": "<p>Yes. The switch underneath the pot has a quieter setting for naps and car trips, and an off setting for when you need some peace.</p>"
+          "tab_title": "How long does delivery take?",
+          "tab_content": "<p>We deliver across South Africa. Orders placed before 12:00 on a weekday are packed the same day, and most arrive within 2 to 4 working days in the main centres. You'll get a tracking number by email.</p>"
          },
          {
           "_id": "8d3ba58",
-          "tab_title": "How long does delivery take?",
-          "tab_content": "<p>We deliver across South Africa. Orders placed before 12:00 on a weekday are packed the same day, and most arrive within 2 to 4 working days in the main centres. You'll get a tracking number by email.</p>"
+          "tab_title": "How much is delivery?",
+          "tab_content": "<p>The delivery fee is shown in your cart and at checkout before you pay. Look out for free-delivery offers.</p>"
          },
          {
           "_id": "7f62fe2",
@@ -1625,8 +1666,13 @@
          },
          {
           "_id": "5c91be2",
+          "tab_title": "Are your products safe for my baby?",
+          "tab_content": "<p>We choose every product with little ones in mind. Each product page shows the age it's suitable for, so check it before you buy, and always supervise play.</p>"
+         },
+         {
+          "_id": "72b99ec",
           "tab_title": "What if something is wrong with my order?",
-          "tab_content": "<p>Message us on WhatsApp or email within 7 days of delivery and we'll sort it out with a replacement or a refund. See our <a href='/faq-delivery/'>Delivery &amp; Returns</a> page for the details.</p>"
+          "tab_content": "<p>Message us on WhatsApp or email within 7 days of delivery and we'll sort it out with a replacement or a refund. See our <a href='/faq-delivery/'>FAQ &amp; Delivery</a> page for the details.</p>"
          }
         ],
         "selected_icon": {
@@ -1678,7 +1724,7 @@
    "isInner": false
   },
   {
-   "id": "ba1c2d1",
+   "id": "b04c1f0",
    "elType": "section",
    "settings": {
     "layout": "boxed",
@@ -1710,7 +1756,7 @@
    },
    "elements": [
     {
-     "id": "4b6a3c1",
+     "id": "ba1c2d1",
      "elType": "column",
      "settings": {
       "_column_size": 100,
@@ -1718,7 +1764,7 @@
      },
      "elements": [
       {
-       "id": "e206abd",
+       "id": "93ab8ee",
        "elType": "widget",
        "widgetType": "heading",
        "settings": {
@@ -1749,7 +1795,7 @@
        "isInner": false
       },
       {
-       "id": "93ab8ee",
+       "id": "a1269af",
        "elType": "widget",
        "widgetType": "text-editor",
        "settings": {
@@ -1774,7 +1820,7 @@
        "isInner": false
       },
       {
-       "id": "a1269af",
+       "id": "1d03ed4",
        "elType": "widget",
        "widgetType": "spacer",
        "settings": {
@@ -1788,13 +1834,13 @@
        "isInner": false
       },
       {
-       "id": "1d03ed4",
+       "id": "f2a6f63",
        "elType": "widget",
        "widgetType": "button",
        "settings": {
-        "text": "Buy the Talking Cactus",
+        "text": "Shop now",
         "link": {
-         "url": "#buy",
+         "url": "/shop/",
          "is_external": "",
          "nofollow": "",
          "custom_attributes": ""
@@ -1845,7 +1891,7 @@
        "isInner": false
       },
       {
-       "id": "f2a6f63",
+       "id": "1df87dc",
        "elType": "widget",
        "widgetType": "spacer",
        "settings": {
@@ -1859,7 +1905,7 @@
        "isInner": false
       },
       {
-       "id": "1df87dc",
+       "id": "4b6a3c1",
        "elType": "widget",
        "widgetType": "button",
        "settings": {

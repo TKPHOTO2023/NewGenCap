@@ -7,7 +7,7 @@
  },
  "content": [
   {
-   "id": "ba53f0d",
+   "id": "d3375ee",
    "elType": "section",
    "settings": {
     "layout": "boxed",
@@ -39,7 +39,7 @@
    },
    "elements": [
     {
-     "id": "af4aa95",
+     "id": "ba53f0d",
      "elType": "column",
      "settings": {
       "_column_size": 100,
@@ -47,7 +47,7 @@
      },
      "elements": [
       {
-       "id": "b04c1f0",
+       "id": "863d8c0",
        "elType": "widget",
        "widgetType": "heading",
        "settings": {
@@ -81,7 +81,7 @@
        "isInner": false
       },
       {
-       "id": "863d8c0",
+       "id": "32b6f7a",
        "elType": "widget",
        "widgetType": "heading",
        "settings": {
@@ -112,11 +112,11 @@
        "isInner": false
       },
       {
-       "id": "32b6f7a",
+       "id": "af4aa95",
        "elType": "widget",
        "widgetType": "text-editor",
        "settings": {
-        "editor": "<p>BabyVibes started with a simple idea: the best baby toys are the ones that make you laugh too. We pick fun, good-value toys, test them at home with our own little ones, and deliver them across South Africa.</p>",
+        "editor": "<p>BabyVibes started with a simple idea: the best things for babies are the ones that make you smile too. We pick fun, good-value toys and baby essentials, test them at home with our own little ones, and deliver them across South Africa.</p>",
         "align": "center",
         "text_color": "#2E2A3B",
         "typography_typography": "custom",
@@ -143,7 +143,7 @@
    "isInner": false
   },
   {
-   "id": "aef6659",
+   "id": "f0cc62d",
    "elType": "section",
    "settings": {
     "layout": "boxed",
@@ -175,7 +175,7 @@
    },
    "elements": [
     {
-     "id": "6712084",
+     "id": "1701242",
      "elType": "column",
      "settings": {
       "_column_size": 33,
@@ -183,7 +183,7 @@
      },
      "elements": [
       {
-       "id": "d3375ee",
+       "id": "6712084",
        "elType": "widget",
        "widgetType": "icon-box",
        "settings": {
@@ -194,7 +194,7 @@
         "view": "stacked",
         "shape": "circle",
         "title_text": "Picked with care",
-        "description_text": "We only stock toys we'd happily give our own kids.",
+        "description_text": "We only stock what we'd happily give our own kids.",
         "position": "top",
         "text_align": "center",
         "title_size": "h3",
@@ -246,7 +246,7 @@
      "isInner": false
     },
     {
-     "id": "2a25254",
+     "id": "601af54",
      "elType": "column",
      "settings": {
       "_column_size": 33,
@@ -254,7 +254,7 @@
      },
      "elements": [
       {
-       "id": "1701242",
+       "id": "2a25254",
        "elType": "widget",
        "widgetType": "icon-box",
        "settings": {
@@ -317,7 +317,7 @@
      "isInner": false
     },
     {
-     "id": "8e29363",
+     "id": "aef6659",
      "elType": "column",
      "settings": {
       "_column_size": 33,
@@ -325,7 +325,7 @@
      },
      "elements": [
       {
-       "id": "601af54",
+       "id": "8e29363",
        "elType": "widget",
        "widgetType": "icon-box",
        "settings": {
@@ -391,7 +391,7 @@
    "isInner": false
   },
   {
-   "id": "77f3ce5",
+   "id": "92e335d",
    "elType": "section",
    "settings": {
     "layout": "boxed",
@@ -423,7 +423,7 @@
    },
    "elements": [
     {
-     "id": "b4ce4ec",
+     "id": "77f3ce5",
      "elType": "column",
      "settings": {
       "_column_size": 100,
@@ -431,11 +431,11 @@
      },
      "elements": [
       {
-       "id": "f0cc62d",
+       "id": "2c1e183",
        "elType": "widget",
        "widgetType": "heading",
        "settings": {
-        "title": "Say hello to the Talking Cactus",
+        "title": "Come and have a look",
         "header_size": "h2",
         "align": "center",
         "title_color": "#2E2A3B",
@@ -462,11 +462,11 @@
        "isInner": false
       },
       {
-       "id": "2c1e183",
+       "id": "2898400",
        "elType": "widget",
        "widgetType": "text-editor",
        "settings": {
-        "editor": "<p>Our first toy, and already a favourite.</p>",
+        "editor": "<p>New toys and baby goodies are added all the time.</p>",
         "align": "center",
         "text_color": "#2E2A3B",
         "typography_typography": "custom",
@@ -487,13 +487,13 @@
        "isInner": false
       },
       {
-       "id": "2898400",
+       "id": "b4ce4ec",
        "elType": "widget",
        "widgetType": "button",
        "settings": {
         "text": "Shop now",
         "link": {
-         "url": "/#buy",
+         "url": "/shop/",
          "is_external": "",
          "nofollow": "",
          "custom_attributes": ""

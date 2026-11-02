@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name:       BabyVibes Store Kit
- * Description:       Sets up the BabyVibes shop (Talking Cactus product, Elementor pages, menu, homepage) and adds the BabyVibes look and one-product checkout tweaks to WooCommerce.
- * Version:           1.0.0
+ * Description:       Sets up the BabyVibes shop (first product, Elementor pages, menu, homepage, South African store settings) and adds the BabyVibes look to WooCommerce.
+ * Version:           1.1.0
  * Requires at least: 6.2
  * Requires PHP:      7.4
  * Author:            BabyVibes
@@ -11,7 +11,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'BABYVIBES_KIT_VERSION', '1.0.0' );
+define( 'BABYVIBES_KIT_VERSION', '1.1.0' );
 define( 'BABYVIBES_KIT_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BABYVIBES_KIT_URL', plugin_dir_url( __FILE__ ) );
 define( 'BABYVIBES_SKU', 'BV-TC-001' );

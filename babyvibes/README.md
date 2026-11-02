@@ -1,20 +1,47 @@
 # BabyVibes shop (WordPress + WooCommerce + Elementor)
 
-A one-product shop for moms, selling the Talking Cactus. Everything is in one plugin,
-`dist/babyvibes-store-kit.zip`. Upload it, fill in three fields, and it builds the shop.
+An online shop for moms and babies. It launches with one product, the Talking Cactus, and is built to grow:
+the homepage and shop list products automatically, so new products appear as soon as you publish them.
+Everything is in one plugin, `dist/babyvibes-store-kit.zip`. Upload it, fill in three fields, and it builds the
+shop.
 
 ## What the plugin sets up
 
-- **Talking Cactus product** (SKU `BV-TC-001`, category Toys) with description, short description,
-  shipping weight and size. You add the photos.
-- **Four pages built with Elementor**, editable as normal: Home, About, FAQ & Delivery, Contact.
-- **Homepage** set to the Home page, and a **main menu** placed in the theme's header.
+- **Your first product, the Talking Cactus** (SKU `BV-TC-001`, category Toys), with description, short
+  description, shipping weight and size. You add the photos.
+- **Four pages built with Elementor**, editable as normal: Home, About, FAQ & Delivery, Contact. The Home page
+  has these sections:
+  - hero with a "Shop now" button
+  - trust strip
+  - **New arrivals** (your latest 8 products)
+  - a **Spotlight** on the Talking Cactus
+  - **Shop by category** (categories that have products)
+  - **Best sellers**
+  - FAQ
+  - closing call to action
+- **Homepage** set to the Home page, and a **main menu** (Home, Shop, About, FAQ & Delivery, Contact) placed
+  in the theme's header.
 - **South African store settings**: rand (ZAR), selling and delivering in South Africa only.
-- **One-product checkout**: the button reads "Buy now" and goes straight to checkout, `/shop/` sends visitors
-  to the product, related products are hidden, and a "Delivery across SA · Secure checkout · Help on
-  WhatsApp" line shows under the button.
-- **BabyVibes look**: Fredoka headings, Nunito text, green buttons, peach and cream backgrounds, and styles for
-  WooCommerce pages, cart and checkout.
+- **Normal store checkout**: "Add to cart" keeps shoppers browsing, and the cart, related products and shop
+  page work as standard WooCommerce. A "Delivery across SA · Secure checkout · Help on WhatsApp" line shows
+  under every product's buy button.
+- **BabyVibes look**: Fredoka headings, Nunito text, green buttons, peach and cream backgrounds, rounded
+  product cards, and styles for the shop, product pages, cart and checkout.
+
+## Adding more products
+
+1. Products > Add New: add a name, price, description, photos and an age guide.
+2. Choose a **category** (create new ones such as Feeding, Bath time or Sleep on the right). Categories show
+   up in "Shop by category" once they have a product.
+3. Publish. The product appears in New arrivals, the shop and its category straight away.
+
+Optional extras:
+
+- Tick **Featured** (the ☆ in the Products list) to build a "Featured" section later.
+- Change which product the homepage **Spotlight** features by editing that section in Elementor (heading, text
+  and button link).
+- While the shop has only one or two products, you may want to hide the "Best sellers" section (Elementor:
+  right-click the section > Hide on desktop/tablet/mobile), since it will repeat New arrivals.
 
 ## Build it (about 20 minutes)
 
@@ -67,9 +94,9 @@ To change the templates themselves (for developers): edit `tools/build_templates
 `python3 tools/build_templates.py`. It regenerates `plugin/babyvibes-store-kit/templates/*.json` and the zip.
 Each template JSON can also be imported on its own in Elementor (Templates > Saved Templates > Import).
 
-The homepage illustration is `tools/cactus.svg`, embedded in the page (no upload needed). Once you have
-good photos, you can swap the second illustration ("Why moms love it") for a photo of a little one playing
-with the cactus.
+The homepage illustration is `tools/cactus.svg`, embedded in the page (no upload needed). As the range grows,
+swap the hero illustration for a banner photo of your products, and the Spotlight illustration for a photo of
+whichever product you're featuring.
 
 ## Files
 

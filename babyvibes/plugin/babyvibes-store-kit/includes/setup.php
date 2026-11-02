@@ -81,7 +81,7 @@ function babyvibes_setup_screen() {
 	?>
 	<div class="wrap">
 		<h1>BabyVibes: set up store</h1>
-		<p>This creates the Talking Cactus product, the Home, About, FAQ &amp; Delivery and Contact pages (built with Elementor), the main menu, and sets your homepage and South African store settings. You can run it again at any time.</p>
+		<p>This creates your first product (the Talking Cactus), the Home, About, FAQ &amp; Delivery and Contact pages (built with Elementor), the main menu, and sets your homepage and South African store settings. You can run it again at any time.</p>
 
 		<?php if ( $missing && ! $report ) : ?>
 			<div class="notice notice-warning"><p>Install and activate <strong><?php echo esc_html( implode( ' and ', $missing ) ); ?></strong> before running the setup (Plugins &gt; Add New).</p></div>
@@ -143,14 +143,14 @@ function babyvibes_run_setup( array $opts, $overwrite ) {
 	update_option( 'woocommerce_allowed_countries', 'specific' );
 	update_option( 'woocommerce_specific_allowed_countries', array( 'ZA' ) );
 	update_option( 'woocommerce_ship_to_countries', '' );
-	// Non-AJAX add to cart, so "Buy now" can go straight to checkout.
-	update_option( 'woocommerce_enable_ajax_add_to_cart', 'no' );
-	update_option( 'woocommerce_cart_redirect_after_add', 'yes' );
+	// Shoppers stay on the page and keep browsing after adding to the cart.
+	update_option( 'woocommerce_enable_ajax_add_to_cart', 'yes' );
+	update_option( 'woocommerce_cart_redirect_after_add', 'no' );
 	$log[] = array( 'ok', 'Store set to South Africa and rand (ZAR).' );
 
 	// Product.
 	$product_id = babyvibes_upsert_product( $opts['price'] );
-	$log[]      = array( 'ok', sprintf( 'Talking Cactus product ready at R%s. <a href="%s">Add its photos</a> (main image and gallery).', esc_html( $opts['price'] ), esc_url( get_edit_post_link( $product_id, 'raw' ) ) ) );
+	$log[]      = array( 'ok', sprintf( 'Talking Cactus product ready at R%s. <a href="%s">Add its photos</a> (main image and gallery). Add more products under Products &gt; Add New: they appear on the homepage and shop automatically.', esc_html( $opts['price'] ), esc_url( get_edit_post_link( $product_id, 'raw' ) ) ) );
 
 	// Pages.
 	$pages = $opts['pages'];
@@ -237,6 +237,11 @@ function babyvibes_product_description() {
 			'</ul>',
 			'<h4>In the box</h4>',
 			'<ul><li>1 x Talking Cactus</li><li>1 x USB charging cable</li></ul>',
+			'<h4>Good to know</h4>',
+			'<ul>',
+			'<li><strong>Charging:</strong> use the USB cable in the box with a phone charger or laptop.</li>',
+			'<li><strong>Volume:</strong> the switch under the pot has a quieter setting and an off setting.</li>',
+			'</ul>',
 			'<h4>Safety</h4>',
 			'<p>Please check the age rating on the packaging. Always supervise play, charge it with an adult nearby, and don\'t leave it in a cot.</p>',
 		)
@@ -315,7 +320,7 @@ function babyvibes_build_menu( array $pages ) {
 
 	$items = array(
 		array( 'Home', 'page', $pages['home'] ?? 0 ),
-		array( 'Shop the Talking Cactus', 'product', wc_get_product_id_by_sku( BABYVIBES_SKU ) ),
+		array( 'Shop', 'page', wc_get_page_id( 'shop' ) > 0 ? wc_get_page_id( 'shop' ) : 0 ),
 		array( 'About', 'page', $pages['about'] ?? 0 ),
 		array( 'FAQ & Delivery', 'page', $pages['faq-delivery'] ?? 0 ),
 		array( 'Contact', 'page', $pages['contact'] ?? 0 ),

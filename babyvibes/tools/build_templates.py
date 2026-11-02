@@ -21,7 +21,6 @@ ZIP = HERE.parent / "dist" / "babyvibes-store-kit.zip"
 
 SHOP = {
     "name": "BabyVibes",
-    "sku": "BV-TC-001",
     "whatsapp": "27000000000",  # placeholder, replaced by the setup screen
     "email": "hello@babyvibes.co.za",  # placeholder, replaced by the setup screen
     "hours": "Monday to Friday, 08:00 to 17:00",
@@ -232,109 +231,105 @@ def template(title, content):
 
 # Pages -----------------------------------------------------------------------------------
 
-SKU = SHOP["sku"]
 WA = f"https://wa.me/{SHOP['whatsapp']}"
 CACTUS_SVG = (HERE / "cactus.svg").read_text().strip()
 
+PRODUCT_URL = "/product/talking-cactus/"
+SHOP_URL = "/shop/"
+
+# Store-wide questions. Product-specific answers (age, charging, volume) live on each product page.
 FAQ = [
-    ("What age is the Talking Cactus for?",
-     "<p>Check the age rating on the box of your Talking Cactus before giving it to your little one. "
-     "It is a soft toy with a battery inside, so play should always be supervised, and it is not a sleep toy "
-     "to leave in a cot.</p>"),
-    ("How does it charge?",
-     "<p>It charges with the USB cable in the box. Plug it into a phone charger or a laptop, and a full charge "
-     "gives hours of play.</p>"),
-    ("Can I turn the volume down?",
-     "<p>Yes. The switch underneath the pot has a quieter setting for naps and car trips, and an off setting "
-     "for when you need some peace.</p>"),
     ("How long does delivery take?",
      "<p>We deliver across South Africa. Orders placed before 12:00 on a weekday are packed the same day, "
      "and most arrive within 2 to 4 working days in the main centres. You'll get a tracking number by email.</p>"),
+    ("How much is delivery?",
+     "<p>The delivery fee is shown in your cart and at checkout before you pay. Look out for free-delivery "
+     "offers.</p>"),
     ("How do I pay?",
      "<p>Pay securely at checkout by card, Instant EFT or the other options shown there. We never see or "
      "store your card details.</p>"),
+    ("Are your products safe for my baby?",
+     "<p>We choose every product with little ones in mind. Each product page shows the age it's suitable for, "
+     "so check it before you buy, and always supervise play.</p>"),
     ("What if something is wrong with my order?",
      "<p>Message us on WhatsApp or email within 7 days of delivery and we'll sort it out with a replacement "
-     "or a refund. See our <a href='/faq-delivery/'>Delivery &amp; Returns</a> page for the details.</p>"),
+     "or a refund. See our <a href='/faq-delivery/'>FAQ &amp; Delivery</a> page for the details.</p>"),
 ]
+
+
+def head_block(kick, title, intro=None, bg=CREAM):
+    """A centred heading block that sits directly on top of the next section."""
+    widgets = [kicker(kick), heading(title)]
+    if intro:
+        widgets.append(text(f"<p>{intro}</p>"))
+    widgets.append(spacer(10))
+    sec = one(*widgets, bg=bg)
+    sec["settings"]["padding"] = box(90, 20, 0, 20)
+    sec["settings"]["padding_mobile"] = box(56, 16, 0, 16)
+    return sec
+
+
+def tail(sec):
+    """Remove the top padding from a section that follows head_block()."""
+    sec["settings"]["padding"] = box(0, 20, 90, 20)
+    sec["settings"]["padding_mobile"] = box(0, 16, 56, 16)
+    return sec
 
 
 def home():
     hero = section([
         column(55,
-               kicker("New at BabyVibes", align="left"),
-               heading("Meet the Talking Cactus, the little friend who talks back",
-                       tag="h1", size=54, mobile=36, align="left"),
-               text("<p>Say something and the Talking Cactus says it right back in a giggly voice, then wiggles, "
-                    "dances and lights up. It's the toy that keeps the giggles going.</p>",
+               kicker("Happy babies, happy moms", align="left"),
+               heading("Toys and goodies that bring the giggles", tag="h1", size=54, mobile=36,
+                       align="left"),
+               text("<p>BabyVibes is a shop for moms, by moms. We pick fun, good-value toys and baby "
+                    "essentials, test them with our own little ones and deliver them across South Africa.</p>",
                     align="left", size=19),
                spacer(8),
-               shortcode(f'[add_to_cart sku="{SKU}" show_price="true" style=""]'),
+               button("Shop now", SHOP_URL, align="left"),
                icon_list(["Delivery across South Africa",
                           "Secure checkout",
-                          "USB rechargeable, so no batteries to buy"]),
+                          "Help on WhatsApp from real moms"]),
                align="middle"),
         column(45, html(CACTUS_SVG), align="middle"),
     ], bg=PEACH, pad=(80, 20), middle=True)
 
-    features = one(
-        kicker("What it does"),
-        heading("Talks, dances, sings and glows"),
-        text("<p>Everything little ones love, in one cheeky cactus.</p>"),
-        spacer(20),
-        bg=CREAM)
-    features["settings"]["padding"] = box(90, 20, 0, 20)
-    features["settings"]["padding_mobile"] = box(56, 16, 0, 16)
-    feature_row = section([
-        column(25, icon_box("microphone", "Repeats what you say",
-                            "Talk, sing or giggle and it copies you in a funny voice.")),
-        column(25, icon_box("music", "Sings and dances",
-                            "A playlist of catchy songs with a wiggle to match.", color=CORAL)),
-        column(25, icon_box("lightbulb", "Lights up",
-                            "Soft, colourful lights that catch little eyes.")),
-        column(25, icon_box("battery-full", "USB rechargeable",
-                            "Charge it like your phone. No batteries to buy.", color=CORAL)),
-    ], bg=CREAM, pad=(0, 20), pad_mobile=(0, 16))
-    # Close the features block with some room under the row of boxes.
-    feature_row["settings"]["padding"] = box(0, 20, 90, 20)
-    feature_row["settings"]["padding_mobile"] = box(0, 16, 56, 16)
+    trust = section([
+        column(25, icon_box("truck", "Fast delivery", "Tracked delivery across South Africa.")),
+        column(25, icon_box("lock", "Secure checkout", "Card, Instant EFT and more.", color=CORAL)),
+        column(25, icon_box("heart", "Mom-picked", "Every product tested by real moms.")),
+        column(25, icon_box("comment-dots", "Friendly help", "Questions? We're a WhatsApp away.",
+                            color=CORAL)),
+    ], bg=WHITE, pad=(56, 20), pad_mobile=(40, 16))
 
-    why = section([
+    # Product grids fill themselves: every product you publish shows up here automatically.
+    new_head = head_block("Shop", "New arrivals", "The latest finds for your little one.")
+    new_grid = tail(section([column(100,
+        shortcode('[products limit="8" columns="4" orderby="date" order="DESC" paginate="false"]'),
+        button("See all products", SHOP_URL, primary=False))], bg=CREAM))
+
+    spotlight = section([
         column(50, html(CACTUS_SVG), align="middle"),
         column(50,
-               kicker("Why moms love it", align="left"),
-               heading("More giggles, more chatting, more play", align="left"),
-               text("<p>Little ones love hearing their own voice played back. The Talking Cactus turns "
-                    "babbling into a game and keeps them busy for longer than most toys.</p>",
-                    align="left"),
-               icon_list(["Encourages babbling and first words",
-                          "Makes tummy time more fun",
-                          "A great distraction for car trips and nappy changes",
-                          "A gift that gets a reaction at baby showers and birthdays"]),
+               kicker("Spotlight", align="left"),
+               heading("Meet the Talking Cactus", align="left"),
+               text("<p>Say something and it says it right back in a giggly voice, then wiggles, dances and "
+                    "lights up. Little ones love hearing their own voice played back.</p>", align="left"),
+               icon_list(["Repeats what you say",
+                          "Sings, dances and lights up",
+                          "USB rechargeable, so no batteries to buy"]),
+               spacer(6),
+               button("Shop the Talking Cactus", PRODUCT_URL, align="left"),
                align="middle"),
     ], bg=GREEN_SOFT, middle=True)
 
-    steps = section([
-        column(33, icon_box("plug", "1. Charge it", "Plug in the USB cable until the light shows it's full.")),
-        column(33, icon_box("toggle-on", "2. Switch it on",
-                            "Pick talk mode or music mode with the switch under the pot.", color=CORAL)),
-        column(33, icon_box("comments", "3. Talk and play",
-                            "Say hello and watch it answer back with a dance.")),
-    ], bg=CREAM, pad=(0, 20), pad_mobile=(0, 16))
-    steps["settings"]["padding"] = box(0, 20, 90, 20)
-    steps["settings"]["padding_mobile"] = box(0, 16, 56, 16)
-    steps_head = one(kicker("How it works"), heading("Ready to play in three steps"), spacer(10),
-                     bg=CREAM)
-    steps_head["settings"]["padding"] = box(90, 20, 0, 20)
-    steps_head["settings"]["padding_mobile"] = box(56, 16, 0, 16)
+    cat_head = head_block("Browse", "Shop by category")
+    cat_grid = tail(section([column(100,
+        shortcode('[product_categories columns="3" hide_empty="1" parent="0"]'))], bg=CREAM))
 
-    buy = one(
-        kicker("Get yours"),
-        heading("Bring home the Talking Cactus"),
-        text("<p>Add it to your cart and check out in under a minute.</p>"),
-        spacer(10),
-        shortcode(f'[product_page sku="{SKU}"]'),
-        bg=WHITE, anchor="buy")
+    best_head = head_block("Mom favourites", "Our best sellers", bg=WHITE)
+    best_grid = tail(section([column(100,
+        shortcode('[products limit="4" columns="4" best_selling="true"]'))], bg=WHITE))
 
     faq = section([
         column(100,
@@ -348,27 +343,28 @@ def home():
         heading("Ready for the giggles?", size=42, color=WHITE),
         text("<p>Questions before you order? We're a WhatsApp away.</p>", color=WHITE),
         spacer(6),
-        button("Buy the Talking Cactus", "#buy", primary=False),
+        button("Shop now", SHOP_URL, primary=False),
         spacer(6),
         button("Chat on WhatsApp", WA, primary=False, size="md", external=True),
         bg=GREEN, pad=(80, 20))
 
     return template("BabyVibes: Home",
-                    [hero, features, feature_row, why, steps_head, steps, buy, faq, final])
+                    [hero, trust, new_head, new_grid, spotlight, cat_head, cat_grid,
+                     best_head, best_grid, faq, final])
 
 
 def about():
     intro = one(
         kicker("Our story"),
         heading("Made by moms, for moms", tag="h1", size=50, mobile=34),
-        text("<p>BabyVibes started with a simple idea: the best baby toys are the ones that make "
-             "you laugh too. We pick fun, good-value toys, test them at home with our own little ones, "
-             "and deliver them across South Africa.</p>"),
+        text("<p>BabyVibes started with a simple idea: the best things for babies are the ones that "
+             "make you smile too. We pick fun, good-value toys and baby essentials, test them at home with "
+             "our own little ones, and deliver them across South Africa.</p>"),
         bg=PEACH, width=820)
 
     values = section([
         column(33, icon_box("heart", "Picked with care",
-                            "We only stock toys we'd happily give our own kids.")),
+                            "We only stock what we'd happily give our own kids.")),
         column(33, icon_box("truck", "Delivered to your door",
                             "Fast, tracked delivery across South Africa.", color=CORAL)),
         column(33, icon_box("smile", "Real people, real help",
@@ -376,9 +372,9 @@ def about():
     ], bg=CREAM)
 
     cta = one(
-        heading("Say hello to the Talking Cactus"),
-        text("<p>Our first toy, and already a favourite.</p>"),
-        button("Shop now", "/#buy"),
+        heading("Come and have a look"),
+        text("<p>New toys and baby goodies are added all the time.</p>"),
+        button("Shop now", SHOP_URL),
         bg=GREEN_SOFT, width=820)
     return template("BabyVibes: About", [intro, values, cta])
 
@@ -387,7 +383,7 @@ def contact():
     intro = one(
         kicker("Contact us"),
         heading("We'd love to hear from you", tag="h1", size=50, mobile=34),
-        text("<p>Questions about an order, delivery or the Talking Cactus? The quickest way to reach us is "
+        text("<p>Questions about an order, delivery or one of our products? The quickest way to reach us is "
              "WhatsApp.</p>"),
         bg=PEACH, width=820)
 
@@ -427,12 +423,12 @@ def faq_page():
         ("Can I track my parcel?", "<p>Yes. We email your tracking number as soon as your order ships.</p>"),
     ]
     returns = [
-        ("My toy arrived damaged or doesn't work",
+        ("My order arrived damaged or doesn't work",
          "<p>We're sorry! Contact us within 7 days of delivery with your order number and a photo or video, "
          "and we'll send a replacement or refund you in full, including delivery.</p>"),
-        ("Can I return a toy I don't want?",
+        ("Can I return something I don't want?",
          "<p>Yes, within 7 days of delivery, if it's unused and in its original packaging. Contact us first "
-         "and we'll explain how to send it back. Once we receive it, we refund the price of the toy.</p>"),
+         "and we'll explain how to send it back. Once we receive it, we refund the price of the product.</p>"),
         ("How long do refunds take?",
          "<p>We process refunds within 5 working days of receiving the return. Your bank may take a few "
          "more days to show the money.</p>"),

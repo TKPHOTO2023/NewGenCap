@@ -7,7 +7,7 @@
  },
  "content": [
   {
-   "id": "3c75373",
+   "id": "3cdbea0",
    "elType": "section",
    "settings": {
     "layout": "boxed",
@@ -39,7 +39,7 @@
    },
    "elements": [
     {
-     "id": "08c5627",
+     "id": "3c75373",
      "elType": "column",
      "settings": {
       "_column_size": 100,
@@ -47,7 +47,7 @@
      },
      "elements": [
       {
-       "id": "92e335d",
+       "id": "47ee9d2",
        "elType": "widget",
        "widgetType": "heading",
        "settings": {
@@ -81,7 +81,7 @@
        "isInner": false
       },
       {
-       "id": "47ee9d2",
+       "id": "c26522b",
        "elType": "widget",
        "widgetType": "heading",
        "settings": {
@@ -112,11 +112,11 @@
        "isInner": false
       },
       {
-       "id": "c26522b",
+       "id": "08c5627",
        "elType": "widget",
        "widgetType": "text-editor",
        "settings": {
-        "editor": "<p>Questions about an order, delivery or the Talking Cactus? The quickest way to reach us is WhatsApp.</p>",
+        "editor": "<p>Questions about an order, delivery or one of our products? The quickest way to reach us is WhatsApp.</p>",
         "align": "center",
         "text_color": "#2E2A3B",
         "typography_typography": "custom",
@@ -143,7 +143,7 @@
    "isInner": false
   },
   {
-   "id": "85e7e47",
+   "id": "d561605",
    "elType": "section",
    "settings": {
     "layout": "boxed",
@@ -175,7 +175,7 @@
    },
    "elements": [
     {
-     "id": "37dc8f4",
+     "id": "1a7dcf6",
      "elType": "column",
      "settings": {
       "_column_size": 50,
@@ -201,7 +201,7 @@
      },
      "elements": [
       {
-       "id": "3cdbea0",
+       "id": "11d8778",
        "elType": "widget",
        "widgetType": "icon-box",
        "settings": {
@@ -261,7 +261,7 @@
        "isInner": false
       },
       {
-       "id": "11d8778",
+       "id": "37dc8f4",
        "elType": "widget",
        "widgetType": "button",
        "settings": {
@@ -321,7 +321,7 @@
      "isInner": false
     },
     {
-     "id": "81ceab6",
+     "id": "85e7e47",
      "elType": "column",
      "settings": {
       "_column_size": 50,
@@ -347,7 +347,7 @@
      },
      "elements": [
       {
-       "id": "1a7dcf6",
+       "id": "aa9a971",
        "elType": "widget",
        "widgetType": "icon-box",
        "settings": {
@@ -407,7 +407,7 @@
        "isInner": false
       },
       {
-       "id": "aa9a971",
+       "id": "81ceab6",
        "elType": "widget",
        "widgetType": "button",
        "settings": {
@@ -470,7 +470,7 @@
    "isInner": false
   },
   {
-   "id": "f1eb83e",
+   "id": "cb9660c",
    "elType": "section",
    "settings": {
     "layout": "boxed",
@@ -502,7 +502,7 @@
    },
    "elements": [
     {
-     "id": "29faf8f",
+     "id": "f1eb83e",
      "elType": "column",
      "settings": {
       "_column_size": 100,
@@ -510,7 +510,7 @@
      },
      "elements": [
       {
-       "id": "d561605",
+       "id": "846e008",
        "elType": "widget",
        "widgetType": "heading",
        "settings": {
@@ -541,7 +541,7 @@
        "isInner": false
       },
       {
-       "id": "846e008",
+       "id": "29faf8f",
        "elType": "widget",
        "widgetType": "text-editor",
        "settings": {
