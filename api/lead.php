@@ -147,7 +147,7 @@ if ($type === 'tool-report') {
     }
     $rows['I am a'] = oneLine(field('role', 40));
     $rows['Service of interest'] = oneLine(field('service', 80));
-    foreach (['industry' => 'Industry', 'amount' => 'Funding required (R)', 'stage' => 'Project stage'] as $key => $label) {
+    foreach (['industry' => 'Industry', 'subsector' => 'Sub-sector', 'amount' => 'Funding required (R)', 'stage' => 'Project stage'] as $key => $label) {
         $v = oneLine(field($key, 120));
         if ($v !== '') {
             $rows[$label] = $v;

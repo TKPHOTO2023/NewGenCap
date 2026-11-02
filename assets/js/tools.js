@@ -22,7 +22,8 @@
     { name: 'Commercial strength', qs: ['revenue', 'equity'] },
     { name: 'Team & track record', qs: ['team', 'financials'] },
     { name: 'Technical & approvals', qs: ['technical', 'permits'] },
-    { name: 'Risk management', qs: ['risk'] }
+    { name: 'Risk management', qs: ['risk'] },
+    { name: 'Telecoms readiness', qs: ['tc_rights', 'tc_licence', 'tc_demand', 'tc_build', 'tc_rollout'] }
   ];
   var GAPS = {
     stage: 'Complete a feasibility study that confirms the project can be built and run as planned.',
@@ -34,7 +35,12 @@
     permits: 'Start land, permit and licence applications early. They are often the longest lead item.',
     financials: 'Get up-to-date management accounts and, where possible, audited financial statements.',
     risk: 'Write a risk register covering construction, market, financial and regulatory risk, with mitigations.',
-    ask: 'Build a detailed budget and decide on the mix of debt and equity you are looking for.'
+    ask: 'Build a detailed budget and decide on the mix of debt and equity you are looking for.',
+    tc_rights: 'Secure site access, wayleaves and rights of way along the route before funders review the project.',
+    tc_licence: 'Confirm the ICASA licences the network needs, held directly or through a licensed partner.',
+    tc_demand: 'Evidence demand on the route or sites: anchor tenants, pre-registrations or signed take-up.',
+    tc_build: 'Firm up the network design and get contractor quotes, so build costs can be verified.',
+    tc_rollout: 'Plan the rollout in phases with milestones that drawdowns can be tied to.'
   };
   var BANDS = [
     { min: 85, name: 'Funding-ready', text: 'Your project looks ready to present to funders. Submit it and we will review it with you.' },
@@ -47,7 +53,19 @@
   var readinessResult = null;
 
   if (rForm) {
-    var questions = Array.prototype.slice.call(rForm.querySelectorAll('.q'));
+    var allQuestions = Array.prototype.slice.call(rForm.querySelectorAll('.q'));
+    var questions = allQuestions;
+    // optional project-type picker: extra questions carry data-track and only apply to that track
+    function selectTrack() {
+      var picked = rForm.querySelector('input[name="track"]:checked');
+      var track = picked ? picked.value : 'general';
+      questions = allQuestions.filter(function (q) {
+        var t = q.getAttribute('data-track');
+        return !t || t === track;
+      });
+      allQuestions.forEach(function (q) { if (questions.indexOf(q) < 0) q.classList.remove('is-current'); });
+    }
+    selectTrack();
     var nextBtn = $('readinessNext');
     var backBtn = $('readinessBack');
     var nextLabel = nextBtn.querySelector('span');
@@ -86,6 +104,7 @@
     rForm.addEventListener('pointerdown', function () { pointerDown = true; });
     rForm.addEventListener('keydown', function () { pointerDown = false; });
     rForm.addEventListener('change', function (e) {
+      if (e.target.name === 'track') { selectTrack(); show(0); return; }
       if (!e.target.matches('input[type="radio"]')) return;
       nextBtn.disabled = false;
       // a mouse or touch choice moves on by itself; keyboard users press Next
@@ -105,7 +124,7 @@
       var pct = Math.round(total / (questions.length * 3) * 100);
       var band = BANDS.filter(function (b) { return pct >= b.min; })[0];
 
-      var areas = AREAS.map(function (a) {
+      var areas = AREAS.filter(function (a) { return a.qs.every(function (k) { return k in answers; }); }).map(function (a) {
         var sum = a.qs.reduce(function (s, k) { return s + answers[k]; }, 0);
         return { name: a.name, pct: Math.round(sum / (a.qs.length * 3) * 100) };
       });
@@ -182,6 +201,7 @@
 
     $('readinessRestart').addEventListener('click', function () {
       rForm.reset();
+      selectTrack();
       readinessResult = null;
       resultEl.hidden = true;
       rForm.hidden = false;
@@ -233,6 +253,8 @@
     var revenue = parseNum(cForm.revenue.value);
     var opex = parseNum(cForm.opex.value);
     var growth = parseNum(cForm.growth.value);
+    var grace = parseNum(cForm.grace.value);
+    var profile = cForm.profile.value;
 
     var problems = [];
     if (!(cost > 0)) problems.push('a project cost above zero');
@@ -242,6 +264,7 @@
     if (!(revenue >= 0)) problems.push('expected annual income');
     if (!(opex >= 0)) problems.push('annual operating costs');
     if (!(growth >= -20 && growth <= 50)) problems.push('annual growth between -20% and 50%');
+    if (!(grace >= 0 && grace <= 60 && Math.round(grace) === grace && grace < years * 12)) problems.push('a grace period of 0 to 60 whole months, shorter than the loan term');
     if (problems.length) {
       $('dscrError').textContent = 'Please enter ' + problems.join(', ') + '.';
       $('dscrError').hidden = false;
@@ -256,48 +279,65 @@
     var equity = cost - loan;
     var r = rate / 100 / 12;
     var n = years * 12;
-    var monthly = loan === 0 ? 0 : (r === 0 ? loan / n : loan * r / (1 - Math.pow(1 + r, -n)));
-    var annualService = monthly * 12;
     var cfads1 = revenue - opex;
+    // repayments may rise each year with income (never fall); level repayments stay flat
+    var step = profile === 'growing' ? Math.max(0, growth) / 100 : 0;
 
-    // year-by-year schedule; income and costs grow together, so cash available grows at the same rate
+    // first repayment after the grace period, sized so the loan is repaid exactly at the end of the term
+    var after = n - grace;
+    var pv = 0;
+    for (var k = 0; k < after; k++) pv += Math.pow(1 + step, Math.floor(k / 12)) / Math.pow(1 + r, k + 1);
+    var firstPayment = loan === 0 ? 0 : loan / pv;
+
+    // month-by-month schedule: interest only during the grace period, then capital and interest
     var schedule = [];
     var balance = loan;
     var totalInterest = 0;
     for (var y = 1; y <= years; y++) {
-      var opening = balance, interest = 0, principal = 0;
+      var opening = balance, interest = 0, principal = 0, service = 0;
       for (var m = 0; m < 12; m++) {
+        var month = (y - 1) * 12 + m;
         var i = balance * r;
-        var p = Math.min(balance, monthly - i);
-        interest += i; principal += p; balance -= p;
+        var pay = month < grace ? i : firstPayment * Math.pow(1 + step, Math.floor((month - grace) / 12));
+        var p = Math.max(0, Math.min(balance, pay - i));
+        interest += i; principal += p; balance -= p; service += i + p;
       }
-      if (y === years) { principal += balance; balance = 0; }
+      if (y === years && balance > 0) { principal += balance; service += balance; balance = 0; }
       totalInterest += interest;
       var cfads = cfads1 * Math.pow(1 + growth / 100, y - 1);
-      schedule.push({ year: y, opening: opening, interest: interest, principal: principal, closing: Math.max(0, balance), dscr: annualService > 0 ? cfads / annualService : Infinity });
+      schedule.push({ year: y, opening: opening, interest: interest, principal: principal, closing: Math.max(0, balance), service: service, dscr: service > 0 ? cfads / service : Infinity });
     }
-    var dscr1 = annualService > 0 ? cfads1 / annualService : Infinity;
+    var annualService = schedule[0].service;
+    var dscr1 = schedule[0].dscr;
     var minDscr = schedule.reduce(function (mn, s) { return Math.min(mn, s.dscr); }, Infinity);
 
-    // debt the year-1 cash flow can support at a 1.30× cover
+    // debt the year-1 cash flow can support at a 1.30× cover, with level repayments
     var capacity = Math.max(0, cfads1 / 1.3 / 12);
     var maxDebt = r === 0 ? capacity * n : capacity * (1 - Math.pow(1 + r, -n)) / r;
 
+    var notes = [];
+    if (grace > 0 && loan > 0) notes.push('Interest only for the first ' + grace + ' months (' + money(loan * r) + ' a month).');
+    if (step > 0 && loan > 0) notes.push((grace > 0 ? 'Repayments then rise by ' : 'Repayments rise by ') + (step * 100).toFixed(step * 100 % 1 ? 1 : 0) + '% a year, in line with income.');
+    var note = notes.join(' ');
+
     dscrResult = {
-      inputs: { cost: cost, debtPct: debtPct, rate: rate, years: years, revenue: revenue, opex: opex, growth: growth },
-      loan: loan, equity: equity, monthly: monthly, annualService: annualService, totalInterest: totalInterest,
-      dscr1: dscr1, minDscr: minDscr, maxDebt: maxDebt, schedule: schedule, verdict: verdictFor(dscr1)
+      inputs: { cost: cost, debtPct: debtPct, rate: rate, years: years, revenue: revenue, opex: opex, growth: growth, grace: grace,
+                profile: step > 0 ? 'Increasing with income (' + growth + '% a year)' : 'Level' },
+      loan: loan, equity: equity, monthly: firstPayment, annualService: annualService, totalInterest: totalInterest,
+      dscr1: dscr1, minDscr: minDscr, maxDebt: maxDebt, schedule: schedule, verdict: verdictFor(dscr1), note: note
     };
 
     $('r-dscr').textContent = ratio(dscr1);
     $('r-verdict').textContent = dscrResult.verdict;
     $('r-marker').style.left = markerPos(dscr1).toFixed(1) + '%';
-    $('r-monthly').textContent = money(monthly);
+    $('r-monthly').textContent = money(firstPayment);
     $('r-loan').textContent = money(loan);
     $('r-equity').textContent = money(equity);
     $('r-interest').textContent = money(totalInterest);
     $('r-min').textContent = ratio(minDscr);
     $('r-max').textContent = money(maxDebt);
+    $('r-note').textContent = note;
+    $('r-note').hidden = !note;
 
     var level = !isFinite(dscr1) ? 'good' : dscr1 < 1 ? 'low' : dscr1 < 1.2 ? 'tight' : dscr1 < 1.35 ? 'ok' : 'good';
     $('dscrResults').setAttribute('data-level', level);
@@ -311,6 +351,7 @@
 
   if (cForm) {
     cForm.addEventListener('input', calculate);
+    cForm.addEventListener('change', calculate);
     cForm.addEventListener('submit', function (e) { e.preventDefault(); });
     Array.prototype.forEach.call(cForm.querySelectorAll('[data-money]'), function (input) {
       input.addEventListener('blur', function () {
@@ -529,20 +570,23 @@
           ['Loan term', inp.years + ' years'],
           ['Expected annual income', money(inp.revenue)],
           ['Annual operating costs', money(inp.opex)],
-          ['Annual growth in income and costs', inp.growth + '%']
+          ['Annual growth in income and costs', inp.growth + '%'],
+          ['Grace period', inp.grace ? inp.grace + ' months, interest only' : 'None'],
+          ['Repayment profile', inp.profile]
         ]);
         heading('Results');
         rows([
           ['Year 1 DSCR', ratio(d.dscr1)],
           ['Lowest DSCR over the term', ratio(d.minDscr)],
-          ['Monthly repayment', money(d.monthly)],
-          ['Annual debt service', money(d.annualService)],
+          ['First monthly repayment', money(d.monthly)],
+          ['Year 1 debt service', money(d.annualService)],
           ['Loan amount', money(d.loan)],
           ['Your equity', money(d.equity)],
           ['Total interest over the term', money(d.totalInterest)],
-          ['Debt supportable at 1.30x cover', money(d.maxDebt)]
+          ['Debt supportable at 1.30x cover (level repayments)', money(d.maxDebt)]
         ]);
         para(d.verdict, 10);
+        if (d.note) para(d.note, 9.5);
         para('DSCR (debt service coverage ratio) is the cash a project has available each year divided by its loan repayments for that year. Many lenders look for at least 1.20x to 1.35x, depending on the sector and risk.', 8.5, SLATE);
         y += 2;
 

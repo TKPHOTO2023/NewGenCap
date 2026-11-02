@@ -259,6 +259,18 @@
               <label for="c-growth">Income growth</label>
               <div class="calc-input calc-input--suffix"><input id="c-growth" name="growth" inputmode="decimal" value="5"><span>% a year</span></div>
             </div>
+            <div class="calc-field">
+              <label for="c-grace">Grace period</label>
+              <div class="calc-input calc-input--suffix"><input id="c-grace" name="grace" inputmode="numeric" value="0"><span>months</span></div>
+            </div>
+            <div class="calc-field calc-field--wide">
+              <span class="calc-label" id="c-profile-label">Repayment profile</span>
+              <div class="profile-pick" role="radiogroup" aria-labelledby="c-profile-label">
+                <label><input type="radio" name="profile" value="level" checked><span>Level repayments</span></label>
+                <label><input type="radio" name="profile" value="growing"><span>Increase with income</span></label>
+              </div>
+              <p class="calc-hint">Network builds take time to reach full revenue. Repayments that rise with income, after an interest-only grace period, match that ramp-up.</p>
+            </div>
           </div>
           <p class="form-error" id="dscrError" role="alert" hidden></p>
         </form>
@@ -278,14 +290,15 @@
             </div>
             <div class="dscr-gauge__scale" aria-hidden="true"><span>0.5×</span><span>1.0×</span><span>1.2×</span><span>1.35×</span><span>2.0×+</span></div>
             <p class="dscr-verdict" id="r-verdict"></p>
+            <p class="calc-note" id="r-note" hidden></p>
           </div>
           <dl class="calc-kpis">
-            <div><dt>Monthly repayment</dt><dd id="r-monthly">R 0</dd></div>
+            <div><dt>First monthly repayment</dt><dd id="r-monthly">R 0</dd></div>
             <div><dt>Loan amount</dt><dd id="r-loan">R 0</dd></div>
             <div><dt>Your equity</dt><dd id="r-equity">R 0</dd></div>
             <div><dt>Total interest</dt><dd id="r-interest">R 0</dd></div>
-            <div><dt>Lowest DSCR over the term</dt><dd id="r-min">R 0</dd></div>
-            <div><dt>Debt supportable at 1.30×</dt><dd id="r-max">R 0</dd></div>
+            <div><dt>Lowest DSCR over the term</dt><dd id="r-min">0.00×</dd></div>
+            <div><dt>Debt supportable at 1.30× (level)</dt><dd id="r-max">R 0</dd></div>
           </dl>
           <details class="schedule">
             <summary>Show the year-by-year schedule</summary>
@@ -369,6 +382,7 @@
         <li><a href="digital-telecoms.html">Digital &amp; Telecoms</a></li>
         <li><a href="funding-tools.html">Funding tools</a></li>
         <li><a href="partner.html">Partner with us</a></li>
+        <li><a href="case-study-joburg-broadband.html">Case study</a></li>
         <li><a href="partner.html#submit">Submit a project</a></li>
       </ul>
     </nav>
@@ -379,7 +393,6 @@
         <li><a href="services.html#bridging-finance">Bridging Finance</a></li>
         <li><a href="services.html#acquisitions-mergers">Acquisitions &amp; Mergers</a></li>
         <li><a href="services.html#greenfield-fundraising">Greenfield Project Fundraising</a></li>
-        <li><a href="services.html#short-term-insurance">Short-Term Insurance</a></li>
       </ul>
     </nav>
     <div class="footer-col">

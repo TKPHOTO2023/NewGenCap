@@ -15,6 +15,7 @@
   var doneText = document.getElementById('submitDoneText');
   var msgLabel = document.getElementById('s-msg-label');
   var sponsorOnly = form.querySelectorAll('[data-sponsor-only]');
+  var subsectorField = document.getElementById('subsectorField');
   var fileInput = document.getElementById('s-files');
   var zone = form.querySelector('.upload-zone');
   var list = document.getElementById('uploadList');
@@ -25,8 +26,16 @@
     var role = form.role.value;
     var sponsor = role === 'Project sponsor';
     Array.prototype.forEach.call(sponsorOnly, function (el) { el.hidden = !sponsor; });
+    applyIndustry();
     msgLabel.textContent = role === 'Capital provider' ? 'Tell us about your mandate' : 'Tell us about the project';
   }
+  // sub-sector only applies to digital and telecoms projects
+  function applyIndustry() {
+    if (!subsectorField) return;
+    var digital = form.role.value === 'Project sponsor' && /^Digital/.test(form.industry.value);
+    subsectorField.hidden = !digital;
+  }
+  form.industry.addEventListener('change', applyIndustry);
   Array.prototype.forEach.call(form.role, function (r) { r.addEventListener('change', applyRole); });
   document.querySelectorAll('[data-role-pick="funder"]').forEach(function (link) {
     link.addEventListener('click', function () {
@@ -143,6 +152,7 @@
       fields.industry = form.industry.value;
       fields.amount = form.amount.value.trim();
       fields.stage = form.stage.value;
+      if (subsectorField && !subsectorField.hidden) fields.subsector = form.subsector.value;
     }
 
     var button = form.querySelector('button[type="submit"]');
@@ -160,7 +170,7 @@
         'Service of interest: ' + fields.service
       ];
       if (sponsor) {
-        lines.push('Industry: ' + fields.industry, 'Funding required: R ' + (fields.amount || 'Not provided'), 'Stage: ' + fields.stage);
+        lines.push('Industry: ' + fields.industry + (fields.subsector ? ' (' + fields.subsector + ')' : ''), 'Funding required: R ' + (fields.amount || 'Not provided'), 'Stage: ' + fields.stage);
       }
       lines.push('', fields.message);
       if (files.length) {
@@ -173,7 +183,7 @@
     }
 
     window.NGC.submitLead('project-submission', fields, files).then(function (result) {
-      if (result.sent) finish('Our team will review your submission and come back to you with next steps.');
+      if (result.sent) finish(doneEl.getAttribute('data-sent') || 'Our team will review your submission and come back to you with next steps.');
       else emailFallback();
     }).catch(function (err) {
       // problems the visitor can fix are shown; if the server is unreachable, email keeps the lead

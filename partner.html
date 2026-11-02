@@ -89,6 +89,7 @@
         <h2 class="display display--light">Grow your book without growing your risk.</h2>
         <ul class="audience-list">
           <li><h3>Pre-screened deal flow</h3><p>Only commercially viable, deliverable projects reach you, de-risked before capital is committed.</p></li>
+          <li><h3>Technical due diligence</h3><p>We check build costs against the design and quotes, and verify progress on site before each drawdown is released.</p></li>
           <li><h3>Lower post-funding risk</h3><p>Active project management and milestone oversight reduce default and completion risk.</p></li>
           <li><h3>Extended reach, no fixed cost</h3><p>Added origination capacity and a managed pipeline without additional overhead.</p></li>
           <li><h3>Protected returns</h3><p>Early warning on delivery risk protects interest income and capital.</p></li>
@@ -124,7 +125,7 @@
       <div class="reveal">
         <p class="label">Submit a project</p>
         <h2 class="display">Tell us about your project.</h2>
-        <p class="contact-lede">Share the basics and any documents you have, such as a business plan, financial model or feasibility study. Our team reviews every submission and will come back to you with next steps.</p>
+        <p class="contact-lede">Share the basics and any documents you have, such as a business plan, financial model or feasibility study. Our team reviews every submission and replies <span class="tbc">within X working days</span>.</p>
         <p class="contact-lede">Not sure you are ready? <a class="text-link" href="funding-tools.html#readiness">Take the Funding Readiness Assessment</a> first.</p>
         <dl class="contact-details contact-details--light">
           <div><dt>Email</dt><dd><a href="mailto:funding@newgenerationcap.co.za">funding@newgenerationcap.co.za</a></dd></div>
@@ -182,6 +183,19 @@
               <input id="s-amount" name="amount" inputmode="decimal" placeholder="e.g. 25 000 000">
             </div>
           </div>
+          <div class="field" id="subsectorField" hidden>
+            <label for="s-subsector">Digital &amp; telecoms sub-sector</label>
+            <select id="s-subsector" name="subsector">
+              <option>Fibre to the home or business</option>
+              <option>Metro and long-haul fibre</option>
+              <option>Towers and wireless</option>
+              <option>Edge and micro data centres</option>
+              <option>Energy for digital sites</option>
+              <option>Security and surveillance</option>
+              <option>Supporting value chains</option>
+              <option>Other</option>
+            </select>
+          </div>
           <div class="field" data-sponsor-only>
             <label for="s-stage">Project stage</label>
             <select id="s-stage" name="stage">
@@ -200,7 +214,6 @@
               <option value="bridging-finance">Bridging Finance</option>
               <option value="acquisitions-mergers">Acquisitions &amp; Mergers</option>
               <option value="greenfield-fundraising">Greenfield Project Fundraising</option>
-              <option value="short-term-insurance">Short-Term Insurance</option>
             </select>
           </div>
           <div class="field">
@@ -226,9 +239,9 @@
           <p class="form-error" id="submitError" role="alert" hidden></p>
           <button class="btn btn--block" type="submit"><span>Submit</span><svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></button>
         </form>
-        <div class="form-done" id="submitDone" hidden tabindex="-1">
+        <div class="form-done" id="submitDone" hidden tabindex="-1" data-sent="Our team will review your submission and reply with next steps.">
           <h3>Thank you, we have your details.</h3>
-          <p id="submitDoneText">Our team will review your submission and come back to you with next steps.</p>
+          <p id="submitDoneText">Our team will review your submission and reply <span class="tbc">within X working days</span>.</p>
         </div>
       </div>
     </div>
@@ -257,6 +270,7 @@
         <li><a href="digital-telecoms.html">Digital &amp; Telecoms</a></li>
         <li><a href="funding-tools.html">Funding tools</a></li>
         <li><a href="partner.html">Partner with us</a></li>
+        <li><a href="case-study-joburg-broadband.html">Case study</a></li>
         <li><a href="partner.html#submit">Submit a project</a></li>
       </ul>
     </nav>
@@ -267,7 +281,6 @@
         <li><a href="services.html#bridging-finance">Bridging Finance</a></li>
         <li><a href="services.html#acquisitions-mergers">Acquisitions &amp; Mergers</a></li>
         <li><a href="services.html#greenfield-fundraising">Greenfield Project Fundraising</a></li>
-        <li><a href="services.html#short-term-insurance">Short-Term Insurance</a></li>
       </ul>
     </nav>
     <div class="footer-col">

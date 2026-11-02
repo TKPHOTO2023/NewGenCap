@@ -1,0 +1,203 @@
+{
+ "brand-path": {
+  "widths": [
+   800,
+   1400,
+   1600,
+   1672
+  ],
+  "ratio": 1.7768
+ },
+ "solar-aerial": {
+  "widths": [
+   800,
+   1400,
+   1600,
+   2200
+  ],
+  "ratio": 1.345
+ },
+ "city-night": {
+  "widths": [
+   800,
+   1400,
+   1600,
+   2200
+  ],
+  "ratio": 1.1209
+ },
+ "team-meeting": {
+  "widths": [
+   800,
+   1400,
+   1600,
+   2200
+  ],
+  "ratio": 1.5
+ },
+ "office-colleagues": {
+  "widths": [
+   800,
+   1400,
+   1600,
+   2200
+  ],
+  "ratio": 1.4998
+ },
+ "office-analysis": {
+  "widths": [
+   800,
+   1400,
+   1600,
+   2200
+  ],
+  "ratio": 1.5
+ },
+ "sandton-dusk": {
+  "widths": [
+   800,
+   1400,
+   1600,
+   2200
+  ],
+  "ratio": 1.4994
+ },
+ "sandton-day": {
+  "widths": [
+   800,
+   1400,
+   1600,
+   1672
+  ],
+  "ratio": 1.7787
+ },
+ "sponsor-model": {
+  "widths": [
+   800,
+   1400,
+   1600,
+   2200
+  ],
+  "ratio": 1.7778
+ },
+ "solar-wind": {
+  "widths": [
+   800,
+   1400,
+   1600,
+   2200
+  ],
+  "ratio": 1.5
+ },
+ "solar-site": {
+  "widths": [
+   800,
+   1400,
+   1600,
+   2200
+  ],
+  "ratio": 1.3349
+ },
+ "growth-capital": {
+  "widths": [
+   800,
+   1400,
+   1600,
+   2200
+  ],
+  "ratio": 1.7777
+ },
+ "data-campus": {
+  "widths": [
+   800,
+   1400
+  ],
+  "ratio": 1.7766
+ },
+ "secured-site": {
+  "widths": [
+   800,
+   1400
+  ],
+  "ratio": 1.7766
+ },
+ "liquid-metal": {
+  "widths": [
+   800,
+   1400,
+   1600,
+   2200
+  ],
+  "ratio": 1.5002
+ },
+ "tech-tunnel": {
+  "widths": [
+   800,
+   1400,
+   1600,
+   2200
+  ],
+  "ratio": 1.0
+ },
+ "optical-fiber": {
+  "widths": [
+   800,
+   1400,
+   1600,
+   2200
+  ],
+  "ratio": 1.5
+ },
+ "meeting-devices": {
+  "widths": [
+   800,
+   1400,
+   1600,
+   2200
+  ],
+  "ratio": 1.5
+ },
+ "office-workers": {
+  "widths": [
+   800,
+   1400,
+   1600,
+   2200
+  ],
+  "ratio": 1.4
+ },
+ "futuristic-office": {
+  "widths": [
+   800,
+   1400,
+   1600,
+   2200
+  ],
+  "ratio": 1.7843
+ },
+ "analytics-meeting": {
+  "widths": [
+   800,
+   1400,
+   1600,
+   2200
+  ],
+  "ratio": 1.5
+ },
+ "team-discussion": {
+  "widths": [
+   800,
+   1400,
+   1600,
+   2200
+  ],
+  "ratio": 1.5
+ },
+ "team-review": {
+  "widths": [
+   800,
+   1400
+  ],
+  "ratio": 1.7766
+ }
+}
