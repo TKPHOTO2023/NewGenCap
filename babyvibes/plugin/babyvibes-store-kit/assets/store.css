@@ -1,0 +1,163 @@
+/* BabyVibes brand layer for WooCommerce and Hello Elementor. */
+:root {
+	--bv-ink: #2E2A3B;
+	--bv-green: #2F7A4D;
+	--bv-green-dark: #25613D;
+	--bv-green-soft: #E8F6EC;
+	--bv-coral: #FF7F6E;
+	--bv-peach: #FFF1EA;
+	--bv-cream: #FFF8F0;
+	--bv-sun: #FFD166;
+	--bv-radius: 999px;
+}
+
+body {
+	background: var(--bv-cream);
+	color: var(--bv-ink);
+	font-family: "Nunito", system-ui, sans-serif;
+}
+
+h1, h2, h3, h4,
+.woocommerce div.product .product_title {
+	font-family: "Fredoka", "Nunito", system-ui, sans-serif;
+	font-weight: 600;
+	color: var(--bv-ink);
+}
+
+a { color: var(--bv-green); }
+a:hover { color: var(--bv-green-dark); }
+
+/* Buttons: WooCommerce, blocks and the shortcodes used on the homepage. */
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce a.checkout-button,
+.wc-block-components-button:not(.is-link),
+.add_to_cart_inline a.button {
+	background: var(--bv-green);
+	color: #fff;
+	border: 2px solid var(--bv-green);
+	border-radius: var(--bv-radius);
+	padding: 0.9em 2em;
+	font-family: "Nunito", system-ui, sans-serif;
+	font-weight: 800;
+	font-size: 1.05rem;
+	line-height: 1.2;
+	transition: background-color 0.15s ease, transform 0.15s ease;
+}
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover,
+.wc-block-components-button:not(.is-link):hover,
+.add_to_cart_inline a.button:hover {
+	background: var(--bv-green-dark);
+	border-color: var(--bv-green-dark);
+	color: #fff;
+	transform: translateY(-1px);
+}
+.woocommerce a.button:focus-visible,
+.woocommerce button.button:focus-visible,
+.add_to_cart_inline a.button:focus-visible {
+	outline: 3px solid var(--bv-sun);
+	outline-offset: 3px;
+}
+
+/* Price + button block from [add_to_cart] in the hero. */
+.add_to_cart_inline {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 16px;
+	margin: 0 0 18px;
+	padding: 0;
+	border: 0 !important;
+}
+.add_to_cart_inline .amount {
+	font-family: "Fredoka", system-ui, sans-serif;
+	font-size: 2rem;
+	font-weight: 600;
+	color: var(--bv-ink);
+}
+@media (max-width: 767px) {
+	.add_to_cart_inline { justify-content: center; }
+	.add_to_cart_inline a.button { width: 100%; text-align: center; }
+}
+
+/* Single product (also used by [product_page] on the homepage). */
+.woocommerce div.product p.price,
+.woocommerce div.product span.price {
+	color: var(--bv-ink);
+	font-family: "Fredoka", system-ui, sans-serif;
+	font-size: 1.9rem;
+	font-weight: 600;
+}
+.woocommerce div.product div.images img {
+	border-radius: 24px;
+	background: var(--bv-peach);
+}
+.woocommerce div.product form.cart .quantity .qty {
+	border-radius: 12px;
+	border: 2px solid #E6D6CC;
+	min-height: 48px;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+	border-radius: 12px 12px 0 0;
+	background: var(--bv-peach);
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+	background: #fff;
+}
+.woocommerce span.onsale {
+	background: var(--bv-coral);
+	color: var(--bv-ink);
+	font-weight: 800;
+}
+
+.bv-trust {
+	list-style: none;
+	margin: 6px 0 22px;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px 18px;
+	font-weight: 600;
+	font-size: 0.95rem;
+}
+.bv-trust li::before {
+	content: "\2713";
+	display: inline-block;
+	margin-right: 6px;
+	color: var(--bv-green);
+	font-weight: 800;
+}
+
+/* Notices */
+.woocommerce-message,
+.woocommerce-info {
+	border-top-color: var(--bv-green);
+	background: var(--bv-green-soft);
+	border-radius: 12px;
+}
+.woocommerce-message::before,
+.woocommerce-info::before { color: var(--bv-green); }
+
+/* Store notice (WooCommerce > Settings > Store notice in the Customizer). */
+.woocommerce-store-notice,
+p.demo_store {
+	background: var(--bv-coral);
+	color: var(--bv-ink);
+	font-weight: 700;
+}
+.woocommerce-store-notice a { color: var(--bv-ink); }
+
+/* Hello Elementor header and footer */
+.site-header .site-navigation ul.menu li a,
+.site-header .header-inner .site-navigation ul li a {
+	color: var(--bv-ink);
+	font-weight: 700;
+}
+.site-header .site-navigation ul.menu li a:hover { color: var(--bv-green); }

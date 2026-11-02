@@ -1,0 +1,634 @@
+{
+ "version": "0.4",
+ "title": "BabyVibes: FAQ and Delivery",
+ "type": "page",
+ "page_settings": {
+  "hide_title": "yes"
+ },
+ "content": [
+  {
+   "id": "67b5a22",
+   "elType": "section",
+   "settings": {
+    "layout": "boxed",
+    "content_width": {
+     "unit": "px",
+     "size": 820,
+     "sizes": []
+    },
+    "gap": "wider",
+    "structure": "10",
+    "background_background": "classic",
+    "background_color": "#FFF1EA",
+    "padding": {
+     "unit": "px",
+     "top": "80",
+     "right": "20",
+     "bottom": "80",
+     "left": "20",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "56",
+     "right": "16",
+     "bottom": "56",
+     "left": "16",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "5c8859f",
+     "elType": "column",
+     "settings": {
+      "_column_size": 100,
+      "_inline_size": null
+     },
+     "elements": [
+      {
+       "id": "cb9660c",
+       "elType": "widget",
+       "widgetType": "heading",
+       "settings": {
+        "title": "HELP",
+        "header_size": "p",
+        "align": "center",
+        "title_color": "#FF7F6E",
+        "typography_typography": "custom",
+        "typography_font_family": "Nunito",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 14,
+         "sizes": []
+        },
+        "typography_font_weight": "800",
+        "typography_letter_spacing": {
+         "unit": "px",
+         "size": 2,
+         "sizes": []
+        },
+        "_margin": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "8",
+         "left": "0",
+         "isLinked": false
+        }
+       },
+       "elements": [],
+       "isInner": false
+      },
+      {
+       "id": "9d4e4d8",
+       "elType": "widget",
+       "widgetType": "heading",
+       "settings": {
+        "title": "FAQ, delivery and returns",
+        "header_size": "h1",
+        "align": "center",
+        "title_color": "#2E2A3B",
+        "typography_typography": "custom",
+        "typography_font_family": "Fredoka",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 50,
+         "sizes": []
+        },
+        "typography_font_weight": "600",
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 34,
+         "sizes": []
+        },
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.15,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      }
+     ],
+     "isInner": false
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "6d67f95",
+   "elType": "section",
+   "settings": {
+    "layout": "boxed",
+    "content_width": {
+     "unit": "px",
+     "size": 820,
+     "sizes": []
+    },
+    "gap": "wider",
+    "structure": "10",
+    "background_background": "classic",
+    "background_color": "#FFF8F0",
+    "padding": {
+     "unit": "px",
+     "top": "90",
+     "right": "20",
+     "bottom": "90",
+     "left": "20",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "56",
+     "right": "16",
+     "bottom": "56",
+     "left": "16",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "c61317a",
+     "elType": "column",
+     "settings": {
+      "_column_size": 100,
+      "_inline_size": null
+     },
+     "elements": [
+      {
+       "id": "18fc481",
+       "elType": "widget",
+       "widgetType": "heading",
+       "settings": {
+        "title": "Your questions",
+        "header_size": "h2",
+        "align": "left",
+        "title_color": "#2E2A3B",
+        "typography_typography": "custom",
+        "typography_font_family": "Fredoka",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 30,
+         "sizes": []
+        },
+        "typography_font_weight": "600",
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 30,
+         "sizes": []
+        },
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.15,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      },
+      {
+       "id": "e37dca5",
+       "elType": "widget",
+       "widgetType": "accordion",
+       "settings": {
+        "tabs": [
+         {
+          "_id": "2b3ae97",
+          "tab_title": "What age is the Talking Cactus for?",
+          "tab_content": "<p>Check the age rating on the box of your Talking Cactus before giving it to your little one. It is a soft toy with a battery inside, so play should always be supervised, and it is not a sleep toy to leave in a cot.</p>"
+         },
+         {
+          "_id": "c5a9a33",
+          "tab_title": "How does it charge?",
+          "tab_content": "<p>It charges with the USB cable in the box. Plug it into a phone charger or a laptop, and a full charge gives hours of play.</p>"
+         },
+         {
+          "_id": "761319e",
+          "tab_title": "Can I turn the volume down?",
+          "tab_content": "<p>Yes. The switch underneath the pot has a quieter setting for naps and car trips, and an off setting for when you need some peace.</p>"
+         },
+         {
+          "_id": "c892b58",
+          "tab_title": "How long does delivery take?",
+          "tab_content": "<p>We deliver across South Africa. Orders placed before 12:00 on a weekday are packed the same day, and most arrive within 2 to 4 working days in the main centres. You'll get a tracking number by email.</p>"
+         },
+         {
+          "_id": "6f211bb",
+          "tab_title": "How do I pay?",
+          "tab_content": "<p>Pay securely at checkout by card, Instant EFT or the other options shown there. We never see or store your card details.</p>"
+         },
+         {
+          "_id": "13f2107",
+          "tab_title": "What if something is wrong with my order?",
+          "tab_content": "<p>Message us on WhatsApp or email within 7 days of delivery and we'll sort it out with a replacement or a refund. See our <a href='/faq-delivery/'>Delivery &amp; Returns</a> page for the details.</p>"
+         }
+        ],
+        "selected_icon": {
+         "value": "fas fa-plus",
+         "library": "fa-solid"
+        },
+        "selected_active_icon": {
+         "value": "fas fa-minus",
+         "library": "fa-solid"
+        },
+        "title_html_tag": "h3",
+        "border_color": "#F1DED3",
+        "title_background": "#FFFFFF",
+        "title_color": "#2E2A3B",
+        "tab_active_color": "#2F7A4D",
+        "icon_color": "#FF7F6E",
+        "icon_active_color": "#2F7A4D",
+        "content_background_color": "#FFFFFF",
+        "content_color": "#2E2A3B",
+        "title_typography_typography": "custom",
+        "title_typography_font_family": "Fredoka",
+        "title_typography_font_size": {
+         "unit": "px",
+         "size": 19,
+         "sizes": []
+        },
+        "title_typography_font_weight": "600",
+        "content_typography_typography": "custom",
+        "content_typography_font_family": "Nunito",
+        "content_typography_font_size": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "content_typography_font_weight": "400",
+        "content_typography_line_height": {
+         "unit": "em",
+         "size": 1.6,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      },
+      {
+       "id": "4bf80fd",
+       "elType": "widget",
+       "widgetType": "spacer",
+       "settings": {
+        "space": {
+         "unit": "px",
+         "size": 30,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      },
+      {
+       "id": "9af80bc",
+       "elType": "widget",
+       "widgetType": "heading",
+       "settings": {
+        "title": "Delivery",
+        "header_size": "h2",
+        "align": "left",
+        "title_color": "#2E2A3B",
+        "typography_typography": "custom",
+        "typography_font_family": "Fredoka",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 30,
+         "sizes": []
+        },
+        "typography_font_weight": "600",
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 30,
+         "sizes": []
+        },
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.15,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      },
+      {
+       "id": "cd88d69",
+       "elType": "widget",
+       "widgetType": "accordion",
+       "settings": {
+        "tabs": [
+         {
+          "_id": "037c458",
+          "tab_title": "Where do you deliver?",
+          "tab_content": "<p>Anywhere in South Africa.</p>"
+         },
+         {
+          "_id": "c8a657b",
+          "tab_title": "How much does delivery cost?",
+          "tab_content": "<p>The delivery fee is shown at checkout before you pay. Look out for free-delivery offers.</p>"
+         },
+         {
+          "_id": "538124d",
+          "tab_title": "How long will it take?",
+          "tab_content": "<p>Orders placed before 12:00 on a weekday are packed the same day. Most orders arrive within 2 to 4 working days in the main centres, and a little longer in outlying areas.</p>"
+         },
+         {
+          "_id": "b3aae31",
+          "tab_title": "Can I track my parcel?",
+          "tab_content": "<p>Yes. We email your tracking number as soon as your order ships.</p>"
+         }
+        ],
+        "selected_icon": {
+         "value": "fas fa-plus",
+         "library": "fa-solid"
+        },
+        "selected_active_icon": {
+         "value": "fas fa-minus",
+         "library": "fa-solid"
+        },
+        "title_html_tag": "h3",
+        "border_color": "#F1DED3",
+        "title_background": "#FFFFFF",
+        "title_color": "#2E2A3B",
+        "tab_active_color": "#2F7A4D",
+        "icon_color": "#FF7F6E",
+        "icon_active_color": "#2F7A4D",
+        "content_background_color": "#FFFFFF",
+        "content_color": "#2E2A3B",
+        "title_typography_typography": "custom",
+        "title_typography_font_family": "Fredoka",
+        "title_typography_font_size": {
+         "unit": "px",
+         "size": 19,
+         "sizes": []
+        },
+        "title_typography_font_weight": "600",
+        "content_typography_typography": "custom",
+        "content_typography_font_family": "Nunito",
+        "content_typography_font_size": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "content_typography_font_weight": "400",
+        "content_typography_line_height": {
+         "unit": "em",
+         "size": 1.6,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      },
+      {
+       "id": "c2d016a",
+       "elType": "widget",
+       "widgetType": "spacer",
+       "settings": {
+        "space": {
+         "unit": "px",
+         "size": 30,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      },
+      {
+       "id": "e52fcb1",
+       "elType": "widget",
+       "widgetType": "heading",
+       "settings": {
+        "title": "Returns and refunds",
+        "header_size": "h2",
+        "align": "left",
+        "title_color": "#2E2A3B",
+        "typography_typography": "custom",
+        "typography_font_family": "Fredoka",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 30,
+         "sizes": []
+        },
+        "typography_font_weight": "600",
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 30,
+         "sizes": []
+        },
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.15,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      },
+      {
+       "id": "f910a39",
+       "elType": "widget",
+       "widgetType": "accordion",
+       "settings": {
+        "tabs": [
+         {
+          "_id": "420107a",
+          "tab_title": "My toy arrived damaged or doesn't work",
+          "tab_content": "<p>We're sorry! Contact us within 7 days of delivery with your order number and a photo or video, and we'll send a replacement or refund you in full, including delivery.</p>"
+         },
+         {
+          "_id": "173c6ad",
+          "tab_title": "Can I return a toy I don't want?",
+          "tab_content": "<p>Yes, within 7 days of delivery, if it's unused and in its original packaging. Contact us first and we'll explain how to send it back. Once we receive it, we refund the price of the toy.</p>"
+         },
+         {
+          "_id": "eb68879",
+          "tab_title": "How long do refunds take?",
+          "tab_content": "<p>We process refunds within 5 working days of receiving the return. Your bank may take a few more days to show the money.</p>"
+         }
+        ],
+        "selected_icon": {
+         "value": "fas fa-plus",
+         "library": "fa-solid"
+        },
+        "selected_active_icon": {
+         "value": "fas fa-minus",
+         "library": "fa-solid"
+        },
+        "title_html_tag": "h3",
+        "border_color": "#F1DED3",
+        "title_background": "#FFFFFF",
+        "title_color": "#2E2A3B",
+        "tab_active_color": "#2F7A4D",
+        "icon_color": "#FF7F6E",
+        "icon_active_color": "#2F7A4D",
+        "content_background_color": "#FFFFFF",
+        "content_color": "#2E2A3B",
+        "title_typography_typography": "custom",
+        "title_typography_font_family": "Fredoka",
+        "title_typography_font_size": {
+         "unit": "px",
+         "size": 19,
+         "sizes": []
+        },
+        "title_typography_font_weight": "600",
+        "content_typography_typography": "custom",
+        "content_typography_font_family": "Nunito",
+        "content_typography_font_size": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "content_typography_font_weight": "400",
+        "content_typography_line_height": {
+         "unit": "em",
+         "size": 1.6,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      }
+     ],
+     "isInner": false
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "42ba066",
+   "elType": "section",
+   "settings": {
+    "layout": "boxed",
+    "content_width": {
+     "unit": "px",
+     "size": 820,
+     "sizes": []
+    },
+    "gap": "wider",
+    "structure": "10",
+    "background_background": "classic",
+    "background_color": "#E8F6EC",
+    "padding": {
+     "unit": "px",
+     "top": "70",
+     "right": "20",
+     "bottom": "70",
+     "left": "20",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "56",
+     "right": "16",
+     "bottom": "56",
+     "left": "16",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "a28a0ac",
+     "elType": "column",
+     "settings": {
+      "_column_size": 100,
+      "_inline_size": null
+     },
+     "elements": [
+      {
+       "id": "27ca488",
+       "elType": "widget",
+       "widgetType": "heading",
+       "settings": {
+        "title": "Still need help?",
+        "header_size": "h2",
+        "align": "center",
+        "title_color": "#2E2A3B",
+        "typography_typography": "custom",
+        "typography_font_family": "Fredoka",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 30,
+         "sizes": []
+        },
+        "typography_font_weight": "600",
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 30,
+         "sizes": []
+        },
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.15,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      },
+      {
+       "id": "7be4c92",
+       "elType": "widget",
+       "widgetType": "button",
+       "settings": {
+        "text": "Chat on WhatsApp",
+        "link": {
+         "url": "https://wa.me/27000000000",
+         "is_external": "on",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "align": "center",
+        "align_mobile": "justify",
+        "size": "lg",
+        "background_color": "#2F7A4D",
+        "button_text_color": "#FFFFFF",
+        "button_background_hover_color": "#25613D",
+        "hover_color": "#FFFFFF",
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "2",
+         "right": "2",
+         "bottom": "2",
+         "left": "2",
+         "isLinked": true
+        },
+        "border_color": "#2F7A4D",
+        "border_radius": {
+         "unit": "px",
+         "top": "999",
+         "right": "999",
+         "bottom": "999",
+         "left": "999",
+         "isLinked": true
+        },
+        "text_padding": {
+         "unit": "px",
+         "top": "16",
+         "right": "34",
+         "bottom": "16",
+         "left": "34",
+         "isLinked": false
+        },
+        "typography_typography": "custom",
+        "typography_font_family": "Nunito",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 17,
+         "sizes": []
+        },
+        "typography_font_weight": "800"
+       },
+       "elements": [],
+       "isInner": false
+      }
+     ],
+     "isInner": false
+    }
+   ],
+   "isInner": false
+  }
+ ]
+}

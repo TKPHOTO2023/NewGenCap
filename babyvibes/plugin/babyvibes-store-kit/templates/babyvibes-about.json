@@ -1,0 +1,553 @@
+{
+ "version": "0.4",
+ "title": "BabyVibes: About",
+ "type": "page",
+ "page_settings": {
+  "hide_title": "yes"
+ },
+ "content": [
+  {
+   "id": "ba53f0d",
+   "elType": "section",
+   "settings": {
+    "layout": "boxed",
+    "content_width": {
+     "unit": "px",
+     "size": 820,
+     "sizes": []
+    },
+    "gap": "wider",
+    "structure": "10",
+    "background_background": "classic",
+    "background_color": "#FFF1EA",
+    "padding": {
+     "unit": "px",
+     "top": "90",
+     "right": "20",
+     "bottom": "90",
+     "left": "20",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "56",
+     "right": "16",
+     "bottom": "56",
+     "left": "16",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "af4aa95",
+     "elType": "column",
+     "settings": {
+      "_column_size": 100,
+      "_inline_size": null
+     },
+     "elements": [
+      {
+       "id": "b04c1f0",
+       "elType": "widget",
+       "widgetType": "heading",
+       "settings": {
+        "title": "OUR STORY",
+        "header_size": "p",
+        "align": "center",
+        "title_color": "#FF7F6E",
+        "typography_typography": "custom",
+        "typography_font_family": "Nunito",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 14,
+         "sizes": []
+        },
+        "typography_font_weight": "800",
+        "typography_letter_spacing": {
+         "unit": "px",
+         "size": 2,
+         "sizes": []
+        },
+        "_margin": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "8",
+         "left": "0",
+         "isLinked": false
+        }
+       },
+       "elements": [],
+       "isInner": false
+      },
+      {
+       "id": "863d8c0",
+       "elType": "widget",
+       "widgetType": "heading",
+       "settings": {
+        "title": "Made by moms, for moms",
+        "header_size": "h1",
+        "align": "center",
+        "title_color": "#2E2A3B",
+        "typography_typography": "custom",
+        "typography_font_family": "Fredoka",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 50,
+         "sizes": []
+        },
+        "typography_font_weight": "600",
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 34,
+         "sizes": []
+        },
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.15,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      },
+      {
+       "id": "32b6f7a",
+       "elType": "widget",
+       "widgetType": "text-editor",
+       "settings": {
+        "editor": "<p>BabyVibes started with a simple idea: the best baby toys are the ones that make you laugh too. We pick fun, good-value toys, test them at home with our own little ones, and deliver them across South Africa.</p>",
+        "align": "center",
+        "text_color": "#2E2A3B",
+        "typography_typography": "custom",
+        "typography_font_family": "Nunito",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 18,
+         "sizes": []
+        },
+        "typography_font_weight": "400",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.6,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      }
+     ],
+     "isInner": false
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "aef6659",
+   "elType": "section",
+   "settings": {
+    "layout": "boxed",
+    "content_width": {
+     "unit": "px",
+     "size": 1140,
+     "sizes": []
+    },
+    "gap": "wider",
+    "structure": "30",
+    "background_background": "classic",
+    "background_color": "#FFF8F0",
+    "padding": {
+     "unit": "px",
+     "top": "90",
+     "right": "20",
+     "bottom": "90",
+     "left": "20",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "56",
+     "right": "16",
+     "bottom": "56",
+     "left": "16",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "6712084",
+     "elType": "column",
+     "settings": {
+      "_column_size": 33,
+      "_inline_size": null
+     },
+     "elements": [
+      {
+       "id": "d3375ee",
+       "elType": "widget",
+       "widgetType": "icon-box",
+       "settings": {
+        "selected_icon": {
+         "value": "fas fa-heart",
+         "library": "fa-solid"
+        },
+        "view": "stacked",
+        "shape": "circle",
+        "title_text": "Picked with care",
+        "description_text": "We only stock toys we'd happily give our own kids.",
+        "position": "top",
+        "text_align": "center",
+        "title_size": "h3",
+        "primary_color": "#2F7A4D",
+        "secondary_color": "#FFFFFF",
+        "icon_size": {
+         "unit": "px",
+         "size": 26,
+         "sizes": []
+        },
+        "icon_padding": {
+         "unit": "em",
+         "size": 0.75,
+         "sizes": []
+        },
+        "icon_space": {
+         "unit": "px",
+         "size": 14,
+         "sizes": []
+        },
+        "title_color": "#2E2A3B",
+        "description_color": "#2E2A3B",
+        "title_typography_typography": "custom",
+        "title_typography_font_family": "Fredoka",
+        "title_typography_font_size": {
+         "unit": "px",
+         "size": 21,
+         "sizes": []
+        },
+        "title_typography_font_weight": "600",
+        "description_typography_typography": "custom",
+        "description_typography_font_family": "Nunito",
+        "description_typography_font_size": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "description_typography_font_weight": "400",
+        "description_typography_line_height": {
+         "unit": "em",
+         "size": 1.55,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      }
+     ],
+     "isInner": false
+    },
+    {
+     "id": "2a25254",
+     "elType": "column",
+     "settings": {
+      "_column_size": 33,
+      "_inline_size": null
+     },
+     "elements": [
+      {
+       "id": "1701242",
+       "elType": "widget",
+       "widgetType": "icon-box",
+       "settings": {
+        "selected_icon": {
+         "value": "fas fa-truck",
+         "library": "fa-solid"
+        },
+        "view": "stacked",
+        "shape": "circle",
+        "title_text": "Delivered to your door",
+        "description_text": "Fast, tracked delivery across South Africa.",
+        "position": "top",
+        "text_align": "center",
+        "title_size": "h3",
+        "primary_color": "#FF7F6E",
+        "secondary_color": "#FFFFFF",
+        "icon_size": {
+         "unit": "px",
+         "size": 26,
+         "sizes": []
+        },
+        "icon_padding": {
+         "unit": "em",
+         "size": 0.75,
+         "sizes": []
+        },
+        "icon_space": {
+         "unit": "px",
+         "size": 14,
+         "sizes": []
+        },
+        "title_color": "#2E2A3B",
+        "description_color": "#2E2A3B",
+        "title_typography_typography": "custom",
+        "title_typography_font_family": "Fredoka",
+        "title_typography_font_size": {
+         "unit": "px",
+         "size": 21,
+         "sizes": []
+        },
+        "title_typography_font_weight": "600",
+        "description_typography_typography": "custom",
+        "description_typography_font_family": "Nunito",
+        "description_typography_font_size": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "description_typography_font_weight": "400",
+        "description_typography_line_height": {
+         "unit": "em",
+         "size": 1.55,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      }
+     ],
+     "isInner": false
+    },
+    {
+     "id": "8e29363",
+     "elType": "column",
+     "settings": {
+      "_column_size": 33,
+      "_inline_size": null
+     },
+     "elements": [
+      {
+       "id": "601af54",
+       "elType": "widget",
+       "widgetType": "icon-box",
+       "settings": {
+        "selected_icon": {
+         "value": "fas fa-smile",
+         "library": "fa-solid"
+        },
+        "view": "stacked",
+        "shape": "circle",
+        "title_text": "Real people, real help",
+        "description_text": "Message us any time and a real mom will answer.",
+        "position": "top",
+        "text_align": "center",
+        "title_size": "h3",
+        "primary_color": "#2F7A4D",
+        "secondary_color": "#FFFFFF",
+        "icon_size": {
+         "unit": "px",
+         "size": 26,
+         "sizes": []
+        },
+        "icon_padding": {
+         "unit": "em",
+         "size": 0.75,
+         "sizes": []
+        },
+        "icon_space": {
+         "unit": "px",
+         "size": 14,
+         "sizes": []
+        },
+        "title_color": "#2E2A3B",
+        "description_color": "#2E2A3B",
+        "title_typography_typography": "custom",
+        "title_typography_font_family": "Fredoka",
+        "title_typography_font_size": {
+         "unit": "px",
+         "size": 21,
+         "sizes": []
+        },
+        "title_typography_font_weight": "600",
+        "description_typography_typography": "custom",
+        "description_typography_font_family": "Nunito",
+        "description_typography_font_size": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "description_typography_font_weight": "400",
+        "description_typography_line_height": {
+         "unit": "em",
+         "size": 1.55,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      }
+     ],
+     "isInner": false
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "77f3ce5",
+   "elType": "section",
+   "settings": {
+    "layout": "boxed",
+    "content_width": {
+     "unit": "px",
+     "size": 820,
+     "sizes": []
+    },
+    "gap": "wider",
+    "structure": "10",
+    "background_background": "classic",
+    "background_color": "#E8F6EC",
+    "padding": {
+     "unit": "px",
+     "top": "90",
+     "right": "20",
+     "bottom": "90",
+     "left": "20",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "56",
+     "right": "16",
+     "bottom": "56",
+     "left": "16",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "b4ce4ec",
+     "elType": "column",
+     "settings": {
+      "_column_size": 100,
+      "_inline_size": null
+     },
+     "elements": [
+      {
+       "id": "f0cc62d",
+       "elType": "widget",
+       "widgetType": "heading",
+       "settings": {
+        "title": "Say hello to the Talking Cactus",
+        "header_size": "h2",
+        "align": "center",
+        "title_color": "#2E2A3B",
+        "typography_typography": "custom",
+        "typography_font_family": "Fredoka",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 40,
+         "sizes": []
+        },
+        "typography_font_weight": "600",
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 30,
+         "sizes": []
+        },
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.15,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      },
+      {
+       "id": "2c1e183",
+       "elType": "widget",
+       "widgetType": "text-editor",
+       "settings": {
+        "editor": "<p>Our first toy, and already a favourite.</p>",
+        "align": "center",
+        "text_color": "#2E2A3B",
+        "typography_typography": "custom",
+        "typography_font_family": "Nunito",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 18,
+         "sizes": []
+        },
+        "typography_font_weight": "400",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.6,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      },
+      {
+       "id": "2898400",
+       "elType": "widget",
+       "widgetType": "button",
+       "settings": {
+        "text": "Shop now",
+        "link": {
+         "url": "/#buy",
+         "is_external": "",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "align": "center",
+        "align_mobile": "justify",
+        "size": "lg",
+        "background_color": "#2F7A4D",
+        "button_text_color": "#FFFFFF",
+        "button_background_hover_color": "#25613D",
+        "hover_color": "#FFFFFF",
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "2",
+         "right": "2",
+         "bottom": "2",
+         "left": "2",
+         "isLinked": true
+        },
+        "border_color": "#2F7A4D",
+        "border_radius": {
+         "unit": "px",
+         "top": "999",
+         "right": "999",
+         "bottom": "999",
+         "left": "999",
+         "isLinked": true
+        },
+        "text_padding": {
+         "unit": "px",
+         "top": "16",
+         "right": "34",
+         "bottom": "16",
+         "left": "34",
+         "isLinked": false
+        },
+        "typography_typography": "custom",
+        "typography_font_family": "Nunito",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 17,
+         "sizes": []
+        },
+        "typography_font_weight": "800"
+       },
+       "elements": [],
+       "isInner": false
+      }
+     ],
+     "isInner": false
+    }
+   ],
+   "isInner": false
+  }
+ ]
+}

@@ -1,0 +1,575 @@
+{
+ "version": "0.4",
+ "title": "BabyVibes: Contact",
+ "type": "page",
+ "page_settings": {
+  "hide_title": "yes"
+ },
+ "content": [
+  {
+   "id": "3c75373",
+   "elType": "section",
+   "settings": {
+    "layout": "boxed",
+    "content_width": {
+     "unit": "px",
+     "size": 820,
+     "sizes": []
+    },
+    "gap": "wider",
+    "structure": "10",
+    "background_background": "classic",
+    "background_color": "#FFF1EA",
+    "padding": {
+     "unit": "px",
+     "top": "90",
+     "right": "20",
+     "bottom": "90",
+     "left": "20",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "56",
+     "right": "16",
+     "bottom": "56",
+     "left": "16",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "08c5627",
+     "elType": "column",
+     "settings": {
+      "_column_size": 100,
+      "_inline_size": null
+     },
+     "elements": [
+      {
+       "id": "92e335d",
+       "elType": "widget",
+       "widgetType": "heading",
+       "settings": {
+        "title": "CONTACT US",
+        "header_size": "p",
+        "align": "center",
+        "title_color": "#FF7F6E",
+        "typography_typography": "custom",
+        "typography_font_family": "Nunito",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 14,
+         "sizes": []
+        },
+        "typography_font_weight": "800",
+        "typography_letter_spacing": {
+         "unit": "px",
+         "size": 2,
+         "sizes": []
+        },
+        "_margin": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "8",
+         "left": "0",
+         "isLinked": false
+        }
+       },
+       "elements": [],
+       "isInner": false
+      },
+      {
+       "id": "47ee9d2",
+       "elType": "widget",
+       "widgetType": "heading",
+       "settings": {
+        "title": "We'd love to hear from you",
+        "header_size": "h1",
+        "align": "center",
+        "title_color": "#2E2A3B",
+        "typography_typography": "custom",
+        "typography_font_family": "Fredoka",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 50,
+         "sizes": []
+        },
+        "typography_font_weight": "600",
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 34,
+         "sizes": []
+        },
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.15,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      },
+      {
+       "id": "c26522b",
+       "elType": "widget",
+       "widgetType": "text-editor",
+       "settings": {
+        "editor": "<p>Questions about an order, delivery or the Talking Cactus? The quickest way to reach us is WhatsApp.</p>",
+        "align": "center",
+        "text_color": "#2E2A3B",
+        "typography_typography": "custom",
+        "typography_font_family": "Nunito",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 18,
+         "sizes": []
+        },
+        "typography_font_weight": "400",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.6,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      }
+     ],
+     "isInner": false
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "85e7e47",
+   "elType": "section",
+   "settings": {
+    "layout": "boxed",
+    "content_width": {
+     "unit": "px",
+     "size": 1140,
+     "sizes": []
+    },
+    "gap": "wider",
+    "structure": "20",
+    "background_background": "classic",
+    "background_color": "#FFF8F0",
+    "padding": {
+     "unit": "px",
+     "top": "90",
+     "right": "20",
+     "bottom": "90",
+     "left": "20",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "56",
+     "right": "16",
+     "bottom": "56",
+     "left": "16",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "37dc8f4",
+     "elType": "column",
+     "settings": {
+      "_column_size": 50,
+      "_inline_size": null,
+      "padding": {
+       "unit": "px",
+       "top": "32",
+       "right": "32",
+       "bottom": "32",
+       "left": "32",
+       "isLinked": true
+      },
+      "background_background": "classic",
+      "background_color": "#FFFFFF",
+      "border_radius": {
+       "unit": "px",
+       "top": "24",
+       "right": "24",
+       "bottom": "24",
+       "left": "24",
+       "isLinked": true
+      }
+     },
+     "elements": [
+      {
+       "id": "3cdbea0",
+       "elType": "widget",
+       "widgetType": "icon-box",
+       "settings": {
+        "selected_icon": {
+         "value": "fas fa-comment-dots",
+         "library": "fa-solid"
+        },
+        "view": "stacked",
+        "shape": "circle",
+        "title_text": "WhatsApp",
+        "description_text": "Fastest replies during office hours.",
+        "position": "top",
+        "text_align": "center",
+        "title_size": "h3",
+        "primary_color": "#2F7A4D",
+        "secondary_color": "#FFFFFF",
+        "icon_size": {
+         "unit": "px",
+         "size": 26,
+         "sizes": []
+        },
+        "icon_padding": {
+         "unit": "em",
+         "size": 0.75,
+         "sizes": []
+        },
+        "icon_space": {
+         "unit": "px",
+         "size": 14,
+         "sizes": []
+        },
+        "title_color": "#2E2A3B",
+        "description_color": "#2E2A3B",
+        "title_typography_typography": "custom",
+        "title_typography_font_family": "Fredoka",
+        "title_typography_font_size": {
+         "unit": "px",
+         "size": 21,
+         "sizes": []
+        },
+        "title_typography_font_weight": "600",
+        "description_typography_typography": "custom",
+        "description_typography_font_family": "Nunito",
+        "description_typography_font_size": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "description_typography_font_weight": "400",
+        "description_typography_line_height": {
+         "unit": "em",
+         "size": 1.55,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      },
+      {
+       "id": "11d8778",
+       "elType": "widget",
+       "widgetType": "button",
+       "settings": {
+        "text": "Chat on WhatsApp",
+        "link": {
+         "url": "https://wa.me/27000000000",
+         "is_external": "on",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "align": "center",
+        "align_mobile": "justify",
+        "size": "lg",
+        "background_color": "#2F7A4D",
+        "button_text_color": "#FFFFFF",
+        "button_background_hover_color": "#25613D",
+        "hover_color": "#FFFFFF",
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "2",
+         "right": "2",
+         "bottom": "2",
+         "left": "2",
+         "isLinked": true
+        },
+        "border_color": "#2F7A4D",
+        "border_radius": {
+         "unit": "px",
+         "top": "999",
+         "right": "999",
+         "bottom": "999",
+         "left": "999",
+         "isLinked": true
+        },
+        "text_padding": {
+         "unit": "px",
+         "top": "16",
+         "right": "34",
+         "bottom": "16",
+         "left": "34",
+         "isLinked": false
+        },
+        "typography_typography": "custom",
+        "typography_font_family": "Nunito",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 17,
+         "sizes": []
+        },
+        "typography_font_weight": "800"
+       },
+       "elements": [],
+       "isInner": false
+      }
+     ],
+     "isInner": false
+    },
+    {
+     "id": "81ceab6",
+     "elType": "column",
+     "settings": {
+      "_column_size": 50,
+      "_inline_size": null,
+      "padding": {
+       "unit": "px",
+       "top": "32",
+       "right": "32",
+       "bottom": "32",
+       "left": "32",
+       "isLinked": true
+      },
+      "background_background": "classic",
+      "background_color": "#FFFFFF",
+      "border_radius": {
+       "unit": "px",
+       "top": "24",
+       "right": "24",
+       "bottom": "24",
+       "left": "24",
+       "isLinked": true
+      }
+     },
+     "elements": [
+      {
+       "id": "1a7dcf6",
+       "elType": "widget",
+       "widgetType": "icon-box",
+       "settings": {
+        "selected_icon": {
+         "value": "fas fa-envelope",
+         "library": "fa-solid"
+        },
+        "view": "stacked",
+        "shape": "circle",
+        "title_text": "Email",
+        "description_text": "hello@babyvibes.co.za",
+        "position": "top",
+        "text_align": "center",
+        "title_size": "h3",
+        "primary_color": "#FF7F6E",
+        "secondary_color": "#FFFFFF",
+        "icon_size": {
+         "unit": "px",
+         "size": 26,
+         "sizes": []
+        },
+        "icon_padding": {
+         "unit": "em",
+         "size": 0.75,
+         "sizes": []
+        },
+        "icon_space": {
+         "unit": "px",
+         "size": 14,
+         "sizes": []
+        },
+        "title_color": "#2E2A3B",
+        "description_color": "#2E2A3B",
+        "title_typography_typography": "custom",
+        "title_typography_font_family": "Fredoka",
+        "title_typography_font_size": {
+         "unit": "px",
+         "size": 21,
+         "sizes": []
+        },
+        "title_typography_font_weight": "600",
+        "description_typography_typography": "custom",
+        "description_typography_font_family": "Nunito",
+        "description_typography_font_size": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "description_typography_font_weight": "400",
+        "description_typography_line_height": {
+         "unit": "em",
+         "size": 1.55,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      },
+      {
+       "id": "aa9a971",
+       "elType": "widget",
+       "widgetType": "button",
+       "settings": {
+        "text": "Send us an email",
+        "link": {
+         "url": "mailto:hello@babyvibes.co.za",
+         "is_external": "",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "align": "center",
+        "align_mobile": "justify",
+        "size": "lg",
+        "background_color": "#FFFFFF",
+        "button_text_color": "#2F7A4D",
+        "button_background_hover_color": "#E8F6EC",
+        "hover_color": "#2F7A4D",
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "2",
+         "right": "2",
+         "bottom": "2",
+         "left": "2",
+         "isLinked": true
+        },
+        "border_color": "#2F7A4D",
+        "border_radius": {
+         "unit": "px",
+         "top": "999",
+         "right": "999",
+         "bottom": "999",
+         "left": "999",
+         "isLinked": true
+        },
+        "text_padding": {
+         "unit": "px",
+         "top": "16",
+         "right": "34",
+         "bottom": "16",
+         "left": "34",
+         "isLinked": false
+        },
+        "typography_typography": "custom",
+        "typography_font_family": "Nunito",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 17,
+         "sizes": []
+        },
+        "typography_font_weight": "800"
+       },
+       "elements": [],
+       "isInner": false
+      }
+     ],
+     "isInner": false
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "f1eb83e",
+   "elType": "section",
+   "settings": {
+    "layout": "boxed",
+    "content_width": {
+     "unit": "px",
+     "size": 1140,
+     "sizes": []
+    },
+    "gap": "wider",
+    "structure": "10",
+    "background_background": "classic",
+    "background_color": "#FFF8F0",
+    "padding": {
+     "unit": "px",
+     "top": "0",
+     "right": "20",
+     "bottom": "90",
+     "left": "20",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "0",
+     "right": "16",
+     "bottom": "56",
+     "left": "16",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "29faf8f",
+     "elType": "column",
+     "settings": {
+      "_column_size": 100,
+      "_inline_size": null
+     },
+     "elements": [
+      {
+       "id": "d561605",
+       "elType": "widget",
+       "widgetType": "heading",
+       "settings": {
+        "title": "Office hours",
+        "header_size": "h2",
+        "align": "center",
+        "title_color": "#2E2A3B",
+        "typography_typography": "custom",
+        "typography_font_family": "Fredoka",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 28,
+         "sizes": []
+        },
+        "typography_font_weight": "600",
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 30,
+         "sizes": []
+        },
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.15,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      },
+      {
+       "id": "846e008",
+       "elType": "widget",
+       "widgetType": "text-editor",
+       "settings": {
+        "editor": "<p>Monday to Friday, 08:00 to 17:00. Messages sent after hours are answered the next working day.</p>",
+        "align": "center",
+        "text_color": "#2E2A3B",
+        "typography_typography": "custom",
+        "typography_font_family": "Nunito",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 18,
+         "sizes": []
+        },
+        "typography_font_weight": "400",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.6,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "isInner": false
+      }
+     ],
+     "isInner": false
+    }
+   ],
+   "isInner": false
+  }
+ ]
+}
