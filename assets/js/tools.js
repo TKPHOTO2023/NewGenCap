@@ -1,4 +1,4 @@
-/* Funding tools: Funding Readiness Assessment, Repayment & DSCR Calculator,
+/* Funding tools: Funding Readiness Assessment, Telecoms Readiness Assessment, Repayment & DSCR Calculator,
    and the branded PDF report for each. Results are indicative only. */
 (function () {
   'use strict';
@@ -15,33 +15,9 @@
   function ratio(v) { return isFinite(v) ? v.toFixed(2) + '×' : 'n/a'; }
 
   /* =========================================================
-     1. Funding Readiness Assessment
+     1. Readiness assessments (general funding, and telecoms)
+     Both run on the same engine; each section is marked data-assessment="<key>".
      ========================================================= */
-  var AREAS = [
-    { name: 'Project & plan', qs: ['stage', 'plan', 'ask'] },
-    { name: 'Commercial strength', qs: ['revenue', 'equity'] },
-    { name: 'Team & track record', qs: ['team', 'financials'] },
-    { name: 'Technical & approvals', qs: ['technical', 'permits'] },
-    { name: 'Risk management', qs: ['risk'] },
-    { name: 'Telecoms readiness', qs: ['tc_rights', 'tc_licence', 'tc_demand', 'tc_build', 'tc_rollout'] }
-  ];
-  var GAPS = {
-    stage: 'Complete a feasibility study that confirms the project can be built and run as planned.',
-    plan: 'Prepare a business plan and a detailed financial model covering income, costs, funding and repayments.',
-    revenue: 'Secure signed contracts, offtake agreements or letters of intent that show where income will come from.',
-    equity: 'Plan your own contribution. Funders usually expect sponsors to fund part of the cost, often 10% to 30%.',
-    team: 'Strengthen the team with partners, contractors or advisors who have delivered similar projects.',
-    technical: 'Commission an independent technical or engineering study and get supplier or contractor quotes.',
-    permits: 'Start land, permit and licence applications early. They are often the longest lead item.',
-    financials: 'Get up-to-date management accounts and, where possible, audited financial statements.',
-    risk: 'Write a risk register covering construction, market, financial and regulatory risk, with mitigations.',
-    ask: 'Build a detailed budget and decide on the mix of debt and equity you are looking for.',
-    tc_rights: 'Secure site access, wayleaves and rights of way along the route before funders review the project.',
-    tc_licence: 'Confirm the ICASA licences the network needs, held directly or through a licensed partner.',
-    tc_demand: 'Evidence demand on the route or sites: anchor tenants, pre-registrations or signed take-up.',
-    tc_build: 'Firm up the network design and get contractor quotes, so build costs can be verified.',
-    tc_rollout: 'Plan the rollout in phases with milestones that drawdowns can be tied to.'
-  };
   var BANDS = [
     { min: 85, name: 'Funding-ready', text: 'Your project looks ready to present to funders. Submit it and we will review it with you.' },
     { min: 65, name: 'Nearly ready', text: 'A few gaps to close before funders will engage. Most of them can be fixed in weeks, not months.' },
@@ -49,29 +25,71 @@
     { min: 0, name: 'Early stage', text: 'It is early days. Use the list below as your roadmap. We can help you build the case.' }
   ];
 
-  var rForm = $('readinessForm');
-  var readinessResult = null;
-
-  if (rForm) {
-    var allQuestions = Array.prototype.slice.call(rForm.querySelectorAll('.q'));
-    var questions = allQuestions;
-    // optional project-type picker: extra questions carry data-track and only apply to that track
-    function selectTrack() {
-      var picked = rForm.querySelector('input[name="track"]:checked');
-      var track = picked ? picked.value : 'general';
-      questions = allQuestions.filter(function (q) {
-        var t = q.getAttribute('data-track');
-        return !t || t === track;
-      });
-      allQuestions.forEach(function (q) { if (questions.indexOf(q) < 0) q.classList.remove('is-current'); });
+  var ASSESSMENTS = {
+    readiness: {
+      tool: 'Funding Readiness Assessment',
+      report: 'Funding Readiness Report',
+      file: 'NGC-Funding-Readiness-Report',
+      areas: [
+        { name: 'Project & plan', qs: ['stage', 'plan', 'ask'] },
+        { name: 'Commercial strength', qs: ['revenue', 'equity'] },
+        { name: 'Team & track record', qs: ['team', 'financials'] },
+        { name: 'Technical & approvals', qs: ['technical', 'permits'] },
+        { name: 'Risk management', qs: ['risk'] }
+      ],
+      gaps: {
+        stage: 'Complete a feasibility study that confirms the project can be built and run as planned.',
+        plan: 'Prepare a business plan and a detailed financial model covering income, costs, funding and repayments.',
+        revenue: 'Secure signed contracts, offtake agreements or letters of intent that show where income will come from.',
+        equity: 'Plan your own contribution. Funders usually expect sponsors to fund part of the cost, often 10% to 30%.',
+        team: 'Strengthen the team with partners, contractors or advisors who have delivered similar projects.',
+        technical: 'Commission an independent technical or engineering study and get supplier or contractor quotes.',
+        permits: 'Start land, permit and licence applications early. They are often the longest lead item.',
+        financials: 'Get up-to-date management accounts and, where possible, audited financial statements.',
+        risk: 'Write a risk register covering construction, market, financial and regulatory risk, with mitigations.',
+        ask: 'Build a detailed budget and decide on the mix of debt and equity you are looking for.'
+      }
+    },
+    telecoms: {
+      tool: 'Telecoms Readiness Assessment',
+      report: 'Telecoms Readiness Report',
+      file: 'NGC-Telecoms-Readiness-Report',
+      areas: [
+        { name: 'Network design & build', qs: ['tc_design', 'tc_vendor', 'tc_rollout'] },
+        { name: 'Rights & regulation', qs: ['tc_rights', 'tc_licence', 'tc_approvals'] },
+        { name: 'Demand & revenue', qs: ['tc_demand', 'tc_anchor'] },
+        { name: 'Delivery & operations', qs: ['tc_team', 'tc_ops'] }
+      ],
+      gaps: {
+        tc_design: 'Firm up the network design and get contractor quotes, so build costs can be verified.',
+        tc_vendor: 'Select equipment vendors and secure supply terms and lead times for the critical equipment.',
+        tc_rollout: 'Plan the rollout in phases with milestones that funding drawdowns can be tied to.',
+        tc_rights: 'Secure site access, wayleaves and rights of way along the route before funders review the project.',
+        tc_licence: 'Confirm the ICASA licences the network needs, held directly or through a licensed partner.',
+        tc_approvals: 'Start municipal, environmental and building approvals for trenching and tower sites early.',
+        tc_demand: 'Evidence demand on the route or sites: surveys, pre-registrations or signed take-up.',
+        tc_anchor: 'Secure anchor tenants or wholesale and ISP agreements that underpin early revenue.',
+        tc_team: 'Strengthen the team with partners or contractors who have built similar networks.',
+        tc_ops: 'Define how the network will be run: network operations, maintenance, service levels and support.'
+      }
     }
-    selectTrack();
-    var nextBtn = $('readinessNext');
-    var backBtn = $('readinessBack');
+  };
+  var results = {};
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-assessment]'), function (root) {
+    var key = root.getAttribute('data-assessment');
+    var def = ASSESSMENTS[key];
+    if (!def) return;
+    function el(role) { return root.querySelector('[data-role="' + role + '"]'); }
+
+    var form = el('form');
+    var questions = Array.prototype.slice.call(form.querySelectorAll('.q'));
+    var nextBtn = el('next');
+    var backBtn = el('back');
     var nextLabel = nextBtn.querySelector('span');
-    var bar = $('readinessBar');
-    var count = $('readinessCount');
-    var resultEl = $('readinessResult');
+    var bar = el('bar');
+    var count = el('count');
+    var resultEl = el('result');
     var current = 0;
     var pointerDown = false;
 
@@ -101,10 +119,9 @@
       }
     }
 
-    rForm.addEventListener('pointerdown', function () { pointerDown = true; });
-    rForm.addEventListener('keydown', function () { pointerDown = false; });
-    rForm.addEventListener('change', function (e) {
-      if (e.target.name === 'track') { selectTrack(); show(0); return; }
+    form.addEventListener('pointerdown', function () { pointerDown = true; });
+    form.addEventListener('keydown', function () { pointerDown = false; });
+    form.addEventListener('change', function (e) {
       if (!e.target.matches('input[type="radio"]')) return;
       nextBtn.disabled = false;
       // a mouse or touch choice moves on by itself; keyboard users press Next
@@ -123,38 +140,29 @@
       });
       var pct = Math.round(total / (questions.length * 3) * 100);
       var band = BANDS.filter(function (b) { return pct >= b.min; })[0];
-
-      var areas = AREAS.filter(function (a) { return a.qs.every(function (k) { return k in answers; }); }).map(function (a) {
-        var sum = a.qs.reduce(function (s, k) { return s + answers[k]; }, 0);
+      var areas = def.areas.filter(function (a) { return a.qs.every(function (k) { return k in answers; }); }).map(function (a) {
+        var sum = a.qs.reduce(function (t, k) { return t + answers[k]; }, 0);
         return { name: a.name, pct: Math.round(sum / (a.qs.length * 3) * 100) };
       });
-
       var gaps = Object.keys(answers)
         .filter(function (k) { return answers[k] < 2; })
         .sort(function (a, b) { return answers[a] - answers[b]; })
-        .map(function (k) { return GAPS[k]; });
-
+        .map(function (k) { return def.gaps[k]; });
       var detail = questions.map(function (q) {
         var checked = q.querySelector('input:checked');
-        return {
-          question: q.querySelector('legend').textContent.trim(),
-          answer: checked.parentNode.textContent.trim()
-        };
+        return { question: q.querySelector('legend').textContent.trim(), answer: checked.parentNode.textContent.trim() };
       });
-
-      readinessResult = { pct: pct, band: band, areas: areas, gaps: gaps, detail: detail };
-      renderResult();
+      results[key] = { pct: pct, band: band, areas: areas, gaps: gaps, detail: detail };
+      renderResult(results[key]);
     }
 
-    function renderResult() {
-      var r = readinessResult;
-      rForm.hidden = true;
+    function renderResult(r) {
+      form.hidden = true;
       resultEl.hidden = false;
+      el('band').textContent = r.band.name;
+      el('summary').textContent = r.band.text;
 
-      $('scoreBand').textContent = r.band.name;
-      $('scoreSummary').textContent = r.band.text;
-
-      var areasEl = $('scoreAreas');
+      var areasEl = el('areas');
       areasEl.innerHTML = '';
       r.areas.forEach(function (a) {
         var row = document.createElement('div');
@@ -168,7 +176,7 @@
         });
       });
 
-      var gapsEl = $('scoreGaps');
+      var gapsEl = el('gaps');
       gapsEl.innerHTML = '';
       (r.gaps.length ? r.gaps : ['No major gaps. Submit your project and we will review it with you.']).forEach(function (g) {
         var li = document.createElement('li');
@@ -177,11 +185,11 @@
       });
 
       // score ring and number
-      var arc = $('scoreArc');
+      var arc = el('arc');
       var C = 2 * Math.PI * 52;
       arc.style.strokeDasharray = C.toFixed(2);
       arc.style.strokeDashoffset = C.toFixed(2);
-      var num = $('scoreNum');
+      var num = el('num');
       requestAnimationFrame(function () {
         requestAnimationFrame(function () { arc.style.strokeDashoffset = (C * (1 - r.pct / 100)).toFixed(2); });
       });
@@ -199,18 +207,17 @@
       resultEl.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
     }
 
-    $('readinessRestart').addEventListener('click', function () {
-      rForm.reset();
-      selectTrack();
-      readinessResult = null;
+    el('restart').addEventListener('click', function () {
+      form.reset();
+      delete results[key];
       resultEl.hidden = true;
-      rForm.hidden = false;
+      form.hidden = false;
       show(0);
       questions[0].querySelector('input').focus({ preventScroll: true });
     });
 
     show(0);
-  }
+  });
 
   /* =========================================================
      2. Repayment & DSCR Calculator
@@ -380,7 +387,7 @@
   document.querySelectorAll('[data-report]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       reportType = btn.getAttribute('data-report');
-      if (reportType === 'readiness' && !readinessResult) return;
+      if (ASSESSMENTS[reportType] && !results[reportType]) return;
       if (reportType === 'dscr' && !dscrResult) {
         $('dscrError').textContent = 'Please complete the calculator before downloading a report.';
         $('dscrError').hidden = false;
@@ -416,11 +423,12 @@
       reportError.hidden = true;
 
       var person = { name: name, email: email, company: company };
-      var summary = reportType === 'readiness'
-        ? 'Readiness score ' + readinessResult.pct + '% (' + readinessResult.band.name + ')'
+      var assessment = ASSESSMENTS[reportType];
+      var summary = assessment
+        ? 'Readiness score ' + results[reportType].pct + '% (' + results[reportType].band.name + ')'
         : 'Year 1 DSCR ' + ratio(dscrResult.dscr1) + ', loan ' + money(dscrResult.loan);
 
-      var tool = reportType === 'readiness' ? 'Funding Readiness Assessment' : 'Repayment & DSCR Calculator';
+      var tool = assessment ? assessment.tool : 'Repayment & DSCR Calculator';
       var honeypot = reportForm.website ? reportForm.website.value : '';
 
       // the visitor gets the PDF straight away; the same PDF then goes to the team with the lead
@@ -469,7 +477,8 @@
       var doc = new window.jspdf.jsPDF({ unit: 'mm', format: 'a4' });
       var W = 210, M = 18, y = 0;
       var INK = [5, 21, 42], SLATE = [97, 112, 131], SIGNAL = [245, 131, 31], RULE = [213, 220, 228];
-      var title = type === 'readiness' ? 'Funding Readiness Report' : 'Repayment & DSCR Report';
+      var assessment = ASSESSMENTS[type];
+      var title = assessment ? assessment.report : 'Repayment & DSCR Report';
       var today = new Date().toLocaleDateString('en-ZA', { day: 'numeric', month: 'long', year: 'numeric' });
 
       function header() {
@@ -525,8 +534,8 @@
       doc.setFont('helvetica', 'normal'); doc.setFontSize(9); doc.setTextColor.apply(doc, SLATE);
       doc.text(clean('Prepared for ' + person.name + (person.company ? ', ' + person.company : '')), M, y); y += 10;
 
-      if (type === 'readiness') {
-        var r = readinessResult;
+      if (assessment) {
+        var r = results[type];
         doc.setFont('helvetica', 'normal'); doc.setFontSize(40); doc.setTextColor.apply(doc, INK);
         doc.text(r.pct + '%', M, y + 10);
         doc.setFontSize(14); doc.setTextColor.apply(doc, SIGNAL); doc.text(r.band.name, M + 48, y + 3);
@@ -615,7 +624,7 @@
       para('Ready to take the project further? Submit it through the Partner with us page on our website, or email funding@newgenerationcap.co.za, and our team will review it with you.', 9.5);
 
       footer();
-      var file = (type === 'readiness' ? 'NGC-Funding-Readiness-Report' : 'NGC-Repayment-DSCR-Report') + '.pdf';
+      var file = (assessment ? assessment.file : 'NGC-Repayment-DSCR-Report') + '.pdf';
       doc.save(file);
       return { blob: doc.output('blob'), name: file };
     });

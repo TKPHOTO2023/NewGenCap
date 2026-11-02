@@ -13,7 +13,7 @@
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Funding tools | New Generation Capital</title>
-<meta name="description" content="Free project finance tools: a Funding Readiness Assessment and a Project Finance Repayment and DSCR Calculator, each with an instant result and a PDF report.">
+<meta name="description" content="Free project finance tools: a Funding Readiness Assessment, a Telecoms Readiness Assessment and a Repayment and DSCR Calculator, each with an instant result and a PDF report.">
 <meta name="theme-color" content="#05152A">
 <link rel="icon" type="image/png" href="assets/img/ng-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,16 +65,17 @@
     <div class="wrap page-hero__inner">
       <p class="label label--light reveal">Funding tools</p>
       <h1 class="page-hero__title reveal">Know where your project stands before you pitch it.</h1>
-      <p class="page-hero__lede reveal">Two free tools with instant results. Download a detailed PDF report to share with your team, or send your project to us for review.</p>
+      <p class="page-hero__lede reveal">Three free tools with instant results. Download a detailed PDF report to share with your team, or send your project to us for review.</p>
     </div>
   </section>
 
   <nav class="tool-switch wrap" aria-label="Funding tools">
     <a href="#readiness" class="tool-switch__link"><span>01</span> Funding Readiness Assessment</a>
-    <a href="#dscr" class="tool-switch__link"><span>02</span> Repayment &amp; DSCR Calculator</a>
+    <a href="#telecoms" class="tool-switch__link"><span>02</span> Telecoms Readiness Assessment</a>
+    <a href="#dscr" class="tool-switch__link"><span>03</span> Repayment &amp; DSCR Calculator</a>
   </nav>
 
-  <section class="section tool" id="readiness">
+  <section class="section tool" id="readiness" data-assessment="readiness">
     <div class="wrap tool-grid">
       <div class="tool-intro reveal">
         <p class="label">Tool 01</p>
@@ -88,9 +89,9 @@
       </div>
 
       <div class="tool-panel reveal">
-        <form class="readiness" id="readinessForm" novalidate>
-          <div class="readiness-progress" aria-hidden="true"><span id="readinessBar"></span></div>
-          <p class="readiness-count" id="readinessCount" aria-live="polite">Question 1 of 10</p>
+        <form class="readiness" data-role="form" novalidate>
+          <div class="readiness-progress" aria-hidden="true"><span data-role="bar"></span></div>
+          <p class="readiness-count" data-role="count" aria-live="polite">Question 1 of 10</p>
           <fieldset class="q" data-q="stage">
             <legend>What stage is your project at?</legend>
             <div class="choices">
@@ -184,41 +185,183 @@
             </div>
           </fieldset>
           <div class="readiness-nav">
-            <button class="btn btn--quiet" type="button" id="readinessBack">Back</button>
-            <button class="btn" type="button" id="readinessNext" disabled><span>Next</span><svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></button>
+            <button class="btn btn--quiet" type="button" data-role="back">Back</button>
+            <button class="btn" type="button" data-role="next" disabled><span>Next</span><svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></button>
           </div>
         </form>
 
-        <div class="result" id="readinessResult" hidden tabindex="-1">
+        <div class="result" data-role="result" hidden tabindex="-1">
           <div class="result-head">
             <div class="score-ring" aria-hidden="true">
-              <svg viewBox="0 0 120 120"><circle class="score-ring__track" cx="60" cy="60" r="52"/><circle class="score-ring__value" id="scoreArc" cx="60" cy="60" r="52"/></svg>
-              <span class="score-ring__num" id="scoreNum">0</span>
+              <svg viewBox="0 0 120 120"><circle class="score-ring__track" cx="60" cy="60" r="52"/><circle class="score-ring__value" data-role="arc" cx="60" cy="60" r="52"/></svg>
+              <span class="score-ring__num" data-role="num">0</span>
             </div>
             <div>
-              <p class="result-band" id="scoreBand"></p>
-              <p class="result-summary" id="scoreSummary"></p>
+              <p class="result-band" data-role="band"></p>
+              <p class="result-summary" data-role="summary"></p>
             </div>
           </div>
-          <div class="result-areas" id="scoreAreas"></div>
+          <div class="result-areas" data-role="areas"></div>
           <div class="result-gaps">
             <h3>What to work on</h3>
-            <ul id="scoreGaps"></ul>
+            <ul data-role="gaps"></ul>
           </div>
           <div class="result-actions">
             <button class="btn" type="button" data-report="readiness"><span>Get the PDF report</span><svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></button>
             <a class="btn btn--outline" href="partner.html#submit"><span>Submit your project</span><svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a>
-            <button class="btn btn--quiet" type="button" id="readinessRestart">Start again</button>
+            <button class="btn btn--quiet" type="button" data-role="restart">Start again</button>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section tool tool--alt" id="dscr">
+  <section class="section tool tool--alt" id="telecoms" data-assessment="telecoms">
     <div class="wrap tool-grid">
       <div class="tool-intro reveal">
         <p class="label">Tool 02</p>
+        <h2 class="display">Telecoms Readiness Assessment</h2>
+        <p>For fibre, tower, wireless and data centre projects. Ten questions on the things funders check in a network build: design and build cost, rights and licences, demand and operations.</p>
+        <ul class="tool-points">
+          <li>About 3 minutes</li>
+          <li>Built from our directors’ network delivery experience</li>
+          <li>Optional PDF report to share</li>
+        </ul>
+      </div>
+
+      <div class="tool-panel reveal">
+        <form class="readiness" data-role="form" novalidate>
+          <div class="readiness-progress" aria-hidden="true"><span data-role="bar"></span></div>
+          <p class="readiness-count" data-role="count" aria-live="polite">Question 1 of 10</p>
+          <fieldset class="q" data-q="tc_design">
+            <legend>How firm are the network design and build cost?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="tc_design" value="0"><span>Concept only</span></label>
+              <label class="choice"><input type="radio" name="tc_design" value="1"><span>High-level design</span></label>
+              <label class="choice"><input type="radio" name="tc_design" value="2"><span>Detailed design with estimates</span></label>
+              <label class="choice"><input type="radio" name="tc_design" value="3"><span>Detailed design with contractor quotes</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="q" data-q="tc_vendor">
+            <legend>Have equipment vendors and supply been secured?</legend>
+            <p class="q-hint">For example fibre, active equipment, towers, power and cooling.</p>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="tc_vendor" value="0"><span>Not yet</span></label>
+              <label class="choice"><input type="radio" name="tc_vendor" value="1"><span>Shortlisted</span></label>
+              <label class="choice"><input type="radio" name="tc_vendor" value="2"><span>Selected, terms under negotiation</span></label>
+              <label class="choice"><input type="radio" name="tc_vendor" value="3"><span>Contracted, with lead times confirmed</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="q" data-q="tc_rollout">
+            <legend>Is there a phased rollout plan with milestones?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="tc_rollout" value="0"><span>No</span></label>
+              <label class="choice"><input type="radio" name="tc_rollout" value="1"><span>A draft plan</span></label>
+              <label class="choice"><input type="radio" name="tc_rollout" value="2"><span>A phased plan</span></label>
+              <label class="choice"><input type="radio" name="tc_rollout" value="3"><span>A phased plan tied to funding drawdowns</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="q" data-q="tc_rights">
+            <legend>Are site access, wayleaves and rights of way secured?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="tc_rights" value="0"><span>Not started</span></label>
+              <label class="choice"><input type="radio" name="tc_rights" value="1"><span>Applications submitted</span></label>
+              <label class="choice"><input type="radio" name="tc_rights" value="2"><span>Secured for part of the rollout</span></label>
+              <label class="choice"><input type="radio" name="tc_rights" value="3"><span>Secured for the full rollout</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="q" data-q="tc_licence">
+            <legend>Does the project hold the ICASA licences it needs?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="tc_licence" value="0"><span>Not yet</span></label>
+              <label class="choice"><input type="radio" name="tc_licence" value="1"><span>Applied for</span></label>
+              <label class="choice"><input type="radio" name="tc_licence" value="2"><span>Through a licensed partner</span></label>
+              <label class="choice"><input type="radio" name="tc_licence" value="3"><span>Held directly</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="q" data-q="tc_approvals">
+            <legend>Are municipal, environmental and building approvals in place?</legend>
+            <p class="q-hint">For example trenching permits and tower site approvals.</p>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="tc_approvals" value="0"><span>Not started</span></label>
+              <label class="choice"><input type="radio" name="tc_approvals" value="1"><span>Applications in progress</span></label>
+              <label class="choice"><input type="radio" name="tc_approvals" value="2"><span>Mostly approved</span></label>
+              <label class="choice"><input type="radio" name="tc_approvals" value="3"><span>All approved, or none required</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="q" data-q="tc_demand">
+            <legend>How proven is demand on the planned route or sites?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="tc_demand" value="0"><span>Not assessed</span></label>
+              <label class="choice"><input type="radio" name="tc_demand" value="1"><span>Desktop study</span></label>
+              <label class="choice"><input type="radio" name="tc_demand" value="2"><span>Surveys or pre-registrations</span></label>
+              <label class="choice"><input type="radio" name="tc_demand" value="3"><span>Signed take-up or customer orders</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="q" data-q="tc_anchor">
+            <legend>Are there anchor tenants or wholesale agreements?</legend>
+            <p class="q-hint">For example ISPs, mobile operators, municipalities or enterprise clients.</p>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="tc_anchor" value="0"><span>None yet</span></label>
+              <label class="choice"><input type="radio" name="tc_anchor" value="1"><span>In discussion</span></label>
+              <label class="choice"><input type="radio" name="tc_anchor" value="2"><span>Letters of intent</span></label>
+              <label class="choice"><input type="radio" name="tc_anchor" value="3"><span>Signed agreements</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="q" data-q="tc_team">
+            <legend>What is your team’s network build track record?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="tc_team" value="0"><span>This is our first network</span></label>
+              <label class="choice"><input type="radio" name="tc_team" value="1"><span>Some related experience</span></label>
+              <label class="choice"><input type="radio" name="tc_team" value="2"><span>We have built a similar network</span></label>
+              <label class="choice"><input type="radio" name="tc_team" value="3"><span>We have built several similar networks</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="q" data-q="tc_ops">
+            <legend>How will the network be operated and maintained?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="tc_ops" value="0"><span>Not decided</span></label>
+              <label class="choice"><input type="radio" name="tc_ops" value="1"><span>Outline plan</span></label>
+              <label class="choice"><input type="radio" name="tc_ops" value="2"><span>Operating model defined</span></label>
+              <label class="choice"><input type="radio" name="tc_ops" value="3"><span>Operator or NOC and maintenance contracts in place</span></label>
+            </div>
+          </fieldset>
+          <div class="readiness-nav">
+            <button class="btn btn--quiet" type="button" data-role="back">Back</button>
+            <button class="btn" type="button" data-role="next" disabled><span>Next</span><svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></button>
+          </div>
+        </form>
+
+        <div class="result" data-role="result" hidden tabindex="-1">
+          <div class="result-head">
+            <div class="score-ring" aria-hidden="true">
+              <svg viewBox="0 0 120 120"><circle class="score-ring__track" cx="60" cy="60" r="52"/><circle class="score-ring__value" data-role="arc" cx="60" cy="60" r="52"/></svg>
+              <span class="score-ring__num" data-role="num">0</span>
+            </div>
+            <div>
+              <p class="result-band" data-role="band"></p>
+              <p class="result-summary" data-role="summary"></p>
+            </div>
+          </div>
+          <div class="result-areas" data-role="areas"></div>
+          <div class="result-gaps">
+            <h3>What to work on</h3>
+            <ul data-role="gaps"></ul>
+          </div>
+          <div class="result-actions">
+            <button class="btn" type="button" data-report="telecoms"><span>Get the PDF report</span><svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></button>
+            <a class="btn btn--outline" href="partner.html#submit"><span>Submit your project</span><svg class="btn-arrow" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a>
+            <button class="btn btn--quiet" type="button" data-role="restart">Start again</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tool" id="dscr">
+    <div class="wrap tool-grid">
+      <div class="tool-intro reveal">
+        <p class="label">Tool 03</p>
         <h2 class="display">Repayment &amp; DSCR Calculator</h2>
         <p>Estimate loan repayments and your debt service coverage ratio (DSCR): how many times the project’s income covers its loan repayments. Lenders use it to size the debt they will offer.</p>
         <ul class="tool-points">

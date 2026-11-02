@@ -2,7 +2,7 @@ import sys
 from shared import (ARROW, head, header, page_hero, cta_band, footer,
                     stages_list, industries_grid, people, SERVICES,
                     MEDIA, backdrop, photo_break, pic, ALL_SERVICES, DEAL_SIZES,
-                    TELECOMS_READINESS, tbc, response_time)
+                    tbc, response_time)
 
 OUT = sys.argv[1]
 
@@ -116,7 +116,7 @@ TOOLS_TEASER = f"""
           <p class="label">Free funding tools</p>
           <h2 class="display">Test your project before you pitch it.</h2>
         </div>
-        <p class="section-head__aside">Two free tools give you an instant answer, and a detailed PDF report you can share with your team.</p>
+        <p class="section-head__aside">Three free tools give you an instant answer, and a detailed PDF report you can share with your team.</p>
       </div>
       <div class="tool-cards stagger">
         <a class="tool-card-link" href="funding-tools.html#readiness">
@@ -124,6 +124,12 @@ TOOLS_TEASER = f"""
           <h3>Funding Readiness Assessment</h3>
           <p>Score how ready your project is for funding, and see exactly what is missing before funders will engage.</p>
           <span class="tool-card-link__cta">Check my readiness {ARROW}</span>
+        </a>
+        <a class="tool-card-link" href="funding-tools.html#telecoms">
+          <span class="tool-card-link__meta">10 questions · about 3 minutes</span>
+          <h3>Telecoms Readiness Assessment</h3>
+          <p>For fibre, tower, wireless and data centre projects: see how ready your network build is for funders.</p>
+          <span class="tool-card-link__cta">Assess my network project {ARROW}</span>
         </a>
         <a class="tool-card-link" href="funding-tools.html#dscr">
           <span class="tool-card-link__meta">Instant result · year-by-year schedule</span>
@@ -457,93 +463,102 @@ QUESTIONS = [
 ]
 
 
-# Draft telecoms questions for the readiness assessment, for New Generation Capital to confirm.
+# Telecoms Readiness Assessment questions (score 0 to 3), for New Generation Capital to refine.
 TELECOMS_QUESTIONS = [
+    ('tc_design', 'How firm are the network design and build cost?', [(0, 'Concept only'), (1, 'High-level design'), (2, 'Detailed design with estimates'), (3, 'Detailed design with contractor quotes')], ''),
+    ('tc_vendor', 'Have equipment vendors and supply been secured?', [(0, 'Not yet'), (1, 'Shortlisted'), (2, 'Selected, terms under negotiation'), (3, 'Contracted, with lead times confirmed')], 'For example fibre, active equipment, towers, power and cooling.'),
+    ('tc_rollout', 'Is there a phased rollout plan with milestones?', [(0, 'No'), (1, 'A draft plan'), (2, 'A phased plan'), (3, 'A phased plan tied to funding drawdowns')], ''),
     ('tc_rights', 'Are site access, wayleaves and rights of way secured?', [(0, 'Not started'), (1, 'Applications submitted'), (2, 'Secured for part of the rollout'), (3, 'Secured for the full rollout')], ''),
     ('tc_licence', 'Does the project hold the ICASA licences it needs?', [(0, 'Not yet'), (1, 'Applied for'), (2, 'Through a licensed partner'), (3, 'Held directly')], ''),
-    ('tc_demand', 'How proven is demand on the planned route or sites?', [(0, 'Not assessed'), (1, 'Desktop study'), (2, 'Surveys or pre-registrations'), (3, 'Anchor tenants or signed take-up')], ''),
-    ('tc_build', 'How firm are the network design and build cost?', [(0, 'Concept only'), (1, 'High-level design'), (2, 'Detailed design with estimates'), (3, 'Detailed design with contractor quotes')], ''),
-    ('tc_rollout', 'Is there a phased rollout plan with milestones?', [(0, 'No'), (1, 'A draft plan'), (2, 'A phased plan'), (3, 'A phased plan tied to funding drawdowns')], ''),
+    ('tc_approvals', 'Are municipal, environmental and building approvals in place?', [(0, 'Not started'), (1, 'Applications in progress'), (2, 'Mostly approved'), (3, 'All approved, or none required')], 'For example trenching permits and tower site approvals.'),
+    ('tc_demand', 'How proven is demand on the planned route or sites?', [(0, 'Not assessed'), (1, 'Desktop study'), (2, 'Surveys or pre-registrations'), (3, 'Signed take-up or customer orders')], ''),
+    ('tc_anchor', 'Are there anchor tenants or wholesale agreements?', [(0, 'None yet'), (1, 'In discussion'), (2, 'Letters of intent'), (3, 'Signed agreements')], 'For example ISPs, mobile operators, municipalities or enterprise clients.'),
+    ('tc_team', 'What is your team’s network build track record?', [(0, 'This is our first network'), (1, 'Some related experience'), (2, 'We have built a similar network'), (3, 'We have built several similar networks')], ''),
+    ('tc_ops', 'How will the network be operated and maintained?', [(0, 'Not decided'), (1, 'Outline plan'), (2, 'Operating model defined'), (3, 'Operator or NOC and maintenance contracts in place')], ''),
 ]
 
 
-def funding_tools():
-    qs = '\n'.join(tool_q(i, n, q, o, h) for i, (n, q, o, h) in enumerate(QUESTIONS, 1))
-    track_pick = ''
-    if TELECOMS_READINESS:
-        qs += '\n' + '\n'.join(tool_q(i, n, q, o, h, 'telecoms') for i, (n, q, o, h) in enumerate(TELECOMS_QUESTIONS, 11))
-        track_pick = '''          <fieldset class="track-pick">
-            <legend>Project type</legend>
-            <label><input type="radio" name="track" value="general" checked><span>General project</span></label>
-            <label><input type="radio" name="track" value="telecoms"><span>Digital &amp; telecoms</span></label>
-          </fieldset>
-'''
-    return (head('Funding tools | New Generation Capital',
-                 'Free project finance tools: a Funding Readiness Assessment and a Project Finance Repayment and DSCR Calculator, each with an instant result and a PDF report.')
-            + header('funding-tools.html') + '\n<main id="main">\n'
-            + page_hero('Funding tools', 'Know where your project stands before you pitch it.',
-                        'Two free tools with instant results. Download a detailed PDF report to share with your team, or send your project to us for review.',
-                        'backdrop-funding-tools')
-            + f"""
-  <nav class="tool-switch wrap" aria-label="Funding tools">
-    <a href="#readiness" class="tool-switch__link"><span>01</span> Funding Readiness Assessment</a>
-    <a href="#dscr" class="tool-switch__link"><span>02</span> Repayment &amp; DSCR Calculator</a>
-  </nav>
-
-  <section class="section tool" id="readiness">
+def assessment(key, num, title, intro, points, questions, alt=False):
+    qs = '\n'.join(tool_q(i, n, q, o, h) for i, (n, q, o, h) in enumerate(questions, 1))
+    pts = '\n'.join(f'          <li>{p}</li>' for p in points)
+    return f"""
+  <section class="section tool{' tool--alt' if alt else ''}" id="{key}" data-assessment="{key}">
     <div class="wrap tool-grid">
       <div class="tool-intro reveal">
-        <p class="label">Tool 01</p>
-        <h2 class="display">Funding Readiness Assessment</h2>
-        <p>Answer {'ten short questions (fifteen for digital and telecoms projects)' if TELECOMS_READINESS else 'ten short questions'} about your project. You will get a readiness score, a breakdown by area and a list of what to prepare before funders will engage.</p>
+        <p class="label">Tool {num:02d}</p>
+        <h2 class="display">{title}</h2>
+        <p>{intro}</p>
         <ul class="tool-points">
-          <li>About 3 minutes</li>
-          <li>No sign-up needed to see your score</li>
-          <li>Optional PDF report to share</li>
+{pts}
         </ul>
       </div>
 
       <div class="tool-panel reveal">
-        <form class="readiness" id="readinessForm" novalidate>
-{track_pick}          <div class="readiness-progress" aria-hidden="true"><span id="readinessBar"></span></div>
-          <p class="readiness-count" id="readinessCount" aria-live="polite">Question 1 of 10</p>
+        <form class="readiness" data-role="form" novalidate>
+          <div class="readiness-progress" aria-hidden="true"><span data-role="bar"></span></div>
+          <p class="readiness-count" data-role="count" aria-live="polite">Question 1 of {len(questions)}</p>
 {qs}
           <div class="readiness-nav">
-            <button class="btn btn--quiet" type="button" id="readinessBack">Back</button>
-            <button class="btn" type="button" id="readinessNext" disabled><span>Next</span>{ARROW}</button>
+            <button class="btn btn--quiet" type="button" data-role="back">Back</button>
+            <button class="btn" type="button" data-role="next" disabled><span>Next</span>{ARROW}</button>
           </div>
         </form>
 
-        <div class="result" id="readinessResult" hidden tabindex="-1">
+        <div class="result" data-role="result" hidden tabindex="-1">
           <div class="result-head">
             <div class="score-ring" aria-hidden="true">
-              <svg viewBox="0 0 120 120"><circle class="score-ring__track" cx="60" cy="60" r="52"/><circle class="score-ring__value" id="scoreArc" cx="60" cy="60" r="52"/></svg>
-              <span class="score-ring__num" id="scoreNum">0</span>
+              <svg viewBox="0 0 120 120"><circle class="score-ring__track" cx="60" cy="60" r="52"/><circle class="score-ring__value" data-role="arc" cx="60" cy="60" r="52"/></svg>
+              <span class="score-ring__num" data-role="num">0</span>
             </div>
             <div>
-              <p class="result-band" id="scoreBand"></p>
-              <p class="result-summary" id="scoreSummary"></p>
+              <p class="result-band" data-role="band"></p>
+              <p class="result-summary" data-role="summary"></p>
             </div>
           </div>
-          <div class="result-areas" id="scoreAreas"></div>
+          <div class="result-areas" data-role="areas"></div>
           <div class="result-gaps">
             <h3>What to work on</h3>
-            <ul id="scoreGaps"></ul>
+            <ul data-role="gaps"></ul>
           </div>
           <div class="result-actions">
-            <button class="btn" type="button" data-report="readiness"><span>Get the PDF report</span>{ARROW}</button>
+            <button class="btn" type="button" data-report="{key}"><span>Get the PDF report</span>{ARROW}</button>
             <a class="btn btn--outline" href="partner.html#submit"><span>Submit your project</span>{ARROW}</a>
-            <button class="btn btn--quiet" type="button" id="readinessRestart">Start again</button>
+            <button class="btn btn--quiet" type="button" data-role="restart">Start again</button>
           </div>
         </div>
       </div>
     </div>
   </section>
+"""
 
-  <section class="section tool tool--alt" id="dscr">
+
+def funding_tools():
+    return (head('Funding tools | New Generation Capital',
+                 'Free project finance tools: a Funding Readiness Assessment, a Telecoms Readiness Assessment and a Repayment and DSCR Calculator, each with an instant result and a PDF report.')
+            + header('funding-tools.html') + '\n<main id="main">\n'
+            + page_hero('Funding tools', 'Know where your project stands before you pitch it.',
+                        'Three free tools with instant results. Download a detailed PDF report to share with your team, or send your project to us for review.',
+                        'backdrop-funding-tools')
+            + f"""
+  <nav class="tool-switch wrap" aria-label="Funding tools">
+    <a href="#readiness" class="tool-switch__link"><span>01</span> Funding Readiness Assessment</a>
+    <a href="#telecoms" class="tool-switch__link"><span>02</span> Telecoms Readiness Assessment</a>
+    <a href="#dscr" class="tool-switch__link"><span>03</span> Repayment &amp; DSCR Calculator</a>
+  </nav>
+"""
+            + assessment('readiness', 1, 'Funding Readiness Assessment',
+                         'Answer ten short questions about your project. You will get a readiness score, a breakdown by area and a list of what to prepare before funders will engage.',
+                         ['About 3 minutes', 'No sign-up needed to see your score', 'Optional PDF report to share'],
+                         QUESTIONS)
+            + assessment('telecoms', 2, 'Telecoms Readiness Assessment',
+                         'For fibre, tower, wireless and data centre projects. Ten questions on the things funders check in a network build: design and build cost, rights and licences, demand and operations.',
+                         ['About 3 minutes', 'Built from our directors’ network delivery experience', 'Optional PDF report to share'],
+                         TELECOMS_QUESTIONS, alt=True)
+            + f"""
+  <section class="section tool" id="dscr">
     <div class="wrap tool-grid">
       <div class="tool-intro reveal">
-        <p class="label">Tool 02</p>
+        <p class="label">Tool 03</p>
         <h2 class="display">Repayment &amp; DSCR Calculator</h2>
         <p>Estimate loan repayments and your debt service coverage ratio (DSCR): how many times the project’s income covers its loan repayments. Lenders use it to size the debt they will offer.</p>
         <ul class="tool-points">
@@ -988,7 +1003,7 @@ def digital_telecoms():
         <p class="section-head__aside">Every digital project runs through the same seven steps. Only credible, viable and deliverable deals pass our decision gate.</p>
       </div>
 {stages_list()}
-      <p class="section-link reveal"><a class="text-link" href="funding-tools.html">Test your project with our funding tools {ARROW}</a></p>
+      <p class="section-link reveal"><a class="text-link" href="funding-tools.html#telecoms">Take the Telecoms Readiness Assessment {ARROW}</a></p>
     </div>
   </section>
 {cta_band('digital')}

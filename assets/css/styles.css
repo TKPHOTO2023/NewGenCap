@@ -432,7 +432,7 @@ ul, ol { padding: 0; list-style: none; }
 
 /* ---------- home: tools teaser ---------- */
 .tools-teaser { background: var(--mist); }
-.tool-cards { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 3vw, 36px); }
+.tool-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 3vw, 32px); }
 .tool-card-link {
   display: flex; flex-direction: column; gap: 14px; text-decoration: none; color: var(--ink);
   background: var(--paper); padding: clamp(28px, 4vw, 44px); border: 1px solid var(--rule); position: relative;
@@ -912,6 +912,7 @@ ul, ol { padding: 0; list-style: none; }
 /* ---------- responsive (components) ---------- */
 @media (max-width: 1080px) {
   .industries { grid-template-columns: repeat(2, 1fr); }
+  .tool-cards { grid-template-columns: 1fr; }
   .services-list { grid-template-columns: repeat(2, 1fr); border-top: 0; }
   .services-list li, .services-list li + li { padding: 24px 24px 24px 0; border-left: 0; border-top: 1px solid var(--ink); }
   .services-list--links li, .services-list--links li + li { padding: 0; }

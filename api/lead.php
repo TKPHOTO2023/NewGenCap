@@ -130,7 +130,7 @@ $rows = [
 ];
 
 if ($type === 'tool-report') {
-    $tools = ['Funding Readiness Assessment', 'Repayment & DSCR Calculator'];
+    $tools = ['Funding Readiness Assessment', 'Telecoms Readiness Assessment', 'Repayment & DSCR Calculator'];
     $tool = field('tool', 80);
     if (!in_array($tool, $tools, true)) {
         $errors[] = 'the tool used';

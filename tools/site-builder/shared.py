@@ -40,11 +40,9 @@ SERVICES = [s for s in ALL_SERVICES if s[0] not in HIDDEN_SERVICES]
 # None shows "To be confirmed".
 DEAL_SIZES = {slug: (None, None) for slug, _t, _d, _g in ALL_SERVICES}
 
-# Working days within which we reply to a submission, e.g. 5. None shows "To be confirmed".
-RESPONSE_DAYS = None
+# Working days within which we reply to a submission, e.g. '3 to 5'. None shows "To be confirmed".
+RESPONSE_DAYS = '3 to 5'
 
-# Telecoms questions in the Funding Readiness Assessment (draft; switch on once confirmed).
-TELECOMS_READINESS = False
 
 
 def tbc(value):
